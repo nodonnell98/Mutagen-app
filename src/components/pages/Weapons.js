@@ -29,12 +29,12 @@ class Weapons extends Component {
 }
 
 const weaponContainerStyle = {
-  width: '100%'
+  width: '100%',
 }
 
 const pageHeader = {
   width: '100%',
-  color: '#ABD1B5'
+  color: '#66FCF1'
 }
 
 const pageContainer = {

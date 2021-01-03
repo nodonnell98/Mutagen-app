@@ -9,12 +9,12 @@ export default class Header extends Component {
           <div style={links}>
             <a style={navLink}>
               Characters</a>
-            <Link style={navLink} to="/weapons">Weapons</Link>
+            <Link style={navLink} to="/weapons">Armoury</Link>
             <a style={navLink}>
               Documentation</a>
           </div>
           <div style={links}>
-            <Link style={titleStyle} to="/">Anomaly</Link>
+            <Link style={titleStyle} className="titleHover" to="/">Anomaly</Link>
           </div>
           <div style={links}>
             <a style={navLink}>
@@ -27,14 +27,14 @@ export default class Header extends Component {
 }
 
 const headerStyle = {
-  background: '#0D1821',
+  background: '#1F2833',
   color: '#EDF4ED',
   textAlign: 'center',
   padding: '10px',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-evenly',
-  borderBottom: '3px solid #ABD1B5',
+  // borderBottom: '3px solid #66FCF1',
   textDecoration: 'none'
 }
 
@@ -44,7 +44,7 @@ const titleStyle = {
   fontSize: '60px',
   fontFamily: 'Staatliches',
   padding: 0,
-  color: '#ABD1B5'
+  color: '#66FCF1'
 }
 
 const navLink = {

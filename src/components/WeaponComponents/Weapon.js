@@ -24,29 +24,35 @@ export class Weapon extends Component {
             <h1>{name}</h1>
           </div>
           <div style={statItem}>
-            <h3> Range</h3>
-            <p> {range}</p>
+            <h3>Range</h3>
+            <p>
+              {range}</p>
           </div>
           <div style={statItem}>
-            <p>Noise: {noise}</p>
+            <h3>Noise</h3>
+            <p>{noise}</p>
           </div>
           <div style={statItem}>
-            <p>Quality: {quality}</p>
+            <h3>Quality</h3>
+            <p>{quality}</p>
           </div>
-        </div>
-        <div style={statSection}>
+       
           <div style={statItem}>
-            <p>Damage Type: {damage_type}</p>
+            <h3>Damage Type</h3>
+            <p>{damage_type}</p>
           </div>
           <div style={statItem}>
-            <p>Damage: 3d{damage_dice}
+            <h3>Damage</h3>
+            <p>3d{damage_dice}
               + {damage_modifier}</p>
           </div>
           <div style={statItem}>
-            <p>Proficiency: {proficiency}</p>
+            <h3>Proficiency</h3>
+            <p>{proficiency}</p>
           </div>
           <div style={statItem}>
-            <p>Ammo: {ammo}</p>
+            <h3>Ammo</h3>
+            <p>{ammo}</p>
           </div>
 
         </div>
@@ -59,25 +65,14 @@ export class Weapon extends Component {
 const weaponContainer = {
   width: '100%',
   height: 'auto',
-  backgroundColor: '#0D1821',
-  color: 'white',
-  border: '4px solid #ABD1B5',
-  margin: '1em',
+  backgroundColor: 'white',
+  color: 'black',
   borderRadius: '5px',
   display: 'flex',
   flexDirection: 'column',
-  justifyContent: 'space-evenly'
-}
-
-const weaponSectionOne = {
-  flex: '1',
-  flexBasis: 'column no-wrap'
-}
-
-const weaponSectionTwo = {
-  flex: '10',
-  display: 'flex',
-  flexDirection: 'column'
+  justifyContent: 'center',
+  marginBottom: '1em',
+  boxShadow: '0px 1px 10px 1px rgba(0,0,0,0.6)'
 }
 
 const statSection = {
@@ -88,16 +83,21 @@ const statSection = {
 
 const statItem = {
   flex: '1',
-  padding: '5px',
+  padding: '2px',
   margin: '0',
-  border: '1px solid black'
+//   border: '1px solid black'
 }
 
 const descriptionStyle = {
   color: 'grey',
   fontStyle: 'italic',
   fontSize: 'small',
-  paddingTop: '0'
+  paddingTop: '0',
+  background: 'black',
+  color: 'white',
+  marginBottom: '0',
+  padding: '1em',
+  boxShadow: '0 4px 12px 0 rgba(0,0,0,0.2)'
 }
 
 Weapon.propTypes = {
