@@ -16,7 +16,7 @@ class Weapons extends Component {
 
   render() {
     return (
-      <div>
+      <div style={pageContainer}>
         <h1 style={pageHeader}>Weapons</h1>
         <div style={weaponContainerStyle}>
           <WeaponContainer weapons={this.state.weapons}/>
@@ -29,12 +29,16 @@ class Weapons extends Component {
 }
 
 const weaponContainerStyle = {
-  width: '100%',
-  display: 'flex'
+  width: '100%'
 }
 
 const pageHeader = {
-  width: '100%'
+  width: '100%',
+  color: '#ABD1B5'
+}
+
+const pageContainer = {
+  width: '80%'
 }
 
 export default Weapons;
