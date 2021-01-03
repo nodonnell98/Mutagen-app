@@ -17,7 +17,7 @@ class Weapons extends Component {
   render() {
     return (
       <div style={pageContainer}>
-        <h1 style={pageHeader}>Weapons</h1>
+        <h1 style={pageHeader}>Armoury</h1>
         <div style={weaponContainerStyle}>
           <WeaponContainer weapons={this.state.weapons}/>
         </div>
