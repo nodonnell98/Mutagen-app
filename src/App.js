@@ -10,7 +10,16 @@ class App extends Component {
       <Router>
         <div className="App">
           <Header/>
-          <Route path="/weapons" component={Weapons}/>
+          <div className='container'>
+          <Route
+              exact
+              path="/weapons"
+              render={props => (
+              <React.Fragment>
+                <Weapons />
+              </React.Fragment>
+            )}></Route>
+            </div>
         </div>
       </Router>
     )
