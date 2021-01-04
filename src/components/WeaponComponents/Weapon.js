@@ -7,15 +7,15 @@ export class Weapon extends Component {
     let colour = '';
     switch (this.props.weapon.quality) {
       case 'Average':
-        colour = 'rgba(11,156,49)';
+        colour = '#00ff00';
         break;
 
       case 'Rare':
-        colour = 'rgba(0, 133, 255)';
+        colour = '#00ffff';
         break;
 
       case 'Mythic':
-        colour = 'rgba(255, 153, 0)';
+        colour = '#ffcc00';
         break;
     }
     console.log(colour)
@@ -69,12 +69,18 @@ export class Weapon extends Component {
     return (
       <div style={weaponContainer}>
         <div style={this.weaponName()}>
-          
+
           <div style={statItem}>
-          <h1 style={{color: this.getRarityColour()}}>{name}</h1>
-          <img src={this.getDamageType()} style={weaponIcon}/></div>
+            <p style={{
+              color: this.getRarityColour()
+            }}>{name}</p>
+          </div>
           <div style={statItem}>
-              <div style={weaponInfo}></div>
+            <img src={this.getDamageType()} style={weaponIcon}/>
+          </div>
+
+          <div style={statItem}>
+            <div style={weaponInfo}></div>
             <img src="/images/weaponIcons/aim.png" style={weaponIcon}/>
             <p>
               {range}</p>
@@ -102,18 +108,20 @@ export class Weapon extends Component {
 const weaponContainer = {
   width: '100%',
   height: 'auto',
-  backgroundColor: 'white',
-  color: 'black',
+  backgroundColor: '#45A29E',
+  color: '#66FCF1',
   borderRadius: '5px',
+  border: '3px solid #66FCF1',
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
   marginBottom: '1em',
-  boxShadow: '0px 1px 10px 1px rgba(0,0,0,0.6)'
+  boxShadow: '0px 1px 10px 1px rgba(0,0,0,0.6)',
+  fontSize: '20px'
 }
 
 const statItem = {
-  padding: '2px',
+  padding: '0.5em',
   margin: '0',
   flex: '1'
 }
@@ -130,11 +138,11 @@ const descriptionStyle = {
 }
 
 const weaponInfo = {
-    flex: 2
+  flex: 2
 }
 
 const weaponIcon = {
-  height: '40px'
+  height: '30px'
 }
 
 Weapon.propTypes = {
