@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+import {Link} from 'react-router-dom';
 import WeaponContainer from '../WeaponComponents/WeaponContainer';
 import SearchBar from '../SearchBar';
 
