@@ -1,4 +1,5 @@
 import './App.css';
+import './stylesheets/weaponTable.css'
 import React, {Component} from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import Weapons from './components/pages/Weapons';

@@ -108,7 +108,7 @@ export class Weapon extends Component {
 const weaponContainer = {
   width: '100%',
   height: 'auto',
-  backgroundColor: '#45A29E',
+  backgroundColor: '#367c79',
   color: '#66FCF1',
   borderRadius: '5px',
   border: '3px solid #66FCF1',

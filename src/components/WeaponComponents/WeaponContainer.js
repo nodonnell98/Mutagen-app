@@ -1,18 +1,14 @@
 import React, {Component} from 'react';
-import axios from 'axios';
 import Weapon from '../WeaponComponents/Weapon';
+import WeaponTable from '../WeaponComponents/WeaponTable';
 
 class WeaponContainer extends Component {
 
   render() {
     return (
-      this.props.weapons.map((weapon) => {
-      return (
-          <Weapon key={weapon._id} weapon={weapon}/>
+      <WeaponTable weapons={this.props.searchedWeapons} />
       )
-    }))
   }
-
 }
 
 export default WeaponContainer;

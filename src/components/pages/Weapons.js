@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import WeaponContainer from '../WeaponComponents/WeaponContainer';
-import Weapon from '../WeaponComponents/Weapon';
+import SearchBar from '../SearchBar';
 
 class Weapons extends Component {
   state = {
-    weapons: []
+    weapons: [],
+    searchedWeapons: ''
   }
 
   componentDidMount() {
@@ -14,12 +15,22 @@ class Weapons extends Component {
       .then(res => this.setState({weapons: res.data}))
   }
 
+  handleSearch = (e) => {
+    console.log(e.target.value)
+    this.setState({ searchedWeapons: e.target.value})
+  }
+
   render() {
+
+    let searchedWeapons = this.state.weapons.filter((weapon) => {
+      return weapon.name.toLowerCase().includes(this.state.searchedWeapons.toLowerCase())
+    })
     return (
       <div style={pageContainer}>
         <h1 style={pageHeader}>Armoury</h1>
+        <SearchBar handleSearch={this.handleSearch} />
         <div style={weaponContainerStyle}>
-          <WeaponContainer weapons={this.state.weapons}/>
+          <WeaponContainer searchedWeapons={searchedWeapons}/>
         </div>
 
       </div>
