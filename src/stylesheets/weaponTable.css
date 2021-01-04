@@ -1,0 +1,29 @@
+table {
+    background-color: #2a615e;
+    width: 100%;
+    border: 3px solid #66FCF1;
+    color: #66FCF1;
+    border-radius: 10px;
+}
+
+th {
+    border-bottom: 1px solid #66FCF1;
+    padding-bottom: 0.2em;
+}
+
+td {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-top: 1px solid #66FCF1;
+}
+
+.pagination {
+    background-color: #2a615e;
+    width: 100%;
+    border: 3px solid #66FCF1;
+    color: #66FCF1;
+    padding: 5px;
+    margin-top: 1em;
+    border-radius: 5px;
+}
+

@@ -3,9 +3,58 @@ import PropTypes from 'prop-types';
 
 export class Weapon extends Component {
 
+  getRarityColour = () => {
+    let colour = '';
+    switch (this.props.weapon.quality) {
+      case 'Average':
+        colour = '#00ff00';
+        break;
+
+      case 'Rare':
+        colour = '#00ffff';
+        break;
+
+      case 'Mythic':
+        colour = '#ffcc00';
+        break;
+    }
+    console.log(colour)
+    return colour
+  }
+
+  getDamageType = () => {
+    let src = '';
+    switch (this.props.weapon.damage_type) {
+      case 'cryo':
+        src = '/images/weaponIcons/cold.png';
+        break;
+
+      case 'kinetic':
+        src = '/images/weaponIcons/kinetic.png';
+        break;
+
+      case 'Incendiary':
+        src = '/images/weaponIcons/fire.png';
+        break;
+    }
+    return src
+  }
+
+  weaponName = () => {
+    console.log(this.getRarityColour())
+    return {
+      padding: '1em',
+      display: 'flex',
+      margin: '0',
+      alignItems: 'center',
+      justifyContent: 'center',
+      color: 'black',
+      flex: 8
+    }
+  }
+
   render() {
     const {
-      _id,
       name,
       description,
       range,
@@ -19,42 +68,36 @@ export class Weapon extends Component {
     } = this.props.weapon
     return (
       <div style={weaponContainer}>
-        <div style={statSection}>
+        <div style={this.weaponName()}>
+
           <div style={statItem}>
-            <h1>{name}</h1>
+            <p style={{
+              color: this.getRarityColour()
+            }}>{name}</p>
           </div>
           <div style={statItem}>
-            <h3>Range</h3>
+            <img src={this.getDamageType()} style={weaponIcon}/>
+          </div>
+
+          <div style={statItem}>
+            <div style={weaponInfo}></div>
+            <img src="/images/weaponIcons/aim.png" style={weaponIcon}/>
             <p>
               {range}</p>
           </div>
           <div style={statItem}>
-            <h3>Noise</h3>
+            <img src="/images/weaponIcons/ear.png" style={weaponIcon}/>
             <p>{noise}</p>
           </div>
           <div style={statItem}>
-            <h3>Quality</h3>
-            <p>{quality}</p>
-          </div>
-       
-          <div style={statItem}>
-            <h3>Damage Type</h3>
-            <p>{damage_type}</p>
-          </div>
-          <div style={statItem}>
-            <h3>Damage</h3>
+            <img src="/images/weaponIcons/dice.png" style={weaponIcon}/>
             <p>3d{damage_dice}
               + {damage_modifier}</p>
           </div>
           <div style={statItem}>
-            <h3>Proficiency</h3>
-            <p>{proficiency}</p>
-          </div>
-          <div style={statItem}>
-            <h3>Ammo</h3>
+            <img src="/images/weaponIcons/bullets.png" style={weaponIcon}/>
             <p>{ammo}</p>
           </div>
-
         </div>
         <p style={descriptionStyle}>"{description}"</p>
       </div>
@@ -65,27 +108,22 @@ export class Weapon extends Component {
 const weaponContainer = {
   width: '100%',
   height: 'auto',
-  backgroundColor: 'white',
-  color: 'black',
+  backgroundColor: '#367c79',
+  color: '#66FCF1',
   borderRadius: '5px',
+  border: '3px solid #66FCF1',
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
   marginBottom: '1em',
-  boxShadow: '0px 1px 10px 1px rgba(0,0,0,0.6)'
-}
-
-const statSection = {
-  flexBasis: '100%',
-  flexDirection: 'row',
-  display: 'flex'
+  boxShadow: '0px 1px 10px 1px rgba(0,0,0,0.6)',
+  fontSize: '20px'
 }
 
 const statItem = {
-  flex: '1',
-  padding: '2px',
+  padding: '0.5em',
   margin: '0',
-//   border: '1px solid black'
+  flex: '1'
 }
 
 const descriptionStyle = {
@@ -95,9 +133,16 @@ const descriptionStyle = {
   paddingTop: '0',
   background: 'black',
   color: 'white',
-  marginBottom: '0',
-  padding: '1em',
-  boxShadow: '0 4px 12px 0 rgba(0,0,0,0.2)'
+  margin: '0',
+  padding: '1em'
+}
+
+const weaponInfo = {
+  flex: 2
+}
+
+const weaponIcon = {
+  height: '30px'
 }
 
 Weapon.propTypes = {
