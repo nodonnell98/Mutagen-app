@@ -9,7 +9,7 @@ export default function SearchBar(props) {
 }
 
 const searchStyle = {
-    width: '100%',
+    width: '80%',
     marginTop: '2em',
     marginBottom: '2em',
     border: '2px solid #66FCF1',

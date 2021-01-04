@@ -1,7 +1,10 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import WeaponContainer from '../WeaponComponents/WeaponContainer';
 import SearchBar from '../SearchBar';
+import AddWeapon from '../WeaponComponents/AddWeapon';
+
 
 class Weapons extends Component {
   state = {
@@ -17,30 +20,42 @@ class Weapons extends Component {
 
   handleSearch = (e) => {
     console.log(e.target.value)
-    this.setState({ searchedWeapons: e.target.value})
+    this.setState({searchedWeapons: e.target.value})
   }
 
   render() {
 
-    let searchedWeapons = this.state.weapons.filter((weapon) => {
-      return weapon.name.toLowerCase().includes(this.state.searchedWeapons.toLowerCase())
-    })
+    let searchedWeapons = this
+      .state
+      .weapons
+      .filter((weapon) => {
+        return weapon
+          .name
+          .toLowerCase()
+          .includes(this.state.searchedWeapons.toLowerCase())
+      })
     return (
-      <div style={pageContainer}>
-        <h1 style={pageHeader}>Armoury</h1>
-        <SearchBar handleSearch={this.handleSearch} />
-        <div style={weaponContainerStyle}>
-          <WeaponContainer searchedWeapons={searchedWeapons}/>
-        </div>
+        <div style={pageContainer}>
+          <h1 style={pageHeader}>Armoury</h1>
+          <div style={{
+            display: 'inline'
+          }}>
+            <SearchBar handleSearch={this.handleSearch}/>
+            <Link to="/weapons/add">Add</Link>
+          </div>
 
-      </div>
+          <div style={weaponContainerStyle}>
+            <WeaponContainer searchedWeapons={searchedWeapons}/>
+          </div>
+
+        </div>
     )
   }
 
 }
 
 const weaponContainerStyle = {
-  width: '100%',
+  width: '100%'
 }
 
 const pageHeader = {

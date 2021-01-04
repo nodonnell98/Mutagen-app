@@ -28,6 +28,14 @@ export default function WeaponTable(props) {
       Header: 'Noise',
       accessor: 'noise',
       sortType: 'basic'
+    }, {
+      Header: 'Actions',
+      Cell: ({cell}) => (
+        <div>
+          <button className="input">Edit</button>
+          <button className="input">Delete</button>
+        </div>
+      )
     }
   ]
 
@@ -81,31 +89,42 @@ export default function WeaponTable(props) {
             ))}
           </thead>
           <tbody {...getTableBodyProps()}>
-          {page.map((row, i) => {
-            prepareRow(row);
-            return (
-              <tr {...row.getRowProps()}>
-                {row.cells.map(cell => {
-                  return (
-                    <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
-                  );
-                })}
-              </tr>
-            );
-          })}
-        </tbody>
+            {page.map((row, i) => {
+              prepareRow(row);
+              return (
+                <tr {...row.getRowProps()}>
+                  {row
+                    .cells
+                    .map(cell => {
+                      return (
+                        <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
+                      );
+                    })}
+                </tr>
+              );
+            })}
+          </tbody>
         </table>
         <div className="pagination">
-          <button className="input" onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
+          <button
+            className="input"
+            onClick={() => gotoPage(0)}
+            disabled={!canPreviousPage}>
             {"<<"}
           </button>{" "}
-          <button className="input" onClick={() => previousPage()} disabled={!canPreviousPage}>
+          <button
+            className="input"
+            onClick={() => previousPage()}
+            disabled={!canPreviousPage}>
             {"<"}
           </button>{" "}
           <button className="input" onClick={() => nextPage()} disabled={!canNextPage}>
             {">"}
           </button>{" "}
-          <button className="input" onClick={() => gotoPage(pageCount - 1)} disabled={!canNextPage}>
+          <button
+            className="input"
+            onClick={() => gotoPage(pageCount - 1)}
+            disabled={!canNextPage}>
             {">>"}
           </button>{" "}
           <span>
@@ -118,7 +137,7 @@ export default function WeaponTable(props) {
           <span>
             | Go to page:{" "}
             <input
-            className="input"
+              className="input"
               type="number"
               defaultValue={pageIndex + 1}
               onChange={e => {

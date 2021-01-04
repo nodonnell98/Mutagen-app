@@ -22,3 +22,10 @@ a {
   transition: 0.5s;
   text-shadow: 0px 0px 8px rgba(63,239,239,0.55);
 }
+
+.input {
+  background-color: #224e4c;
+  border: 1px solid #66FCF1;
+  color: #66FCF1;
+  cursor: pointer;
+}
