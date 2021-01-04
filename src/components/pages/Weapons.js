@@ -36,7 +36,7 @@ class Weapons extends Component {
       })
     return (
         <div style={pageContainer}>
-          <h1 style={pageHeader}>Armoury</h1>
+          <h1 style={pageHeader}>Welcome to the Armoury</h1>
             <SearchBar handleSearch={this.handleSearch}/>
             <Link to="/weapons/add" ><button style={addStyle}>Add</button></Link>
 

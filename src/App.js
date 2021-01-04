@@ -15,6 +15,11 @@ class App extends Component {
           <div className='container'>
           <Route
               exact
+              path="/"
+
+          ><img style={{width: '102%', marginTop: '0%'}}src='./images/landing.png'></img></Route>
+          <Route
+              exact
               path="/weapons"
               render={props => (
               <React.Fragment>
