@@ -33,17 +33,19 @@ td {
 
 .navBtn {
     height: 100%;
-    width: auto;
-    background-color: transparent;
-    border: none;
+    flex-basis: 25%;
+    flex-grow: 1;
+    background-color: #224e4c;
+    border: 1px solid  #66FCF1;
     font-family: 'Orbitron', sans-serif;
     font-size: large;
-    color: #224e4c;
+    color: #66FCF1;
     cursor: pointer;
 }
 
-.navBtn:active {
+.navBtn:hover {
     background-color: #66FCF1;
+    color: #224e4c;
 }
 
 .tableBtn {

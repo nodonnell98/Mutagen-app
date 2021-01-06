@@ -6,12 +6,16 @@ export class Weapon extends Component {
   getRarityColour = () => {
     let colour = '';
     switch (this.props.weapon.quality) {
-      case 'Average':
+      case 'Basic':
+        colour = '#00ffff';
+        break;
+
+      case 'Refined':
         colour = '#00ff00';
         break;
 
-      case 'Rare':
-        colour = '#00ffff';
+      case 'Superior':
+        colour = '#e600e6';
         break;
 
       case 'Mythic':
@@ -25,11 +29,11 @@ export class Weapon extends Component {
   getDamageType = () => {
     let src = '';
     switch (this.props.weapon.damage_type) {
-      case 'cryo':
+      case 'Cryo':
         src = '/images/weaponIcons/cold.png';
         break;
 
-      case 'kinetic':
+      case 'Kinetic':
         src = '/images/weaponIcons/kinetic.png';
         break;
 
@@ -68,16 +72,16 @@ export class Weapon extends Component {
     } = this.props.weapon
     return (
       <div style={weaponContainer}>
+        <div style={{flexBasis: '50%', flexGrow: 1}}>
+        <div style={statItem}>
+          <p style={{
+            color: this.getRarityColour()
+          }}>{name}</p>
+        </div>
+        <div style={statItem}>
+          <img src={this.getDamageType()} style={weaponIcon}/>
+        </div>
         <div style={this.weaponName()}>
-
-          <div style={statItem}>
-            <p style={{
-              color: this.getRarityColour()
-            }}>{name}</p>
-          </div>
-          <div style={statItem}>
-            <img src={this.getDamageType()} style={weaponIcon}/>
-          </div>
 
           <div style={statItem}>
             <div style={weaponInfo}></div>
@@ -99,6 +103,8 @@ export class Weapon extends Component {
             <p>{ammo}</p>
           </div>
         </div>
+        
+        </div>
         <p style={descriptionStyle}>"{description}"</p>
       </div>
     )
@@ -108,16 +114,13 @@ export class Weapon extends Component {
 const weaponContainer = {
   width: '100%',
   height: 'auto',
-  backgroundColor: '#367c79',
   color: '#66FCF1',
-  borderRadius: '5px',
-  border: '3px solid #66FCF1',
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
   marginBottom: '1em',
-  boxShadow: '0px 1px 10px 1px rgba(0,0,0,0.6)',
-  fontSize: '20px'
+  fontSize: '20px',
+  padding: '0'
 }
 
 const statItem = {
@@ -127,14 +130,14 @@ const statItem = {
 }
 
 const descriptionStyle = {
-  color: 'grey',
   fontStyle: 'italic',
   fontSize: 'small',
   paddingTop: '0',
-  background: 'black',
-  color: 'white',
+  background: '#224e4c',
+  color: '#66FCF1',
   margin: '0',
-  padding: '1em'
+  padding: '1em',
+  flexGrow: '3'
 }
 
 const weaponInfo = {

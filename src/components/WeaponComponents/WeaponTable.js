@@ -149,18 +149,6 @@ export default function WeaponTable(props) {
               width: "100px"
             }}/>
           </span>{" "}
-          <select
-            className="input"
-            value={pageSize}
-            onChange={e => {
-            setPageSize(Number(e.target.value));
-          }}>
-            {[5, 10, 25, 50, 100].map(pageSize => (
-              <option key={pageSize} value={pageSize}>
-                Show {pageSize}
-              </option>
-            ))}
-          </select>
         </div>
       </div>
     );

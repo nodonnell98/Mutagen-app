@@ -4,27 +4,31 @@ import Weapon from './Weapon'
 
 class WeaponContainer extends Component {
 
- 
-
   render() {
-    if(this.props.component === 'add') {
+    if (this.props.component === 'add') {
       return (<AddWeapon/>)
-    }
-    else if(this.props.component === 'weapon'){
-      return (
-        <div>
-          <Weapon weapon={this.props.weapon}/>
-        </div>
-      )
-    }
-    else {
+    } else if (this.props.component === 'weapon') {
+      if (this.props.weapon === '') {
+        return (
+          <div>
+            <p>Select a weapon</p>
+          </div>
+        )
+      } else {
+        return (
+          <div>
+            <Weapon weapon={this.props.weapon}/>
+          </div>
+        )
+      }
+    } else {
       return (
         <div>
           <p>Hello</p>
         </div>
       )
     }
-    
+
   }
 }
 

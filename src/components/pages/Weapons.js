@@ -19,6 +19,10 @@ class Weapons extends Component {
       .then(res => this.setState({weapons: res.data}))
   }
 
+  update = () => {
+  this.setState({containerComponent: ''})
+  }
+
   handleSearch = (e) => {
     this.setState({searchedWeapons: e.target.value})
   }
@@ -65,10 +69,16 @@ class Weapons extends Component {
           <WeaponTable setWeapon={this.setWeapon} searchedWeapons={searchedWeapons}/>
           <div className="container" style={weaponContainerStyle}>
             <div className="btn-group" role="group" style={containerNav}>
-              <button className="navBtn" value="add" onClick={this.handleButton}>Add</button>
               <button className="navBtn" value="weapon" onClick={this.handleButton}>Weapon</button>
+              {/* <div style={{flexGrow: "10"}}></div> */}
+              <button className="navBtn" value="add" onClick={this.handleButton}>Add</button>
             </div>
-            <WeaponContainer weapon={this.state.selectedWeapon} component={this.state.containerComponent}/>
+            <WeaponContainer style={{flexGrow: '10%'}} weapon={this.state.selectedWeapon} component={this.state.containerComponent}/>
+            <div className="btn-group" role="group" style={containerNav}>
+              <button className="navBtn" value="edit">Edit</button>
+              {/* <div style={{flexGrow: "10"}}></div> */}
+              <button className="navBtn" value="weapon">Delete</button>
+            </div>
           </div>
         </div>
 
@@ -95,11 +105,10 @@ const pageContainer = {
 
 const weaponContainerStyle = {
   marginLeft: '1em',
-  height: '500px',
+  height: '550px',
   width: '40%',
   display: 'flex',
   justifyContent: 'start',
-  alignItems: 'center',
   flexDirection: 'column',
   padding: '0'
 }

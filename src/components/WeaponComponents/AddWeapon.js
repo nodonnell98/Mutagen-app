@@ -11,13 +11,14 @@ class AddWeapon extends Component {
             url: 'https://anomaly-api-staging.herokuapp.com/weapons',
             data: weapon
         }).then(response => {
-            this.props.history.push('/weapons');
+          this.props.history.push('/weapons')
         }).catch(err => console.log(err))
         
     }
   onSubmit = (e) => {
       const newWeapon = {
           name: this.refs.name.value,
+          type: this.refs.type.value,
           description: this.refs.description.value,
           quality: this.refs.quality.value,
           noise: this.refs.noise.value,
@@ -43,7 +44,17 @@ class AddWeapon extends Component {
             </label>
             <input style={inputStyle} type="text" autocomplete="off" ref="name" name="name" placeholder="Name"></input>
           </div>
-
+          <div style={flexitem}>
+            <label>Type</label>
+            <select style={inputStyle} ref="type" name="type">
+              <option value="Melee">Melee</option>
+              <option value="Pistol">Pistol</option>
+              <option value="Rifle">Rifle</option>
+              <option value="Bow">Bow</option>
+              <option value="Sniper">Sniper</option>
+              <option value="Launcher">Launcher</option>
+            </select>
+          </div>
           <div style={flexitem}>
             <label>Description:
             </label>
@@ -59,7 +70,8 @@ class AddWeapon extends Component {
             </label>
             <input
               style={inputStyle}
-              type="text"
+              type="number"
+              min="1"
               autocomplete="off" ref="range"
               name="range"
               placeholder="range"></input>
@@ -72,19 +84,19 @@ class AddWeapon extends Component {
           <div style={flexitem}>
             <label>Quality</label>
             <select style={inputStyle} ref="quality" name="quality">
-              <option value="stock">Stock</option>
-              <option value="high-end">High-End</option>
-              <option value="elite">Elite</option>
-              <option value="mythic">Mythic</option>
+              <option value="Basic">Basic</option>
+              <option value="Refined">Refined</option>
+              <option value="Superior">Superior</option>
+              <option value="Mythic">Mythic</option>
             </select>
           </div>
           <div style={flexitem}>
             <label>Noise:
             </label>
             <select style={inputStyle} ref="noise" name="noise">
-              <option value="silent">Silent</option>
-              <option value="quiet">Quiet</option>
-              <option value="loud">Loud</option>
+              <option value="Silent">Silent</option>
+              <option value="Quiet">Quiet</option>
+              <option value="Loud">Loud</option>
               <option value="Explosive">Explosive</option>
             </select>
           </div>
@@ -92,10 +104,10 @@ class AddWeapon extends Component {
             <label>Damage Type:
             </label>
             <select style={inputStyle} ref="damage_type" name="damage_type">
-              <option value="kinetic">Kinetic</option>
-              <option value="cryo">Cryo</option>
-              <option value="incendiary">Incendiary</option>
-              <option value="shock">Shock</option>
+              <option value="Kinetic">Kinetic</option>
+              <option value="Cryo">Cryo</option>
+              <option value="Incendiary">Incendiary</option>
+              <option value="Shock">Shock</option>
             </select>
           </div>
           <input type="submit" value="Add"></input>
