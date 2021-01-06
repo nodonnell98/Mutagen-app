@@ -34,8 +34,6 @@ class AddWeapon extends Component {
   render() {
     return (
       <div
-        style={formContainer}
-        className="input"
         onSubmit={this
         .onSubmit
         .bind(this)}>
@@ -43,7 +41,7 @@ class AddWeapon extends Component {
           <div style={flexitem}>
             <label>Name:
             </label>
-            <input style={inputStyle} type="text" ref="name" name="name" placeholder="Name"></input>
+            <input style={inputStyle} type="text" autocomplete="off" ref="name" name="name" placeholder="Name"></input>
           </div>
 
           <div style={flexitem}>
@@ -52,7 +50,7 @@ class AddWeapon extends Component {
             <input
               style={inputStyle}
               type="text"
-              ref="description"
+              autocomplete="off" ref="description"
               name="description"
               placeholder="Description"></input>
           </div>
@@ -62,14 +60,14 @@ class AddWeapon extends Component {
             <input
               style={inputStyle}
               type="text"
-              ref="range"
+              autocomplete="off" ref="range"
               name="range"
               placeholder="range"></input>
           </div>
           <div style={flexitem}>
             <label>Ammo:
             </label>
-            <input style={inputStyle} type="number" ref="ammo" name="ammo" min="1"></input>
+            <input style={inputStyle} type="number" autocomplete="off" ref="ammo" name="ammo" min="1"></input>
           </div>
           <div style={flexitem}>
             <label>Quality</label>
@@ -81,7 +79,7 @@ class AddWeapon extends Component {
             </select>
           </div>
           <div style={flexitem}>
-            <label>Noise Classification:
+            <label>Noise:
             </label>
             <select style={inputStyle} ref="noise" name="noise">
               <option value="silent">Silent</option>
@@ -107,14 +105,6 @@ class AddWeapon extends Component {
   }
 }
 
-const formContainer = {
-  backgroundColor: '#2a615e',
-  width: '80%',
-  border: '3px solid #66FCF1',
-  color: '#66FCF1'
-
-}
-
 const formStyle = {
   display: 'flex',
   flexDirection: 'column',
@@ -133,7 +123,7 @@ const inputStyle = {
 
 const flexitem = {
   flex: '1',
-  width: '60%',
+  width: '100%',
   display: 'inline'
 }
 

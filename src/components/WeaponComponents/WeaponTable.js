@@ -2,12 +2,19 @@ import React from 'react';
 import {useTable, useSortBy, usePagination} from 'react-table';
 
 export default function WeaponTable(props) {
-  const data = props.weapons
+
+  const data = props.searchedWeapons
   const columns = [
+    
     {
+      display: 'none',
       Header: 'Name',
       accessor: 'name',
-      sortType: 'basic'
+      Cell: ({ cell }) => (
+        <button className="tableBtn" value={cell.row.values.damage_type} onClick={props.setWeapon}>
+          {cell.row.values.name}
+        </button>
+      )
     }, {
       Header: 'Damage Type',
       accessor: 'damage_type',
@@ -28,14 +35,6 @@ export default function WeaponTable(props) {
       Header: 'Noise',
       accessor: 'noise',
       sortType: 'basic'
-    }, {
-      Header: 'Actions',
-      Cell: ({cell}) => (
-        <div>
-          <button className="input">Edit</button>
-          <button className="input">Delete</button>
-        </div>
-      )
     }
   ]
 
