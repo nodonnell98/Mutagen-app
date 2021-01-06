@@ -42,7 +42,7 @@ class AddWeapon extends Component {
           <div style={flexitem}>
             <label>Name:
             </label>
-            <input style={inputStyle} type="text" autocomplete="off" ref="name" name="name" placeholder="Name"></input>
+            <input style={inputStyle} type="text" autocomplete="off" ref="name" name="name"></input>
           </div>
           <div style={flexitem}>
             <label>Type</label>
@@ -62,8 +62,8 @@ class AddWeapon extends Component {
               style={inputStyle}
               type="text"
               autocomplete="off" ref="description"
-              name="description"
-              placeholder="Description"></input>
+              name="description">
+              </input>
           </div>
           <div style={flexitem}>
             <label>Range:
@@ -73,8 +73,7 @@ class AddWeapon extends Component {
               type="number"
               min="1"
               autocomplete="off" ref="range"
-              name="range"
-              placeholder="range"></input>
+              name="range"></input>
           </div>
           <div style={flexitem}>
             <label>Ammo:

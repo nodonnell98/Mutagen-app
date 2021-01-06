@@ -20,14 +20,6 @@ export default function WeaponTable(props) {
       accessor: 'damage_type',
       sortType: 'basic'
     }, {
-      Header: 'Range',
-      accessor: 'range',
-      sortType: 'basic'
-    }, {
-      Header: 'Ammo',
-      accessor: 'ammo',
-      sortType: 'basic'
-    }, {
       Header: 'Quality',
       accessor: 'quality',
       sortType: 'basic'

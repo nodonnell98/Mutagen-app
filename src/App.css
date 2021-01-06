@@ -2,11 +2,7 @@
   text-align: center;
 }
 
-a {
-  cursor: pointer;
-  text-decoration: none;
-  color: inherit;
-}
+
 
 .appContainer {
   width: 100%;

@@ -20,7 +20,7 @@ class Weapons extends Component {
   }
 
   update = () => {
-  this.setState({containerComponent: ''})
+    this.setState({containerComponent: ''})
   }
 
   handleSearch = (e) => {
@@ -44,8 +44,8 @@ class Weapons extends Component {
           .match(weaponName.toLowerCase())
       })
 
-  this.setState({selectedWeapon: foundWeapon})
-  this.setState({containerComponent: 'weapon'})
+    this.setState({selectedWeapon: foundWeapon})
+    this.setState({containerComponent: 'weapon'})
   }
 
   render() {
@@ -62,21 +62,25 @@ class Weapons extends Component {
 
     return (
       <div style={pageContainer}>
-        <h1 style={pageHeader}>Welcome to the Armoury</h1>
+        <h2 style={pageHeader}>Welcome to the Armoury</h2>
         <SearchBar handleSearch={this.handleSearch}/>
 
         <div style={containerStyle}>
+          <div style={{flexBasis: '50%'}}>
           <WeaponTable setWeapon={this.setWeapon} searchedWeapons={searchedWeapons}/>
+          </div>
           <div className="container" style={weaponContainerStyle}>
             <div className="btn-group" role="group" style={containerNav}>
               <button className="navBtn" value="weapon" onClick={this.handleButton}>Weapon</button>
-              {/* <div style={{flexGrow: "10"}}></div> */}
               <button className="navBtn" value="add" onClick={this.handleButton}>Add</button>
             </div>
-            <WeaponContainer style={{flexGrow: '10%'}} weapon={this.state.selectedWeapon} component={this.state.containerComponent}/>
+            <div style={{flexGrow: '10'}}>
+              <WeaponContainer style={{ flexGrow: '10%', marginTop: '1em' }}
+              weapon={this.state.selectedWeapon}
+              component={this.state.containerComponent}/>          
+            </div>
             <div className="btn-group" role="group" style={containerNav}>
               <button className="navBtn" value="edit">Edit</button>
-              {/* <div style={{flexGrow: "10"}}></div> */}
               <button className="navBtn" value="weapon">Delete</button>
             </div>
           </div>
@@ -96,7 +100,8 @@ const containerStyle = {
 
 const pageHeader = {
   width: '100%',
-  color: '#66FCF1'
+  color: '#66FCF1',
+  mnarginBottom: '0'
 }
 
 const pageContainer = {
@@ -118,9 +123,8 @@ const containerNav = {
   height: '10%',
   backgroundColor: 'transparent',
   borderBottom: '2px solid #66FCF1',
-  marginBottom: '1em',
-  display: 'flex'
+  display: 'flex',
+  flexBasis: '10%'
 }
-
 
 export default Weapons;

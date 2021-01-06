@@ -23,12 +23,8 @@ td {
     border: 3px solid #66FCF1;
     color: #66FCF1;
     padding: 5px;
-    margin-top: 1em;
+    margin-top: 0.5em;
     border-radius: 5px;
-}
-
-.weaponTable {
-    width: 50%
 }
 
 .navBtn {
