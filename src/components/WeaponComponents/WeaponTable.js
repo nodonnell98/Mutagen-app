@@ -11,7 +11,7 @@ export default function WeaponTable(props) {
       Header: 'Name',
       accessor: 'name',
       Cell: ({ cell }) => (
-        <button className="tableBtn" value={cell.row.values.damage_type} onClick={props.setWeapon}>
+        <button className="tableBtn" value={cell.row.values.name} onClick={props.setWeapon}>
           {cell.row.values.name}
         </button>
       )

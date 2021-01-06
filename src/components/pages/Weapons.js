@@ -9,7 +9,8 @@ class Weapons extends Component {
   state = {
     weapons: [],
     searchedWeapons: '',
-    containerComponent: ''
+    containerComponent: '',
+    selectedWeapon: ''
   }
 
   componentDidMount() {
@@ -27,7 +28,20 @@ class Weapons extends Component {
   }
 
   setWeapon = (e) => {
-    console.log(e.target.value)
+    let weaponName = e.target.value
+
+    let foundWeapon = this
+      .state
+      .weapons
+      .find((weapon) => {
+        return weapon
+          .name
+          .toLowerCase()
+          .match(weaponName.toLowerCase())
+      })
+
+  this.setState({selectedWeapon: foundWeapon})
+  this.setState({containerComponent: 'weapon'})
   }
 
   render() {
@@ -41,6 +55,7 @@ class Weapons extends Component {
           .toLowerCase()
           .includes(this.state.searchedWeapons.toLowerCase())
       })
+
     return (
       <div style={pageContainer}>
         <h1 style={pageHeader}>Welcome to the Armoury</h1>
@@ -53,7 +68,7 @@ class Weapons extends Component {
               <button className="navBtn" value="add" onClick={this.handleButton}>Add</button>
               <button className="navBtn" value="weapon" onClick={this.handleButton}>Weapon</button>
             </div>
-            <WeaponContainer component={this.state.containerComponent}/>
+            <WeaponContainer weapon={this.state.selectedWeapon} component={this.state.containerComponent}/>
           </div>
         </div>
 

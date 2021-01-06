@@ -13,7 +13,7 @@ class WeaponContainer extends Component {
     else if(this.props.component === 'weapon'){
       return (
         <div>
-          <p>Weapon</p>
+          <Weapon weapon={this.props.weapon}/>
         </div>
       )
     }
