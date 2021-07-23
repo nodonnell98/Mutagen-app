@@ -15,7 +15,7 @@ class Weapons extends Component {
 
   componentDidMount() {
     axios
-      .get('https://anomaly-api-staging.herokuapp.com/weapons')
+      .get('https://mutagen-api-staging.herokuapp.com/weapons')
       .then(res => this.setState({weapons: res.data}))
   }
 
@@ -77,7 +77,7 @@ class Weapons extends Component {
             <div style={{flexGrow: '10'}}>
               <WeaponContainer style={{ flexGrow: '10%', marginTop: '1em' }}
               weapon={this.state.selectedWeapon}
-              component={this.state.containerComponent}/>          
+              component={this.state.containerComponent}/>
             </div>
             <div className="btn-group" role="group" style={containerNav}>
               <button className="navBtn" value="edit">Edit</button>
