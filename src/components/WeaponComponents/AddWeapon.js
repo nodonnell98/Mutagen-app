@@ -8,17 +8,17 @@ class AddWeapon extends Component {
     addWeapon = (weapon) => {
         axios.request({
             method: 'post',
-            url: 'https://anomaly-api-staging.herokuapp.com/weapons',
+            url: 'https://mutagen-api-staging.herokuapp.com/weapons',
             data: weapon
         }).then(response => {
           this.props.history.push('/weapons')
         }).catch(err => console.log(err))
-        
+
     }
   onSubmit = (e) => {
       const newWeapon = {
           name: this.refs.name.value,
-          type: this.refs.type.value,
+          weapon_type: this.refs.type.value,
           description: this.refs.description.value,
           quality: this.refs.quality.value,
           noise: this.refs.noise.value,
@@ -29,7 +29,7 @@ class AddWeapon extends Component {
       }
       this.addWeapon(newWeapon);
     e.preventDefault();
-    
+
   }
 
   render() {
