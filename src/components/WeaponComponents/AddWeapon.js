@@ -9,6 +9,7 @@ class AddWeapon extends Component {
         axios.request({
             method: 'post',
             url: 'https://mutagen-api-staging.herokuapp.com/weapons',
+            // url: 'https://localhost:3000/weapons',
             data: weapon
         }).then(response => {
           this.props.history.push('/weapons')
@@ -21,10 +22,12 @@ class AddWeapon extends Component {
           weapon_type: this.refs.type.value,
           description: this.refs.description.value,
           quality: this.refs.quality.value,
-          noise: this.refs.noise.value,
           range: this.refs.range.value,
           damage_type: this.refs.damage_type.value,
           ammo: this.refs.ammo.value,
+          dice_qty: 2,
+          dice_type: 4,
+          proficiency: 4
 
       }
       this.addWeapon(newWeapon);
