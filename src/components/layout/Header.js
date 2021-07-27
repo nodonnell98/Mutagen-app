@@ -31,7 +31,7 @@ const headerStyle = {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-evenly',
-borderBottom: '3px solid #66FCF1',
+  borderBottom: '3px solid #66FCF1',
   textDecoration: 'none'
 }
 
