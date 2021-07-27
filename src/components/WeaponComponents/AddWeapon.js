@@ -6,7 +6,7 @@ class AddWeapon extends Component {
 
     addWeapon = (weapon) => {
         WeaponDataService.create(weapon).then(response => {
-          this.props.history.push('/weapons')
+          this.props.fetchWeapons();
         }).catch(err => console.log(err))
 
     }
@@ -26,7 +26,6 @@ class AddWeapon extends Component {
       }
       this.addWeapon(newWeapon);
     e.preventDefault();
-
   }
 
   render() {

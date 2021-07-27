@@ -14,9 +14,14 @@ class Weapons extends Component {
   }
 
   componentDidMount() {
+    this.fetchWeapons()
+  }
+
+  fetchWeapons = () => {
     WeaponDataService
-      .index()
-      .then(res => this.setState({weapons: res.data}))
+    .index()
+    .then(res => {
+      this.setState({weapons: res.data})})
   }
 
   update = () => {
@@ -77,7 +82,8 @@ class Weapons extends Component {
             <div style={{flexGrow: '10'}}>
               <WeaponContainer style={{ flexGrow: '10%', marginTop: '1em' }}
               weapon={this.state.selectedWeapon}
-              component={this.state.containerComponent}/>
+              component={this.state.containerComponent}
+              fetchWeapons={this.fetchWeapons}/>
             </div>
             <div className="btn-group" role="group" style={containerNav}>
               <button className="navBtn" value="edit">Edit</button>

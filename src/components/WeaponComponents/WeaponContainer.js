@@ -6,7 +6,7 @@ class WeaponContainer extends Component {
 
   render() {
     if (this.props.component === 'add') {
-      return (<AddWeapon/>)
+      return (<AddWeapon fetchWeapons={this.props.fetchWeapons}/>)
     } else if (this.props.component === 'weapon') {
       if (this.props.weapon === '') {
         return (
