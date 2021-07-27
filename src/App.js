@@ -7,6 +7,7 @@ import Header from './components/layout/Header';
 import AddWeapon from './components/WeaponComponents/AddWeapon';
 import Login from './components/authentication/Login'
 import Register from './components/authentication/Register'
+import ComingSoon from './components/pages/ComingSoon';
 
 class App extends Component {
   render() {
@@ -20,6 +21,7 @@ class App extends Component {
           <Route exact path="/weapons/add" ><AddWeapon /></Route>
           <Route exact path="/login" ><Login /></Route>
           <Route exact path="/register" ><Register /></Route>
+          <Route exact path="/coming_soon" ><ComingSoon /></Route>
             </div>
         </div>
       </Router>
