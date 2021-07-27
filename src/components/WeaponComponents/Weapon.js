@@ -62,9 +62,9 @@ export class Weapon extends Component {
       name,
       description,
       range,
-      noise,
       quality,
-      damage_dice,
+      dice_type,
+      dice_qty,
       damage_modifier,
       proficiency,
       ammo,
@@ -90,20 +90,16 @@ export class Weapon extends Component {
               {range}</p>
           </div>
           <div style={statItem}>
-            <img src="/images/weaponIcons/ear.png" style={weaponIcon}/>
-            <p>{noise}</p>
-          </div>
-          <div style={statItem}>
             <img src="/images/weaponIcons/dice.png" style={weaponIcon}/>
-            <p>3d{damage_dice}
-              + {damage_modifier}</p>
+            <p>{dice_qty}d{dice_type}
+              + {proficiency}</p>
           </div>
           <div style={statItem}>
             <img src="/images/weaponIcons/bullets.png" style={weaponIcon}/>
             <p>{ammo}</p>
           </div>
         </div>
-        
+
         </div>
         <p style={descriptionStyle}>"{description}"</p>
       </div>
