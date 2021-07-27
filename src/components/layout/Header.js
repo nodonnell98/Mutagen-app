@@ -12,7 +12,7 @@ export default class Header extends Component {
 
           </div>
           <div style={links}>
-            <Link style={titleStyle} className="titleHover" to="/">Anomaly</Link>
+            <Link style={titleStyle} className="titleHover" to="/">Mutagen</Link>
           </div>
           <div style={links}>
             <Link style={navLink} to="/login">Login</Link>|<Link style={navLink} to="/register">Register</Link>

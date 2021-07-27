@@ -5,7 +5,8 @@ import {BrowserRouter as Router, Route} from 'react-router-dom';
 import Weapons from './components/pages/Weapons';
 import Header from './components/layout/Header';
 import AddWeapon from './components/WeaponComponents/AddWeapon';
-import Login from './components/Login'
+import Login from './components/authentication/Login'
+import Register from './components/authentication/Register'
 
 class App extends Component {
   render() {
@@ -18,6 +19,7 @@ class App extends Component {
           <Route exact path="/weapons">< Weapons /></Route>
           <Route exact path="/weapons/add" ><AddWeapon /></Route>
           <Route exact path="/login" ><Login /></Route>
+          <Route exact path="/register" ><Register /></Route>
             </div>
         </div>
       </Router>
