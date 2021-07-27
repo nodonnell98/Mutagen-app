@@ -7,16 +7,15 @@ export default class Header extends Component {
       <div>
         <nav style={headerStyle}>
           <div style={links}>
-            
+
             <Link style={navLink} to="/weapons">Armoury</Link>
-            
+
           </div>
           <div style={links}>
             <Link style={titleStyle} className="titleHover" to="/">Anomaly</Link>
           </div>
           <div style={links}>
-            <a style={navLink}>
-              Login | Register</a>
+            <Link style={navLink} to="/login">Login</Link>
           </div>
         </nav>
       </div>
