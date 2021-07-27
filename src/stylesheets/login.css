@@ -1,0 +1,12 @@
+.login-container {
+  position: relative;
+}
+
+.login {
+  width: 50% !important;
+  margin-top: 10%;
+  z-index: 2;
+  position: absolute;
+  top: 20%;
+  left: 25%;
+}

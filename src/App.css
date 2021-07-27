@@ -2,16 +2,19 @@
   text-align: center;
 }
 
-a {
-  cursor: pointer;
-  text-decoration: none;
-  color: inherit;
-}
 
-.container {
+
+.appContainer {
   width: 100%;
   justify-content: center;
   display: flex;
+}
+
+.container {
+  background-color: #2a615e;
+  border: 3px solid #66FCF1;
+  color: #66FCF1;
+  border-radius: 10px;
 }
 
 .titleHover {
@@ -21,4 +24,15 @@ a {
 .titleHover:hover {
   transition: 0.5s;
   text-shadow: 0px 0px 8px rgba(63,239,239,0.55);
+}
+
+.input {
+  background-color: #224e4c;
+  border: 1px solid #66FCF1;
+  color: #66FCF1;
+  cursor: pointer;
+}
+
+a:hover {
+  color: #66FCF1;
 }
