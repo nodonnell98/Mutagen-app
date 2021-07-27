@@ -6,7 +6,7 @@ import '../../App.css';
 import AuthenticationService from "../../services/authentication.service";
 
 
-export default function Register() {
+export default function RegisterForm() {
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -24,7 +24,7 @@ export default function Register() {
       passwordConfirmation
     )
       .then(() => {
-        window.location.replace("/");
+        window.location.replace("/login");
       })
       .catch((e) => {
         // setError(e.response.data.join(". "));
@@ -39,7 +39,7 @@ export default function Register() {
     <div>
       <img style={{width: '102%', marginTop: '0%', opacity: '0.2'}}src='./images/city.jpeg'></img>
       <div className="container login">
-        <Form onSubmit={handleSubmit}>
+        <Form onSubmit={(e) => handleSubmit(e)}>
           <Form.Group size="lg" controlId="email">
             <Form.Label>Username</Form.Label>
             <Form.Control
@@ -97,7 +97,5 @@ export default function Register() {
       </div>
     </div>
   );
-
-
 }
 

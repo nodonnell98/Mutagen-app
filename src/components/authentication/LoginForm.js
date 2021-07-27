@@ -5,7 +5,7 @@ import '../../stylesheets/login.css'
 import '../../App.css'
 import AuthenticationService from "../../services/authentication.service";
 
-export default function Login() {
+export default function LoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -68,7 +68,5 @@ export default function Login() {
       </div>
     </div>
   );
-
-
 }
 
