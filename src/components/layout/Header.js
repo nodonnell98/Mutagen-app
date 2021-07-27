@@ -7,7 +7,7 @@ export default class Header extends Component {
       <div>
         <nav style={headerStyle}>
           <div style={links}>
-            <Link style={navLink} to="/coming_soon">Characters</Link>
+            <Link style={navLink} to="/coming_soon">My Characters</Link>
             <Link style={navLink} to="/weapons">Armoury</Link>
             <Link style={navLink} to="/coming_soon">Game Rules</Link>
           </div>
@@ -32,8 +32,7 @@ const headerStyle = {
   alignItems: 'center',
   justifyContent: 'space-evenly',
 borderBottom: '3px solid #66FCF1',
-  textDecoration: 'none',
-  marginBottom: '20px'
+  textDecoration: 'none'
 }
 
 const titleStyle = {
