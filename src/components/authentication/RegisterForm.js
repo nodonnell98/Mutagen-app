@@ -24,9 +24,11 @@ export default function RegisterForm() {
       passwordConfirmation
     )
       .then(() => {
+        console.log('then')
         window.location.replace("/login");
       })
       .catch((e) => {
+        console.log('catch')
         // setError(e.response.data.join(". "));
       });
   }
