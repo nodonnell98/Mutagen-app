@@ -3,6 +3,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import '../../stylesheets/login.css'
 import '../../App.css'
+import AuthenticationDataService from "../../services/authentication.service";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -14,6 +15,14 @@ export default function Login() {
 
   function handleSubmit(event) {
     event.preventDefault();
+
+    AuthenticationDataService.login(email, password)
+        .then(() => {
+          window.location.replace("/weapons");
+        })
+        .catch((e) => {
+          // setError(e.response.data.errors);
+        });
   }
 
   return (
@@ -40,14 +49,17 @@ export default function Login() {
               onChange={(e) => setPassword(e.target.value)}
             />
           </Form.Group>
-          <Button block size="lg" type="submit" style={{
-            marginTop: '2%',
-            marginBottom: '2%',
-            backgroundColor: '#66FCF1',
-            color:' white',
-            border: 'none',
-            cursor: 'pointer'
-          }} disabled={!validateForm()}>
+          <Button block size="lg" type="submit"
+            style={{
+              marginTop: '2%',
+              marginBottom: '2%',
+              backgroundColor: '#66FCF1',
+              color:' white',
+              border: 'none',
+              cursor: 'pointer'
+            }}
+            disabled={!validateForm()
+          }>
             Login
           </Button>
 
