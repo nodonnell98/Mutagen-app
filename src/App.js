@@ -12,7 +12,7 @@ class App extends Component {
       <Router>
         <div className="App">
           <Header/>
-          <div className='container'>
+          <div className='appContainer'>
           <Route
               exact
               path="/"

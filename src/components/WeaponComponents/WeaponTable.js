@@ -2,23 +2,22 @@ import React from 'react';
 import {useTable, useSortBy, usePagination} from 'react-table';
 
 export default function WeaponTable(props) {
-  const data = props.weapons
+
+  const data = props.searchedWeapons
   const columns = [
+    
     {
+      display: 'none',
       Header: 'Name',
       accessor: 'name',
-      sortType: 'basic'
+      Cell: ({ cell }) => (
+        <button className="tableBtn" value={cell.row.values.name} onClick={props.setWeapon}>
+          {cell.row.values.name}
+        </button>
+      )
     }, {
       Header: 'Damage Type',
       accessor: 'damage_type',
-      sortType: 'basic'
-    }, {
-      Header: 'Range',
-      accessor: 'range',
-      sortType: 'basic'
-    }, {
-      Header: 'Ammo',
-      accessor: 'ammo',
       sortType: 'basic'
     }, {
       Header: 'Quality',
@@ -28,14 +27,6 @@ export default function WeaponTable(props) {
       Header: 'Noise',
       accessor: 'noise',
       sortType: 'basic'
-    }, {
-      Header: 'Actions',
-      Cell: ({cell}) => (
-        <div>
-          <button className="input">Edit</button>
-          <button className="input">Delete</button>
-        </div>
-      )
     }
   ]
 
@@ -150,18 +141,6 @@ export default function WeaponTable(props) {
               width: "100px"
             }}/>
           </span>{" "}
-          <select
-            className="input"
-            value={pageSize}
-            onChange={e => {
-            setPageSize(Number(e.target.value));
-          }}>
-            {[5, 10, 25, 50, 100].map(pageSize => (
-              <option key={pageSize} value={pageSize}>
-                Show {pageSize}
-              </option>
-            ))}
-          </select>
         </div>
       </div>
     );

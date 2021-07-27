@@ -1,25 +1,51 @@
 import React, {Component} from 'react';
-import axios from 'axios';
-import {Link} from 'react-router-dom';
-import WeaponContainer from '../WeaponComponents/WeaponContainer';
+import Button from 'react-bootstrap/Button'
+import http from '../../axios-configuration'
+import WeaponTable from '../WeaponComponents/WeaponTable'
 import SearchBar from '../SearchBar';
-
+import WeaponContainer from '../WeaponComponents/WeaponContainer';
 
 class Weapons extends Component {
   state = {
     weapons: [],
-    searchedWeapons: ''
+    searchedWeapons: '',
+    containerComponent: '',
+    selectedWeapon: ''
   }
 
   componentDidMount() {
-    axios
-      .get('https://anomaly-api-staging.herokuapp.com/weapons')
+    http
+      .get('/weapons')
       .then(res => this.setState({weapons: res.data}))
   }
 
+  update = () => {
+    this.setState({containerComponent: ''})
+  }
+
   handleSearch = (e) => {
-    console.log(e.target.value)
     this.setState({searchedWeapons: e.target.value})
+  }
+
+  handleButton = (e) => {
+    this.setState({containerComponent: e.target.value})
+  }
+
+  setWeapon = (e) => {
+    let weaponName = e.target.value
+
+    let foundWeapon = this
+      .state
+      .weapons
+      .find((weapon) => {
+        return weapon
+          .name
+          .toLowerCase()
+          .match(weaponName.toLowerCase())
+      })
+
+    this.setState({selectedWeapon: foundWeapon})
+    this.setState({containerComponent: 'weapon'})
   }
 
   render() {
@@ -33,45 +59,72 @@ class Weapons extends Component {
           .toLowerCase()
           .includes(this.state.searchedWeapons.toLowerCase())
       })
+
     return (
-        <div style={pageContainer}>
-          <h1 style={pageHeader}>Welcome to the Armoury</h1>
-            <SearchBar handleSearch={this.handleSearch}/>
-            <Link to="/weapons/add" ><button style={addStyle}>Add</button></Link>
+      <div style={pageContainer}>
+        <h2 style={pageHeader}>Welcome to the Armoury</h2>
+        <SearchBar handleSearch={this.handleSearch}/>
 
-          <div style={weaponContainerStyle}>
-            <WeaponContainer searchedWeapons={searchedWeapons}/>
+        <div style={containerStyle}>
+          <div style={{flexBasis: '50%'}}>
+          <WeaponTable setWeapon={this.setWeapon} searchedWeapons={searchedWeapons}/>
           </div>
-
+          <div className="container" style={weaponContainerStyle}>
+            <div className="btn-group" role="group" style={containerNav}>
+              <button className="navBtn" value="weapon" onClick={this.handleButton}>Weapon</button>
+              <button className="navBtn" value="add" onClick={this.handleButton}>Add</button>
+            </div>
+            <div style={{flexGrow: '10'}}>
+              <WeaponContainer style={{ flexGrow: '10%', marginTop: '1em' }}
+              weapon={this.state.selectedWeapon}
+              component={this.state.containerComponent}/>
+            </div>
+            <div className="btn-group" role="group" style={containerNav}>
+              <button className="navBtn" value="edit">Edit</button>
+              <button className="navBtn" value="weapon">Delete</button>
+            </div>
+          </div>
         </div>
+
+      </div>
     )
   }
 
 }
 
-const weaponContainerStyle = {
-  width: '100%'
+const containerStyle = {
+  width: '100%',
+  display: 'flex',
+  justifyContent: 'space-evenly'
 }
 
 const pageHeader = {
   width: '100%',
-  color: '#66FCF1'
+  color: '#66FCF1',
+  mnarginBottom: '0'
 }
 
 const pageContainer = {
   width: '80%'
 }
 
-const addStyle = {
-  width: '10%',
-  backgroundColor: '#66FCF1',
-  padding: '10px',
-  margin: '0',
-  marginBottom: '1em',
-  cursor: 'pointer',
-  borderRadius: '25px',
-  boxShadow: '0px 0px 29px -4px rgba(0,0,0,0.75) inset'
+const weaponContainerStyle = {
+  marginLeft: '1em',
+  height: '550px',
+  width: '40%',
+  display: 'flex',
+  justifyContent: 'start',
+  flexDirection: 'column',
+  padding: '0'
+}
 
+const containerNav = {
+  width: '100%',
+  height: '10%',
+  backgroundColor: 'transparent',
+  borderBottom: '2px solid #66FCF1',
+  display: 'flex',
+  flexBasis: '10%'
 }
 
 export default Weapons;

@@ -1,13 +1,34 @@
 import React, {Component} from 'react';
-import Weapon from '../WeaponComponents/Weapon';
-import WeaponTable from '../WeaponComponents/WeaponTable';
+import AddWeapon from './AddWeapon';
+import Weapon from './Weapon'
 
 class WeaponContainer extends Component {
 
   render() {
-    return (
-      <WeaponTable weapons={this.props.searchedWeapons} />
+    if (this.props.component === 'add') {
+      return (<AddWeapon/>)
+    } else if (this.props.component === 'weapon') {
+      if (this.props.weapon === '') {
+        return (
+          <div>
+            <p>Select a weapon</p>
+          </div>
+        )
+      } else {
+        return (
+          <div>
+            <Weapon weapon={this.props.weapon}/>
+          </div>
+        )
+      }
+    } else {
+      return (
+        <div>
+          <p>Hello</p>
+        </div>
       )
+    }
+
   }
 }
 

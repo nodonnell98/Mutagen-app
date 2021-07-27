@@ -3,9 +3,14 @@ body {
   font-family: 'Orbitron', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
   background-color: #1F2833
   ;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
 }
 
 code {
