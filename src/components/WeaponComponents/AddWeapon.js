@@ -1,17 +1,11 @@
 import React, {Component} from 'react';
 import { withRouter } from 'react-router-dom';
-import axios from 'axios';
+import http from './../../axios-configuration';
 
 class AddWeapon extends Component {
 
-
     addWeapon = (weapon) => {
-        axios.request({
-            method: 'post',
-            url: 'https://mutagen-api-staging.herokuapp.com/weapons',
-            // url: 'https://localhost:3000/weapons',
-            data: weapon
-        }).then(response => {
+        http.post('/weapons', weapon).then(response => {
           this.props.history.push('/weapons')
         }).catch(err => console.log(err))
 

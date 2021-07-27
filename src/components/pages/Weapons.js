@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Button from 'react-bootstrap/Button'
-import axios from 'axios';
+import http from '../../axios-configuration'
 import WeaponTable from '../WeaponComponents/WeaponTable'
 import SearchBar from '../SearchBar';
 import WeaponContainer from '../WeaponComponents/WeaponContainer';
@@ -14,8 +14,8 @@ class Weapons extends Component {
   }
 
   componentDidMount() {
-    axios
-      .get('https://mutagen-api-staging.herokuapp.com/weapons')
+    http
+      .get('/weapons')
       .then(res => this.setState({weapons: res.data}))
   }
 
