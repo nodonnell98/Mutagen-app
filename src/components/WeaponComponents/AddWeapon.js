@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 import { withRouter } from 'react-router-dom';
-import http from './../../axios-configuration';
+import WeaponDataService from "../../services/weapon.service.js";
 
 class AddWeapon extends Component {
 
     addWeapon = (weapon) => {
-        http.post('/weapons', weapon).then(response => {
+        WeaponDataService.create(weapon).then(response => {
           this.props.history.push('/weapons')
         }).catch(err => console.log(err))
 
