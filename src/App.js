@@ -5,6 +5,7 @@ import {BrowserRouter as Router, Route} from 'react-router-dom';
 import Weapons from './components/pages/Weapons';
 import Header from './components/layout/Header';
 import AddWeapon from './components/WeaponComponents/AddWeapon';
+import Login from './components/Login'
 
 class App extends Component {
   render() {
@@ -13,27 +14,10 @@ class App extends Component {
         <div className="App">
           <Header/>
           <div className='appContainer'>
-          <Route
-              exact
-              path="/"
-
-          ><img style={{width: '102%', marginTop: '0%'}}src='./images/landing.png'></img></Route>
-          <Route
-              exact
-              path="/weapons"
-              render={props => (
-              <React.Fragment>
-                <Weapons />
-              </React.Fragment>
-            )}></Route>
-            <Route
-              exact
-              path="/weapons/add"
-              render={props => (
-              <React.Fragment>
-                <AddWeapon />
-              </React.Fragment>
-            )}></Route>
+          <Route exact path="/"><img style={{width: '102%', marginTop: '0%'}}src='./images/landing.png'></img></Route>
+          <Route exact path="/weapons">< Weapons /></Route>
+          <Route exact path="/weapons/add" ><AddWeapon /></Route>
+          <Route exact path="/login" ><Login /></Route>
             </div>
         </div>
       </Router>
