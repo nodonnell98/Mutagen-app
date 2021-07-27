@@ -24,6 +24,11 @@ class Weapons extends Component {
       this.setState({weapons: res.data})})
   }
 
+  deleteWeapon = (id) => {
+    WeaponDataService.delete(id)
+    this.fetchWeapons();
+  }
+
   update = () => {
     this.setState({containerComponent: ''})
   }
@@ -83,11 +88,12 @@ class Weapons extends Component {
               <WeaponContainer style={{ flexGrow: '10%', marginTop: '1em' }}
               weapon={this.state.selectedWeapon}
               component={this.state.containerComponent}
-              fetchWeapons={this.fetchWeapons}/>
+              fetchWeapons={this.fetchWeapons}
+              deleteWeapon={this.deleteWeapon}/>
             </div>
             <div className="btn-group" role="group" style={containerNav}>
               <button className="navBtn" value="edit">Edit</button>
-              <button className="navBtn" value="weapon">Delete</button>
+              <button className="navBtn" value="delete" onClick={() => this.deleteWeapon(this.state.selectedWeapon.id)}>Delete</button>
             </div>
           </div>
         </div>

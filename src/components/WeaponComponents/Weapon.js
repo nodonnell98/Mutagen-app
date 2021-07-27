@@ -22,7 +22,6 @@ export class Weapon extends Component {
         colour = '#ffcc00';
         break;
     }
-    console.log(colour)
     return colour
   }
 

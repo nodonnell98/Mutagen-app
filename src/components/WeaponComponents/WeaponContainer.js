@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import AddWeapon from './AddWeapon';
-import Weapon from './Weapon'
+import Weapon from './Weapon';
+import WeaponDataService from '../../services/weapon.service'
 
 class WeaponContainer extends Component {
 
@@ -21,7 +22,14 @@ class WeaponContainer extends Component {
           </div>
         )
       }
-    } else {
+    } else if (this.props.component === 'delete') {
+        return (
+          <div>
+            <p>Weapon deleted</p>
+          </div>
+        )
+    }
+    else {
       return (
         <div>
           <p>Hello</p>

@@ -24,6 +24,7 @@ class WeaponDataService {
   }
 
   delete(id) {
+    console.log(id)
     return http.delete(`/weapons/${id}`);
   }
 }
