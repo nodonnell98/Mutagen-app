@@ -3,11 +3,12 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import '../../stylesheets/login.css'
 import '../../App.css'
-import AuthenticationDataService from "../../services/authentication.service";
+import AuthenticationService from "../../services/authentication.service";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
   function validateForm() {
     return email.length > 0 && password.length > 0;
@@ -16,12 +17,12 @@ export default function Login() {
   function handleSubmit(event) {
     event.preventDefault();
 
-    AuthenticationDataService.login(email, password)
+    AuthenticationService.login(email, password)
         .then(() => {
-          window.location.replace("/weapons");
+          window.location.replace("/");
         })
         .catch((e) => {
-          // setError(e.response.data.errors);
+          setError(e.response.data.errors);
         });
   }
 

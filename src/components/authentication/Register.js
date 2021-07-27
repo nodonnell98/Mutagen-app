@@ -1,20 +1,38 @@
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import '../../stylesheets/login.css'
-import '../../App.css'
+import '../../stylesheets/login.css';
+import '../../App.css';
+import AuthenticationService from "../../services/authentication.service";
+
 
 export default function Register() {
-  const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [passwordConfirmation, setPasswordConfirmation] = useState("");
 
-  function validateForm() {
-    return email.length > 0 && password.length > 0;
-  }
+  const [error, setError] = useState("");
 
   function handleSubmit(event) {
     event.preventDefault();
+
+    AuthenticationService.register(
+      username,
+      email,
+      password,
+      passwordConfirmation
+    )
+      .then(() => {
+        window.location.replace("/");
+      })
+      .catch((e) => {
+        // setError(e.response.data.join(". "));
+      });
+  }
+
+  function validateForm() {
+    return email.length > 0 && password.length > 8 && password == passwordConfirmation;
   }
 
   return (
@@ -27,11 +45,12 @@ export default function Register() {
             <Form.Control
               autoFocus
               style={{ textAlign: 'center'}}
-              type="username"
+              type="text"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
             />
           </Form.Group>
+
           <Form.Group size="lg" controlId="email">
             <Form.Label>Email</Form.Label>
             <Form.Control
@@ -42,6 +61,7 @@ export default function Register() {
               onChange={(e) => setEmail(e.target.value)}
             />
           </Form.Group>
+
           <Form.Group size="lg" controlId="password">
             <Form.Label>Password</Form.Label>
             <Form.Control
@@ -51,6 +71,17 @@ export default function Register() {
               onChange={(e) => setPassword(e.target.value)}
             />
           </Form.Group>
+
+          <Form.Group size="lg" controlId="password_confirmation">
+            <Form.Label>Password Confirmation</Form.Label>
+            <Form.Control
+              style={{ textAlign: 'center'}}
+              type="password"
+              value={passwordConfirmation}
+              onChange={(e) => setPasswordConfirmation(e.target.value)}
+            />
+          </Form.Group>
+
           <Button block size="lg" type="submit" style={{
             marginTop: '2%',
             marginBottom: '2%',
@@ -59,7 +90,7 @@ export default function Register() {
             border: 'none',
             cursor: 'pointer'
           }} disabled={!validateForm()}>
-            Login
+            Register
           </Button>
 
         </Form>

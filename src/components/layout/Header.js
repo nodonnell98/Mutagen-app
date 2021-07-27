@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
+import AuthenticationService from "../../services/authentication.service";
 
 export default class Header extends Component {
   render() {
