@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import Button from 'react-bootstrap/Button'
-import http from '../../axios-configuration'
 import WeaponDataService from "../../services/weapon.service.js";
 import WeaponTable from '../WeaponComponents/WeaponTable'
 import SearchBar from '../SearchBar';
