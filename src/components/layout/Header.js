@@ -7,16 +7,15 @@ export default class Header extends Component {
       <div>
         <nav style={headerStyle}>
           <div style={links}>
-            
+            <Link style={navLink} to="/coming_soon">My Characters</Link>
             <Link style={navLink} to="/weapons">Armoury</Link>
-            
+            <Link style={navLink} to="/coming_soon">Game Rules</Link>
           </div>
           <div style={links}>
-            <Link style={titleStyle} className="titleHover" to="/">Anomaly</Link>
+            <Link style={titleStyle} className="titleHover" to="/">Mutagen</Link>
           </div>
           <div style={links}>
-            <a style={navLink}>
-              Login | Register</a>
+            <Link style={navLink} to="/login">Login</Link>|<Link style={navLink} to="/register">Register</Link>
           </div>
         </nav>
       </div>
@@ -25,14 +24,14 @@ export default class Header extends Component {
 }
 
 const headerStyle = {
-  background: '#1F2833',
+  background: '#16191d',
   color: '#EDF4ED',
   textAlign: 'center',
   padding: '10px',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-evenly',
-  // borderBottom: '3px solid #66FCF1',
+borderBottom: '3px solid #66FCF1',
   textDecoration: 'none'
 }
 

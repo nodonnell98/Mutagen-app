@@ -5,7 +5,7 @@ export default function WeaponTable(props) {
 
   const data = props.searchedWeapons
   const columns = [
-    
+
     {
       display: 'none',
       Header: 'Name',
@@ -22,10 +22,6 @@ export default function WeaponTable(props) {
     }, {
       Header: 'Quality',
       accessor: 'quality',
-      sortType: 'basic'
-    }, {
-      Header: 'Noise',
-      accessor: 'noise',
       sortType: 'basic'
     }
   ]
