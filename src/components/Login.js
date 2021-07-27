@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import '../stylesheets/login.css'
-import '../stylesheets/app.css'
+import '../App.css'
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -40,7 +40,14 @@ export default function Login() {
               onChange={(e) => setPassword(e.target.value)}
             />
           </Form.Group>
-          <Button block size="lg" type="submit" disabled={!validateForm()}>
+          <Button block size="lg" type="submit" style={{
+            marginTop: '2%',
+            marginBottom: '2%',
+            backgroundColor: '#66FCF1',
+            color:' white',
+            border: 'none',
+            cursor: 'pointer'
+          }} disabled={!validateForm()}>
             Login
           </Button>
 
@@ -48,5 +55,7 @@ export default function Login() {
       </div>
     </div>
   );
+
+
 }
 
