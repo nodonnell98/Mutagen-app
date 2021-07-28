@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import '../../stylesheets/login.css';
@@ -14,34 +14,38 @@ export default function RegisterForm() {
 
   const [error, setError] = useState("");
 
-  function handleSubmit(event) {
-    event.preventDefault();
+  const onSubmit = useCallback(
+    (e) => {
+      e.preventDefault();
 
-    AuthenticationService.register(
-      username,
-      email,
-      password,
-      passwordConfirmation
-    )
-      .then(() => {
-        console.log('then')
-        window.location.replace("/login");
-      })
-      .catch((e) => {
-        console.log('catch')
-        // setError(e.response.data.join(". "));
-      });
-  }
+      AuthenticationService.register(
+        username,
+        email,
+        password,
+        passwordConfirmation
+      )
+        .then(() => {
+          AuthenticationService.login(email, password)
+          .then(() => {
+            window.location.replace("/");
+          })
+        })
+        .catch((e) => {
+          setError(e.response.data.errors);
+        });
+    },
+    [username, email, password, passwordConfirmation]
+  );
 
   function validateForm() {
-    return email.length > 0 && password.length > 8 && password == passwordConfirmation;
+    return email.length > 0 && password.length >= 8 && password == passwordConfirmation;
   }
 
   return (
     <div>
       <img style={{width: '102%', marginTop: '0%', opacity: '0.2'}}src='./images/city.jpeg'></img>
       <div className="container login">
-        <Form onSubmit={(e) => handleSubmit(e)}>
+        <Form onSubmit={onSubmit}>
           <Form.Group size="lg" controlId="email">
             <Form.Label>Username</Form.Label>
             <Form.Control
