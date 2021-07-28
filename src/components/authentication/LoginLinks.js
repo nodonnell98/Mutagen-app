@@ -26,9 +26,14 @@ export default function LoginLinks() {
         });
   }
 
+  function displayUser() {
+    console.log(localStorage)
+  }
+
   if (AuthenticationService.loggedIn() == true) {
     return (
       <div>
+          <a style={navLink} onClick={(e) => displayUser()}>Account</a>
           <a style={navLink} onClick={(e) => handleLogout()}>Logout</a>
       </div>
     )
