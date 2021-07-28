@@ -14,7 +14,7 @@ http.interceptors.response.use(
   (err) => {
     if (err.response.status === 401) {
       localStorage.removeItem("id");
-      window.location.href = "/";
+      window.location.href = "/login";
     } else {
       return Promise.reject(err);
     }

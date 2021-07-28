@@ -1,6 +1,6 @@
 import http from "../axios-configuration";
 
-class AuthenticationDataService {
+class AuthenticationService {
   login(email, password) {
     let params = {};
     params["user"] = {};
@@ -22,11 +22,11 @@ class AuthenticationDataService {
     return localStorage.getItem("id") !== null;
   }
 
-  register(displayName, email, password, passwordConfirmation) {
+  register(username, email, password, passwordConfirmation) {
     let params = {};
     params["user"] = {};
 
-    params["user"]["display_name"] = displayName;
+    params["user"]["username"] = username;
     params["user"]["email"] = email;
     params["user"]["password"] = password;
     params["user"]["password_confirmation"] = passwordConfirmation;
@@ -35,4 +35,4 @@ class AuthenticationDataService {
   }
 }
 
-export default new AuthenticationDataService();
+export default new AuthenticationService();
