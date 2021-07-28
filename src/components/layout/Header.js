@@ -9,7 +9,7 @@ export default function Header() {
     background: '#16191d',
     color: '#EDF4ED',
     textAlign: 'center',
-    padding: '10px',
+    padding: '2px',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-evenly',

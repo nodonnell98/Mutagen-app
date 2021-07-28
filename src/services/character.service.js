@@ -1,7 +1,7 @@
 import http from "../axios-configuration";
 
 class CharacterService {
-  index(userId, query) {
+  index(query) {
     let url = `/characters`;
 
     if (query !== undefined) {
@@ -11,19 +11,19 @@ class CharacterService {
     return http.get(url);
   }
 
-  get(userId, id) {
+  get(id) {
     return http.get(`/characters/${id}`);
   }
 
-  create(userId, weapon) {
-    return http.post(`/characters`, weapon);
+  create(character) {
+    return http.post(`/characters`, character);
   }
 
-  update(userId, id, params) {
+  update(id, params) {
     return http.put(`/characters/${id}`, params);
   }
 
-  delete(userId, id) {
+  delete(id) {
     return http.delete(`/characters/${id}`);
   }
 }
