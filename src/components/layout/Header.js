@@ -39,12 +39,12 @@ export default function Header() {
     <div>
       <nav style={headerStyle}>
         <div style={links}>
-          <Link style={navLink} to="/coming_soon">My Characters</Link>
+          <Link style={navLink} to="/characters">My Characters</Link>
           <Link style={navLink} to="/weapons">Armoury</Link>
           <Link style={navLink} to="/coming_soon">Game Rules</Link>
         </div>
         <div style={links}>
-          <Link style={titleStyle} className="titleHover" to="/">Mutagen</Link>
+          <Link style={titleStyle} className="titleHover" to="/" name="Mutagen">Mutagen</Link>
         </div>
         <div style={links}>
           <LoginLinks />
