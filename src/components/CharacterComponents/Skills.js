@@ -6,28 +6,22 @@ export default function Skills(props) {
 
   const skillStyle = {
     borderBottom: '1px solid #66FCF1',
-    flex: '1',
-    flexDirection: 'row',
-    justifyContent: 'flex-start',
-    flexWrap: 'no-wrap'
   }
 
   const skillsContainerStyle = {
-    width: '30%',
     height: '400px',
-    overflow: 'scroll',
-    margin: '0px'
+    overflow: 'scroll'
   }
 
   return (
-    <div className="container" style={skillsContainerStyle}>
+    <div className="container flexBoxColumn flexGrow1" style={skillsContainerStyle}>
       {skillCategoryKeys.map((skillCategory, i) => {
         let skillKeys = Object.keys(character.skills[skillCategory]);
         return skillKeys.map((skill, i) => {
           return (
-            <div style={skillStyle} key={i}>
-              <p style={{flex: '1', margin: '0%', width: '70%'}}>{skill}</p>
-              <p style={{flex: '1', margin: '0%', width: '10%'}}>{character.skills[skillCategory][skill]}</p>
+            <div className={"flexBoxRow flexGrow1"} key={i}>
+              <p className="flexGrow1">{skill}</p>
+              <p className="flexGrow1">{character.skills[skillCategory][skill]}</p>
             </div>
           );
         });

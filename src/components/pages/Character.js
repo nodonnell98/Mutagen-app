@@ -11,26 +11,26 @@ export default function Character(props) {
   const id = props.id.match.params.id;
 
   const characterContainerStyle = {
-    display: 'flex',
-    width: '100%',
-    padding: '5%',
-    paddingTop: '1%',
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    alignItems: 'center',
-    justifyContent: 'flex-start'
-  }
+    display: "flex",
+    width: "100%",
+    padding: "5%",
+    paddingTop: "1%",
+    flexDirection: "column",
+    flexWrap: "wrap",
+    alignItems: "stretch",
+    justifyContent: "flex-start",
+  };
 
   const sectionStyle = {
-    display: 'flex',
+    display: "flex",
     flexShrink: 1,
-    width: '100%',
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    alignItems: 'center',
-    justifyContent: 'flex-start',
-    padding: '1%'
-  }
+    width: "100%",
+    flexDirection: "row",
+    flexWrap: "wrap",
+    alignItems: "center",
+    justifyContent: "flex-start",
+    padding: "1%",
+  };
 
   const retrieveCharacter = useCallback(() => {
     CharacterService.get(id).then((response) => {
@@ -47,10 +47,13 @@ export default function Character(props) {
 
   return (
     <div style={characterContainerStyle}>
-
+      <section className="flexBoxRow flexGrow1">
         <TraitCards traits={traits} character={character}></TraitCards>
+      </section>
+      <section className="flexBoxRow flexGrow1">
         <CombatUI character={character}></CombatUI>
         <Skills skills={skills} character={character}></Skills>
+      </section>
     </div>
   );
 }
