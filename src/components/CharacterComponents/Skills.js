@@ -9,8 +9,18 @@ export default function Skills(props) {
   }
 
   const skillsContainerStyle = {
-    height: '400px',
+    height: '600px',
     overflow: 'scroll'
+  }
+
+  function getProficiency(value) {
+    if (value == 1) {
+      return 'Proficient'
+    } else if (value == 2) {
+      return 'Expert'
+    } else {
+      return 'Not Proficient'
+    }
   }
 
   return (
@@ -19,9 +29,12 @@ export default function Skills(props) {
         let skillKeys = Object.keys(character.skills[skillCategory]);
         return skillKeys.map((skill, i) => {
           return (
+            <div>
             <div className={"flexBoxRow flexGrow1"} style={skillStyle} key={i}>
               <p className="flexGrow1">{skill}</p>
-              <p className="flexGrow1">{character.skills[skillCategory][skill]}</p>
+              <p className="flexGrow1">{getProficiency(character.skills[skillCategory][skill])}</p>
+            </div>
+            <div className="flexGrow1" style={{borderBottom: '1px solid #66FCF1', height: '1px'}}> </div>
             </div>
           );
         });
