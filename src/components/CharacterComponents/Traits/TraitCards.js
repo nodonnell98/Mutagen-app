@@ -9,7 +9,7 @@ export default function TraitCards(props) {
     <div className="flexBoxRow flexGrow2">
       {traits.map((trait) => {
         return (
-          <TraitCard trait={trait} value={character.traits[trait]}></TraitCard>
+          <TraitCard trait={trait} edit={props.edit} value={character.traits[trait]} character={character}></TraitCard>
         );
       })}
     </div>
