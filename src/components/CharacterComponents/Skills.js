@@ -5,7 +5,7 @@ export default function Skills(props) {
   const character = props.character;
 
   const skillStyle = {
-    borderBottom: '1px solid #66FCF1',
+    // borderBottom: '1px solid #66FCF1',
   }
 
   const skillsContainerStyle = {
@@ -19,7 +19,7 @@ export default function Skills(props) {
         let skillKeys = Object.keys(character.skills[skillCategory]);
         return skillKeys.map((skill, i) => {
           return (
-            <div className={"flexBoxRow flexGrow1"} key={i}>
+            <div className={"flexBoxRow flexGrow1"} style={skillStyle} key={i}>
               <p className="flexGrow1">{skill}</p>
               <p className="flexGrow1">{character.skills[skillCategory][skill]}</p>
             </div>

@@ -22,14 +22,7 @@ export default function Character(props) {
   };
 
   const sectionStyle = {
-    display: "flex",
-    flexShrink: 1,
-    width: "100%",
-    flexDirection: "row",
-    flexWrap: "wrap",
-    alignItems: "center",
-    justifyContent: "flex-start",
-    padding: "1%",
+      marginTop: '1%'
   };
 
   const retrieveCharacter = useCallback(() => {
@@ -47,12 +40,17 @@ export default function Character(props) {
 
   return (
     <div style={characterContainerStyle}>
-      <section className="flexBoxRow flexGrow1">
+      <section style={sectionStyle, {borderBottom: '1px solid #66FCF1'}} className="flexBoxRow flexGrow1">
+        <h1 style={{color: '#66FCF1'}}>{character.name} - CLASS</h1>
+      </section>
+      <section style={sectionStyle, {marginBottom: '2%'}} className="flexBoxRow flexGrow1">
         <TraitCards traits={traits} character={character}></TraitCards>
       </section>
-      <section className="flexBoxRow flexGrow1">
-        <CombatUI character={character}></CombatUI>
+      <section style={sectionStyle} className="flexBoxRow flexGrow1">
         <Skills skills={skills} character={character}></Skills>
+        <span className="flexGrow1"></span>
+        <CombatUI character={character}></CombatUI>
+
       </section>
     </div>
   );

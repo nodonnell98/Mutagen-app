@@ -55,10 +55,10 @@ a:hover {
 .flexBoxRow {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
+  justify-content: stretch;
+  align-items: flex-start;
   flex-wrap: nowrap;
-  padding: '1%';
+  padding: '0.5%';
 }
 
 .flexWrap {
@@ -71,11 +71,11 @@ a:hover {
   justify-content: center;
   align-items: center;
   flex-wrap: nowrap;
-  padding: '1%';
+  padding: '0.5%';
 }
 
 .flexGrow1 {
-  flex-grow: 1;
+  flex: 1;
   width: 10;
 }
 
