@@ -8,7 +8,6 @@ export default function CharacterCard(props) {
     <Card style={props.cardStyle}>
       <Card.Body>
         <Card.Title>{character.name}</Card.Title>
-        <Card.Subtitle className="mb-2 text-muted">Noodle</Card.Subtitle>
         <Card.Text>----------</Card.Text>
         <Card.Text>{character.description}</Card.Text>
         <Card.Text>----------</Card.Text>

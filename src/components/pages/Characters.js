@@ -12,7 +12,7 @@ export default function Characters() {
     flexDirection: "row",
     flexWrap: "wrap",
     listStyle: "none",
-    width: "80%",
+    width: "100%",
     margin: "5%",
     justifyContent: "center",
     alignItems: "center",
