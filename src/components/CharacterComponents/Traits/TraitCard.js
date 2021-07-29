@@ -11,7 +11,9 @@ export default function TraitCard(props) {
   }
 
   const traitHeaderStyle = {
-    fontSize: '12px'
+    fontSize: '12px',
+    paddingBottom: '5px',
+    borderBottom: '1px solid #66FCF1'
   }
 
   return  (
