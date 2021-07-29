@@ -5,10 +5,73 @@ import Skills from "../CharacterComponents/Skills";
 import CombatUI from "../CharacterComponents/CombatUI";
 
 export default function Character(props) {
-  const [character, setCharacter] = useState([]);
-  const [stregth, setStrength] = useState([])
-  const [traits, setTraits] = useState([]);
-  const [skills, setSkills] = useState([]);
+
+  const [character, setCharacter] = useState({
+    id: 0,
+    name: "Name",
+    description: "Description",
+    health: 0,
+    dodge: 0,
+    might: 0,
+    strike: 0,
+    speed: 0,
+    flying_speed: 0,
+    mutation_points: 0,
+    traits: {
+      strength: 20,
+      discipline: 20,
+      constitution: 20,
+      intelligence: 20,
+      sense: 20,
+      will: 20,
+      charm: 20,
+    },
+    skills: {
+      strength: {
+        athletics: 0,
+        intimidation: 0,
+        force: 0,
+      },
+      discipline: {
+        acrobatice: 0,
+        precision: 0,
+        stealth: 0,
+      },
+      constitution: {
+        endurance: 0,
+        resistance: 0,
+      },
+      intelligence: {
+        tech: 0,
+        science: 0,
+        investigation: 0,
+      },
+      sense: {
+        perception: 0,
+        insight: 0,
+      },
+      charm: {
+        persuasion: 0,
+        deception: 0,
+        intimidation: 0,
+      },
+      weapons: {
+        melee: 0,
+        short_range: 0,
+        medium_range: 0,
+        long_range: 0,
+      },
+      strength: 20,
+      discipline: 20,
+      constitution: 20,
+      intelligence: 20,
+      sense: 20,
+      will: 20,
+      charm: 20
+    },
+  });
+
+
   const [edit, setEdit] = useState(true);
   const id = props.id.match.params.id;
 
@@ -37,10 +100,9 @@ export default function Character(props) {
   const retrieveCharacter = useCallback(() => {
     CharacterService.get(id).then((response) => {
       setCharacter(response.data);
-      setTraits(Object.keys(response.data.traits));
-      setSkills(Object.keys(response.data.skills));
+      console.log(response.data)
     });
-  }, [setCharacter, setTraits, setSkills]);
+  }, [setCharacter]);
 
   // Fetch list of characters on load
   useEffect(() => {
@@ -54,7 +116,7 @@ export default function Character(props) {
         className="flexBoxRow flexGrow1"
       >
         <h1 className="flexGrow1" style={{ color: "#66FCF1" }}>
-          {character.name} - CLASS
+          {character.name}
         </h1>
         <button
           className="flexGrow3"
@@ -70,13 +132,13 @@ export default function Character(props) {
         className="flexBoxRow flexGrow1"
       >
         <TraitCards
-          traits={traits}
           edit={edit}
           character={character}
+          setCharacter={setCharacter}
         ></TraitCards>
       </section>
       <section style={sectionStyle} className="flexBoxRow flexGrow1">
-        <Skills skills={skills} character={character}></Skills>
+        <Skills character={character}></Skills>
         <span className="flexGrow1"></span>
         <CombatUI character={character}></CombatUI>
       </section>

@@ -1,8 +1,9 @@
 import React from "react";
 
 export default function Skills(props) {
-  const skillCategoryKeys = props.skills;
+
   const character = props.character;
+  const skillCategoryKeys = Object.keys(character.skills);
 
   const skillStyle = {
     // borderBottom: '1px solid #66FCF1',
