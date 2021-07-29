@@ -44,6 +44,7 @@ export default function TraitCard(props) {
         disabled={props.edit}
         placeholder={value}
         style={props.edit? inputStyle : inputActiveStyle}
+        onChange={(e) => setEmail(e.target.value)}
       ></input>
     </div>
   );
