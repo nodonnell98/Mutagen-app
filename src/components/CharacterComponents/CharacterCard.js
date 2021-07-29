@@ -13,7 +13,6 @@ export default function CharacterCard(props) {
         <Card.Text>{character.description}</Card.Text>
         <Card.Text>----------</Card.Text>
         <Card.Text>Class: Coming Soon</Card.Text>
-        <Card.Link href="#">See more ></Card.Link>
       </Card.Body>
     </Card>
   );

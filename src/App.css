@@ -36,3 +36,9 @@
 a:hover {
   color: #66FCF1;
 }
+
+.card:hover {
+  transform: scale(1.05);
+  transition: 0.2s;
+  box-shadow: -1px 0px 34px 0px rgba(62,170,184,0.92);
+}

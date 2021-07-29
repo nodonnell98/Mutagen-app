@@ -14,7 +14,7 @@ export default function Characters() {
     listStyle: "none",
     width: "80%",
     margin: "5%",
-    justifyContent: "flex-start",
+    justifyContent: "center",
     alignItems: "center",
   };
 
@@ -30,7 +30,10 @@ export default function Characters() {
     border: "3px solid #66FCF1",
     color: "#66FCF1",
     borderRadius: "10px",
-    width: "20em"
+    width: "20em",
+    boxShadow: "-1px 0px 18px 0px rgb(18,94,100)", //rgb(62,170,184)
+    cursor: "pointer",
+    transition: '0.3s'
   }
 
   const retrieveCharacters = useCallback(() => {
@@ -48,7 +51,7 @@ export default function Characters() {
     <div style={containerStyle}>
       {characters.map((char, i) => {
          return (<div style={cardContainerStyle} >
-          <CharacterCard style={cardStyle} key={i} character={char} cardStyle={cardStyle}></CharacterCard>
+          <CharacterCard class="card" style={cardStyle} key={i} character={char} cardStyle={cardStyle}></CharacterCard>
         </div>)
       })}
       <div style={cardContainerStyle} >
