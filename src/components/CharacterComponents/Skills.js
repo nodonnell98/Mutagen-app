@@ -6,11 +6,14 @@ export default function Skills(props) {
 
   const skillStyle = {
     borderBottom: '1px solid #66FCF1',
-    flex: '1'
+    flex: '1',
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    flexWrap: 'no-wrap'
   }
 
   const skillsContainerStyle = {
-    width: '50%',
+    width: '30%',
     height: '400px',
     overflow: 'scroll',
     margin: '0px'
@@ -23,8 +26,8 @@ export default function Skills(props) {
         return skillKeys.map((skill, i) => {
           return (
             <div style={skillStyle} key={i}>
-              <p>{skill}</p>
-              <p>{character.skills[skillCategory][skill]}</p>
+              <p style={{flex: '1', margin: '0%', width: '70%'}}>{skill}</p>
+              <p style={{flex: '1', margin: '0%', width: '10%'}}>{character.skills[skillCategory][skill]}</p>
             </div>
           );
         });

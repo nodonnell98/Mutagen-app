@@ -17,12 +17,12 @@ export default function TraitCard(props) {
   }
 
   const traitHeaderStyle = {
-    fontSize: '15px'
+    fontSize: '12px'
   }
 
   return  (
     <div className="container" style={traitCardStyle}>
-      <h1 style={traitHeaderStyle}>{trait}</h1>
+      <h1 style={traitHeaderStyle}>{trait.toUpperCase()}</h1>
       <p>{value}</p>
     </div>
   )

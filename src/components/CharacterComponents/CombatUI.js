@@ -5,10 +5,11 @@ export default function CombatUI(props) {
 
   const combatContainerStyle = {
     display: "flex",
-    flexDirection: "column",
-    width: "20%",
+    flexDirection: "row",
+    width: "30%",
     justifyContent: 'space-evenly',
-    flex: '1'
+    alignItems: 'center',
+    flexGrow: '1'
   };
 
   const combatStatContainerStyle = {
@@ -24,7 +25,7 @@ export default function CombatUI(props) {
 
   return (
     <div style={combatContainerStyle}>
-      <div className="container" style={combatStatContainerStyle}>
+      <div className="container" style={combatStatContainerStyle, {width: '60%'}}>
         <div style={combatStatStyle}>
           <h1 style={{ fontSize: "20px" }}>Dodge</h1>
           <p>{character.health}10</p>
@@ -38,7 +39,7 @@ export default function CombatUI(props) {
           <p>{character.health}10</p>
         </div>
       </div>
-      <div className="container" style={combatStatContainerStyle}>
+      <div className="container" style={combatStatContainerStyle, {width: '30%'}}>
         <div style={combatStatStyle}>
           <h1 style={{ fontSize: "20px" }}>Health</h1>
           <p>{character.health}10</p>

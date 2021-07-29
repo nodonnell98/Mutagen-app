@@ -2,8 +2,6 @@
   text-align: center;
 }
 
-
-
 .appContainer {
   width: 100%;
   justify-content: center;
@@ -35,6 +33,7 @@
 
 a:hover {
   color: #66FCF1;
+  text-decoration: none;
 }
 
 .card:hover {
@@ -50,3 +49,36 @@ a:hover {
   align-items: center;
   justify-content: center;
 }
+
+.flexBoxRow {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+  padding: '1%';
+}
+
+.flexBoxColumn {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  padding: '1%';
+}
+
+.flexGrow1 {
+  flex-grow: 1;
+  width: 10;
+}
+
+.flexGrow2 {
+  flex-grow: 2;
+  width: 10;
+}
+
+.flexGrow3 {
+  flex-grow: 3;
+  width: 10;
+}
+
+

@@ -6,11 +6,11 @@ export default function TraitCards(props) {
   const character = props.character;
 
   const traitContainerStyle = {
-    width: "50%",
+    flexGrow: '2',
     display: "flex",
     justifyContent: "space-evenly",
     alignItems: "center",
-    flexWrap: 'wrap'
+    flexWrap: 'no-wrap'
   };
 
   return (
