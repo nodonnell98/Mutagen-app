@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import CharacterService from "../../services/character.service";
 import TraitCards from "../CharacterComponents/Traits/TraitCards";
 import Skills from "../CharacterComponents/Skills";
+import CombatUI from "../CharacterComponents/CombatUI";
 
 export default function Character(props) {
   const [character, setCharacter] = useState([]);
@@ -13,6 +14,7 @@ export default function Character(props) {
     display: 'flex',
     width: '100%',
     padding: '5%',
+    paddingTop: '1%',
     flexDirection: 'row',
     flexWrap: 'wrap',
     alignItems: 'center',
@@ -47,7 +49,7 @@ export default function Character(props) {
     <div style={characterContainerStyle}>
 
         <TraitCards traits={traits} character={character}></TraitCards>
-
+        <CombatUI character={character}></CombatUI>
         <Skills skills={skills} character={character}></Skills>
     </div>
   );
