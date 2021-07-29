@@ -90,4 +90,8 @@ a:hover {
   width: 10;
 }
 
+::placeholder {
+  color: #66FCF1;
+}
+
 
