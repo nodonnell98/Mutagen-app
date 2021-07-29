@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 import CharacterService from "../../services/character.service";
 import CharacterCard from "../CharacterComponents/CharacterCard";
+import {Link} from 'react-router-dom';
 import { Card } from "react-bootstrap";
 import '../../App.css'
 
@@ -51,7 +52,7 @@ export default function Characters() {
     <div style={containerStyle}>
       {characters.map((char, i) => {
          return (<div style={cardContainerStyle} >
-          <CharacterCard class="card" style={cardStyle} key={i} character={char} cardStyle={cardStyle}></CharacterCard>
+          <Link to={"/character/" + char.id}><CharacterCard class="card" style={cardStyle} key={i} character={char} cardStyle={cardStyle}></CharacterCard></ Link>
         </div>)
       })}
       <div style={cardContainerStyle} >
