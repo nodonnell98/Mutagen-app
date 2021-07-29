@@ -10,14 +10,14 @@ export default function TraitCard(props) {
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'column',
-    minWidth: '150px',
+    minWidth: '100px',
     height: '100px',
     flex: '1',
-    margin: '2%'
+    margin: '1%'
   }
 
   const traitHeaderStyle = {
-    fontSize: '20px'
+    fontSize: '15px'
   }
 
   return  (

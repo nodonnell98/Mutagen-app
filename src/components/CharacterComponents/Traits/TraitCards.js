@@ -10,6 +10,7 @@ export default function TraitCards(props) {
     display: "flex",
     justifyContent: "space-evenly",
     alignItems: "center",
+    flexWrap: 'wrap'
   };
 
   return (

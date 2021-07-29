@@ -14,7 +14,20 @@ export default function Character(props) {
     width: '100%',
     padding: '5%',
     flexDirection: 'row',
-    flexWrap: 'wrap'
+    flexWrap: 'wrap',
+    alignItems: 'center',
+    justifyContent: 'flex-start'
+  }
+
+  const sectionStyle = {
+    display: 'flex',
+    flexShrink: 1,
+    width: '100%',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+    padding: '1%'
   }
 
   const retrieveCharacter = useCallback(() => {
@@ -32,8 +45,10 @@ export default function Character(props) {
 
   return (
     <div style={characterContainerStyle}>
-      <TraitCards traits={traits} character={character}></TraitCards>
-      <Skills skills={skills} character={character}></Skills>
+
+        <TraitCards traits={traits} character={character}></TraitCards>
+
+        <Skills skills={skills} character={character}></Skills>
     </div>
   );
 }
