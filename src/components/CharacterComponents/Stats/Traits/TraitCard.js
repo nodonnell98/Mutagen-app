@@ -36,21 +36,24 @@ export default function TraitCard(props) {
     marginLeft: "15px",
   };
 
+  const handleChange = event => props.setCharacter({
+    ...props.character,
+      traits: {
+        ...props.character.traits,
+        [trait]: event.target.value
+      },
+    [trait]: event.target.value,
+  });
+
   return (
     <div className="container flexGrow1 flexBoxColumn" style={traitCardStyle}>
       <h1 style={traitHeaderStyle}>{trait.toUpperCase()}</h1>
       <input
         type="number"
         disabled={props.edit}
-        placeholder={value}
+        value={props.character.traits[trait]}
         style={props.edit ? inputStyle : inputActiveStyle}
-        onChange={(e) =>
-          props.setCharacter({
-            ...props.character,
-
-            [trait]: e.target.value,
-          })
-        }
+        onChange={handleChange}
       ></input>
     </div>
   );
