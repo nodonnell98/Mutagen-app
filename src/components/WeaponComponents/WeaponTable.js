@@ -9,12 +9,12 @@ export default function WeaponTable(props) {
     {
       display: 'none',
       Header: 'Name',
-      accessor: 'name',
-      Cell: ({ cell }) => (
-        <button className="tableBtn" value={cell.row.values.name} onClick={props.setWeapon}>
-          {cell.row.values.name}
-        </button>
-      )
+      accessor: 'name'
+      // Cell: ({ cell }) => (
+      //   <button className="tableBtn" value={cell.row.values.name} onClick={props.setWeapon}>
+      //     {cell.row.values.name}
+      //   </button>
+      // )
     }, {
       Header: 'Damage Type',
       accessor: 'damage_type',

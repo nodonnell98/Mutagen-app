@@ -1,13 +1,13 @@
 import React, { useState, useEffect, useCallback } from "react";
 import CharacterService from "../../services/character.service";
-
 import DeleteCharacter from "../CharacterComponents/DeleteCharacter";
-
 import CharacterNavLinks from "../CharacterComponents/CharacterNavLinks";
 import CharacterStats from "../CharacterComponents/Stats/CharacterStats";
+import Inventory from "../CharacterComponents/Inventory/Inventory";
 
 export default function Character(props) {
   const [character, setCharacter] = useState({
+    weapon_ids: [2],
     id: 0,
     name: "Name",
     description: "Description",
@@ -160,12 +160,19 @@ export default function Character(props) {
           <DeleteCharacter id={character.id}></DeleteCharacter>
         </div>
       </section>
+      { view == 'stats' ?
       <CharacterStats
-        display={view == 'stats' ? console.log(view) : console.log(view) }
         character={character}
         edit={edit}
         setCharacter={setCharacter}
-      ></CharacterStats>
+      ></CharacterStats> : false }
+      { view == 'inventory' ?
+      <Inventory
+        character={character}
+        edit={edit}
+        setCharacter={setCharacter}
+      ></Inventory> : false }
+
     </div>
   );
 }
