@@ -3,6 +3,7 @@ import CharacterService from "../../services/character.service";
 import TraitCards from "../CharacterComponents/Traits/TraitCards";
 import Skills from "../CharacterComponents/Skills";
 import CombatUI from "../CharacterComponents/CombatUI";
+import DeleteCharacter from "../CharacterComponents/DeleteCharacter";
 
 export default function Character(props) {
   const [character, setCharacter] = useState({
@@ -92,15 +93,17 @@ export default function Character(props) {
     background: "none",
     border: "none",
     color: "#66FCF1",
-    fontSize: '20px'
+    fontSize: "20px",
   };
 
-  const handleClick = (e) => {
+  const handleEditClick = (e) => {
     let i;
     e.preventDefault();
     setEdit((prevEdit) => !prevEdit);
     edit ? i++ : CharacterService.update(id, character);
   };
+
+
 
   const retrieveCharacter = useCallback(() => {
     CharacterService.get(id).then((response) => {
@@ -118,22 +121,27 @@ export default function Character(props) {
     <div style={characterContainerStyle}>
       <section
         className="flexBoxRow flexGrow1"
-        style={(sectionStyle, { borderBottom: "1px solid #66FCF1", alignItems: 'center' })}
+        style={
+          (sectionStyle,
+          { borderBottom: "1px solid #66FCF1", alignItems: "center" })
+        }
       >
         <h1 className="flexGrow1" style={{ color: "#66FCF1" }}>
           {character.name}
         </h1>
         <span className="flexGrow3"></span>
-        <button
-          style={buttonStyle}
-          className="flexGrow1"
-          onClick={(e) => {
-            handleClick(e);
-          }}
-        >
-          {edit ? "Edit" : "Save"}
-        </button>
-
+        <div className="flexGrow1 flexBoxRow">
+          <button
+            style={buttonStyle}
+            className="flexGrow1"
+            onClick={(e) => {
+              handleEditClick(e);
+            }}
+          >
+            {edit ? "Edit" : "Save"}
+          </button>
+          <DeleteCharacter id={character.id}></DeleteCharacter>
+        </div>
       </section>
       <section
         style={(sectionStyle, { marginBottom: "2%" })}
