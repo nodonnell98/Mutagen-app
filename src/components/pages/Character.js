@@ -5,7 +5,6 @@ import Skills from "../CharacterComponents/Skills";
 import CombatUI from "../CharacterComponents/CombatUI";
 
 export default function Character(props) {
-
   const [character, setCharacter] = useState({
     id: 0,
     name: "Name",
@@ -67,10 +66,9 @@ export default function Character(props) {
       intelligence: 20,
       sense: 20,
       will: 20,
-      charm: 20
+      charm: 20,
     },
   });
-
 
   const [edit, setEdit] = useState(true);
   const id = props.id.match.params.id;
@@ -90,6 +88,13 @@ export default function Character(props) {
     marginTop: "1%",
   };
 
+  const buttonStyle = {
+    background: "none",
+    border: "none",
+    color: "#66FCF1",
+    fontSize: '20px'
+  };
+
   const handleClick = (e) => {
     let i;
     e.preventDefault();
@@ -100,7 +105,7 @@ export default function Character(props) {
   const retrieveCharacter = useCallback(() => {
     CharacterService.get(id).then((response) => {
       setCharacter(response.data);
-      console.log(response.data)
+      console.log(response.data);
     });
   }, [setCharacter]);
 
@@ -112,20 +117,23 @@ export default function Character(props) {
   return (
     <div style={characterContainerStyle}>
       <section
-        style={(sectionStyle, { borderBottom: "1px solid #66FCF1" })}
         className="flexBoxRow flexGrow1"
+        style={(sectionStyle, { borderBottom: "1px solid #66FCF1", alignItems: 'center' })}
       >
         <h1 className="flexGrow1" style={{ color: "#66FCF1" }}>
           {character.name}
         </h1>
+        <span className="flexGrow3"></span>
         <button
-          className="flexGrow3"
+          style={buttonStyle}
+          className="flexGrow1"
           onClick={(e) => {
             handleClick(e);
           }}
         >
           {edit ? "Edit" : "Save"}
         </button>
+
       </section>
       <section
         style={(sectionStyle, { marginBottom: "2%" })}

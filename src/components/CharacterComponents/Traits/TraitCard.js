@@ -22,7 +22,7 @@ export default function TraitCard(props) {
     backgroundColor: "transparent",
     color: "#66FCF1",
     border: "0",
-    marginLeft: "15px",
+    borderBottom: 'none'
   };
 
   const inputActiveStyle = {
