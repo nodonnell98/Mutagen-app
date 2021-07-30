@@ -11,7 +11,8 @@ export default function CharacterNotes(props) {
   }
   const textDisabled = {
     background: 'none',
-    width: '100%'
+    width: '100%',
+    minHeight: '60%'
   }
 
   const handleChange = event => props.setCharacter({
