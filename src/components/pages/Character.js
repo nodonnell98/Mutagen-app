@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useCallback } from "react";
 import CharacterService from "../../services/character.service";
-import TraitCards from "../CharacterComponents/Stats/Traits/TraitCards";
-import Skills from "../CharacterComponents/Stats/Skills";
-import CombatUI from "../CharacterComponents/Stats/CombatUI";
+
 import DeleteCharacter from "../CharacterComponents/DeleteCharacter";
-import CharacterNotes from "../CharacterComponents/Stats/CharacterNotes";
+
+import CharacterNavLinks from "../CharacterComponents/CharacterNavLinks";
+import CharacterStats from "../CharacterComponents/Stats/CharacterStats";
 
 export default function Character(props) {
   const [character, setCharacter] = useState({
@@ -130,6 +130,8 @@ export default function Character(props) {
         <h1 className="flexGrow1" style={{ color: "#66FCF1" }}>
           {character.name}
         </h1>
+        <span className="flexGrow1"></span>
+        <CharacterNavLinks></CharacterNavLinks>
         <span className="flexGrow3"></span>
         <div className="flexGrow1 flexBoxRow">
           <button
@@ -144,21 +146,7 @@ export default function Character(props) {
           <DeleteCharacter id={character.id}></DeleteCharacter>
         </div>
       </section>
-      <section
-        style={(sectionStyle, { marginBottom: "2%" })}
-        className="flexBoxRow flexGrow1"
-      >
-        <TraitCards
-          edit={edit}
-          character={character}
-          setCharacter={setCharacter}
-        ></TraitCards>
-      </section>
-      <section style={sectionStyle} className="flexBoxRow flexGrow1">
-        <CharacterNotes description={character.description} className="flexGrow1"></CharacterNotes>
-        <Skills character={character}></Skills>
-        <CombatUI character={character}></CombatUI>
-      </section>
+      <CharacterStats character={character} edit={edit} setCharacter={setCharacter}></CharacterStats>
     </div>
   );
 }
