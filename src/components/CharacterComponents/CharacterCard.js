@@ -9,8 +9,6 @@ export default function CharacterCard(props) {
       <Card.Body>
         <Card.Title>{character.name}</Card.Title>
         <Card.Text>----------</Card.Text>
-        <Card.Text>{character.description}</Card.Text>
-        <Card.Text>----------</Card.Text>
         <Card.Text>Class: Coming Soon</Card.Text>
       </Card.Body>
     </Card>
