@@ -3,6 +3,7 @@ import CharacterService from "../../services/character.service";
 import CharacterCard from "../CharacterComponents/CharacterCard";
 import {Link} from 'react-router-dom';
 import { Card } from "react-bootstrap";
+import CharacterForm from "../CharacterComponents/CharacterForm";
 import '../../App.css'
 
 export default function Characters() {
@@ -56,7 +57,7 @@ export default function Characters() {
         </div>)
       })}
       <div style={cardContainerStyle} >
-        <Card style={cardStyle}>Add Character</Card>
+        <Card style={cardStyle}><CharacterForm></CharacterForm></Card>
       </div>
     </div>
   );
