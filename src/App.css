@@ -98,6 +98,13 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
+:disabled {
+  opacity: 1;
+  background-color: transparent;
+  color: #66FCF1;
+  border: none
+}
+
 .textGlow:hover {
   transform: scale(1.05);
   transition: 0.2s;
