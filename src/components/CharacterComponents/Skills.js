@@ -14,6 +14,23 @@ export default function Skills(props) {
     overflow: 'scroll'
   }
 
+  function profStyle(value) {
+    const prof = {
+      color: '#33ff33'
+    }
+
+    const expert = {
+      color: '#ffa31a'
+    }
+    if (value == 1) {
+      return prof
+    } else if (value == 2) {
+      return expert
+    } else {
+      return
+    }
+  }
+
   function getProficiency(value) {
     if (value == 1) {
       return 'Proficient'
@@ -33,7 +50,7 @@ export default function Skills(props) {
             <div>
             <div className={"flexBoxRow flexGrow1"} style={skillStyle} key={i}>
               <p className="flexGrow1">{skill}</p>
-              <p className="flexGrow1">{getProficiency(character.skills[skillCategory][skill])}</p>
+              <p className="flexGrow1" style={profStyle(character.skills[skillCategory][skill])}>{getProficiency(character.skills[skillCategory][skill])}</p>
             </div>
             <div className="flexGrow1" style={{borderBottom: '1px solid #66FCF1', height: '1px'}}> </div>
             </div>
