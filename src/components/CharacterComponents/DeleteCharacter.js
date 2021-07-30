@@ -48,7 +48,7 @@ export default function DeleteCharacter(props) {
     <div className= "flexGrow1">
       <button
         style={buttonStyle}
-        className="flexGrow1"
+        className="flexGrow1 textGlow"
         onClick={(e) => {
           handleDeleteClick(e);
         }}

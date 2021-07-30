@@ -104,8 +104,6 @@ export default function Character(props) {
     edit ? i++ : CharacterService.update(id, character);
   };
 
-
-
   const retrieveCharacter = useCallback(() => {
     CharacterService.get(id).then((response) => {
       setCharacter(response.data);
@@ -136,7 +134,7 @@ export default function Character(props) {
         <div className="flexGrow1 flexBoxRow">
           <button
             style={buttonStyle}
-            className="flexGrow1"
+            className="flexGrow1 textGlow"
             onClick={(e) => {
               handleEditClick(e);
             }}
@@ -146,7 +144,11 @@ export default function Character(props) {
           <DeleteCharacter id={character.id}></DeleteCharacter>
         </div>
       </section>
-      <CharacterStats character={character} edit={edit} setCharacter={setCharacter}></CharacterStats>
+      <CharacterStats
+        character={character}
+        edit={edit}
+        setCharacter={setCharacter}
+      ></CharacterStats>
     </div>
   );
 }
