@@ -9,18 +9,20 @@ export default function Inventory(props) {
   const retrieveWeapons = useCallback(() => {
     WeaponService.index().then((response) => {
       let character_weapons = [];
+
       response.data.map((weapon) => {
+        // Loop through each weapon, for each weapon make an array of the character ids
         let character_id_keys = Object.keys(weapon.character_ids)
-        console.log('char_id_keys', character_id_keys)
 
         character_id_keys.map((id_key) => {
-          console.log('weapon.character_ids[id_key] == character.id', weapon.character_ids[id_key] == character.id)
+          // Loop through each id and check if the id matches the current character id, if it does push that weapon to the weapon array
           if (weapon.character_ids[id_key] == character.id) {
             character_weapons.push(weapon)
           }
         })
       })
-      console.log('char_weap_array', character_weapons)
+
+      //set searched weapons as the weapon array aka all the weapons that match the character id
       setSearchedWeapons(character_weapons);
     });
   }, [setSearchedWeapons]);
