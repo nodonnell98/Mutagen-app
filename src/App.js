@@ -8,6 +8,8 @@ import AddWeapon from './components/WeaponComponents/AddWeapon';
 import LoginForm from './components/authentication/LoginForm'
 import RegisterForm from './components/authentication/RegisterForm'
 import ComingSoon from './components/pages/ComingSoon';
+import Characters from './components/pages/Characters';
+import Character from './components/pages/Character';
 
 class App extends Component {
   render() {
@@ -22,6 +24,9 @@ class App extends Component {
           <Route exact path="/login" ><LoginForm /></Route>
           <Route exact path="/register" ><RegisterForm /></Route>
           <Route exact path="/coming_soon" ><ComingSoon /></Route>
+          <Route exact path="/characters" ><Characters /></Route>
+          <Route exact path="/character/:id" render={(props) =>  <Character id={props}/>}></Route>
+
             </div>
         </div>
       </Router>

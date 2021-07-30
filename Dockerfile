@@ -1,5 +1,5 @@
 # pull official base image
-FROM node:15.3.0-alpine3.10
+FROM node:16-alpine3.11
 
 RUN apk add g++ make python
 
