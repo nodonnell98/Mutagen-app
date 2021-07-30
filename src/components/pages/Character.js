@@ -72,6 +72,7 @@ export default function Character(props) {
     },
   });
 
+  const [view, setView] = useState('stats');
   const [edit, setEdit] = useState(true);
   const id = props.id.match.params.id;
 
@@ -107,7 +108,6 @@ export default function Character(props) {
   const retrieveCharacter = useCallback(() => {
     CharacterService.get(id).then((response) => {
       setCharacter(response.data);
-      console.log(response.data);
     });
   }, [setCharacter]);
 
@@ -115,6 +115,22 @@ export default function Character(props) {
   useEffect(() => {
     retrieveCharacter();
   }, [retrieveCharacter]);
+
+  const checkStatsView = () => {
+    if (view == 'stats') {
+      return true
+    } else {
+      return false
+    }
+  }
+
+  const checkInventoryView = () => {
+    if (view == 'inventory') {
+      return true
+    } else {
+      return false
+    }
+  }
 
   return (
     <div style={characterContainerStyle}>
@@ -129,7 +145,7 @@ export default function Character(props) {
           {character.name}
         </h1>
         <span className="flexGrow1"></span>
-        <CharacterNavLinks></CharacterNavLinks>
+        <CharacterNavLinks setView={setView}></CharacterNavLinks>
         <span className="flexGrow3"></span>
         <div className="flexGrow1 flexBoxRow">
           <button
@@ -145,6 +161,7 @@ export default function Character(props) {
         </div>
       </section>
       <CharacterStats
+        display={view == 'stats' ? console.log(view) : console.log(view) }
         character={character}
         edit={edit}
         setCharacter={setCharacter}

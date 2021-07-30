@@ -20,7 +20,6 @@ class CharacterService {
   }
 
   update(id, params) {
-    console.log(params)
     return http.put(`/characters/${id}`, params);
   }
 
