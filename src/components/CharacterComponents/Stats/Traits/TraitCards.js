@@ -1,5 +1,5 @@
 import React from "react";
-import TraitCard from "../Traits/TraitCard"
+import TraitCard from "./TraitCard"
 
 export default function TraitCards(props) {
   const character = props.character;

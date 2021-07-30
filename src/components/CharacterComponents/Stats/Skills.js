@@ -11,7 +11,9 @@ export default function Skills(props) {
 
   const skillsContainerStyle = {
     height: '600px',
-    overflow: 'scroll'
+    overflow: 'scroll',
+    marginRight: '2%',
+    marginLeft: '2%'
   }
 
   function profStyle(value) {

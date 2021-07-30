@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useCallback } from "react";
 import CharacterService from "../../services/character.service";
-import TraitCards from "../CharacterComponents/Traits/TraitCards";
-import Skills from "../CharacterComponents/Skills";
-import CombatUI from "../CharacterComponents/CombatUI";
+import TraitCards from "../CharacterComponents/Stats/Traits/TraitCards";
+import Skills from "../CharacterComponents/Stats/Skills";
+import CombatUI from "../CharacterComponents/Stats/CombatUI";
 import DeleteCharacter from "../CharacterComponents/DeleteCharacter";
+import CharacterNotes from "../CharacterComponents/Stats/CharacterNotes";
 
 export default function Character(props) {
   const [character, setCharacter] = useState({
@@ -154,8 +155,8 @@ export default function Character(props) {
         ></TraitCards>
       </section>
       <section style={sectionStyle} className="flexBoxRow flexGrow1">
+        <CharacterNotes description={character.description} className="flexGrow1"></CharacterNotes>
         <Skills character={character}></Skills>
-        <span className="flexGrow1"></span>
         <CombatUI character={character}></CombatUI>
       </section>
     </div>
