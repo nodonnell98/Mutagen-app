@@ -3,27 +3,64 @@ import {useTable, useSortBy, usePagination} from 'react-table';
 
 export default function WeaponTable(props) {
 
+  const isCharacter = props.isCharacter
   const data = props.searchedWeapons
+
   const columns = [
 
     {
       display: 'none',
       Header: 'Name',
-      accessor: 'name'
-      // Cell: ({ cell }) => (
-      //   <button className="tableBtn" value={cell.row.values.name} onClick={props.setWeapon}>
-      //     {cell.row.values.name}
-      //   </button>
-      // )
+      accessor: 'name',
+      Cell: ({ cell }) => (
+        <button className="tableBtn" value={cell.row.values.name} onClick={props.setWeapon}>
+          {cell.row.values.name}
+        </button>
+      )
     }, {
       Header: 'Damage Type',
       accessor: 'damage_type',
       sortType: 'basic'
     }, {
-      Header: 'Quality',
-      accessor: 'quality',
+      Header: 'Type',
+      accessor: 'weapon_type',
       sortType: 'basic'
+    },
+    {
+      Header: 'Range',
+      accessor: 'range',
+      sortType: 'basic'
+    },
+    {
+      Header: 'Ammo',
+      accessor: 'ammo',
+      sortType: 'basic'
+    },
+    {
+      Header: 'Prof. Bonus',
+      accessor: 'proficiency',
+      sortType: 'basic'
+    },
+    {
+      Header: 'Dice Qty',
+      accessor: 'dice_qty',
+      sortType: 'basic'
+    },
+    {
+      Header: 'Dice Type',
+      accessor: 'dice_type',
+      sortType: 'basic'
+    },{
+      display: 'none',
+      Header: 'Actions',
+      accessor: 'delete',
+      Cell: ({ cell }) => (
+        <button className="tableBtn" value={cell.row.values.delete} onClick={props.removeWeapon}>
+            Delete
+        </button>
+      )
     }
+
   ]
 
   const Table = ({columns, data}) => {
@@ -56,8 +93,8 @@ export default function WeaponTable(props) {
     }, useSortBy, usePagination);
 
     return (
-      <div>
-        <table {...getTableProps()}>
+      <div className="flexBoxColumn" style={{ justifyContent: 'space-evenly' }}>
+        <table {...getTableProps()} className="flexGrow1">
           <thead>
             {headerGroups.map(headerGroup => (
               <tr {...headerGroup.getHeaderGroupProps()}>
@@ -92,7 +129,7 @@ export default function WeaponTable(props) {
             })}
           </tbody>
         </table>
-        <div className="pagination">
+        <div className="pagination flexGrow1" style={{ alignSelf: 'flex-end' }}>
           <button
             className="input"
             onClick={() => gotoPage(0)}

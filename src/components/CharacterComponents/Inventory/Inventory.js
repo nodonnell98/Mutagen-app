@@ -1,10 +1,12 @@
 import React, { useState, useCallback, useEffect } from 'react'
 import WeaponTable from '../../WeaponComponents/WeaponTable';
 import WeaponService from '../../../services/weapon.service';
+import SearchBar from '../../SearchBar';
+import AddWeaponModal from './AddWeaponModal';
 
 export default function Inventory(props) {
   const character = props.character
-  const [searchedWeapons, setSearchedWeapons] = useState([])
+  const [Weapons, setWeapons] = useState([])
 
   const retrieveWeapons = useCallback(() => {
     WeaponService.index().then((response) => {
@@ -23,18 +25,25 @@ export default function Inventory(props) {
       })
 
       //set searched weapons as the weapon array aka all the weapons that match the character id
-      setSearchedWeapons(character_weapons);
+      setWeapons(character_weapons);
     });
-  }, [setSearchedWeapons]);
+  }, [setWeapons]);
 
   // Fetch list of Weapons on load
   useEffect(() => {
     retrieveWeapons();
   }, [retrieveWeapons]);
 
+  const handleSearch = (e) => {
+
+  }
+
   return (
-    <div class="container flexBoxColumn flexGrow1" style={{ marginTop: '1%', height: '90%'}}>
-      <WeaponTable searchedWeapons={searchedWeapons}></WeaponTable>
+    <div class="container flexBoxColumn flexGrow1" style={{ marginTop: '1%', height: '500px'}}>
+      <h1 className="flexGrow1" style={{alignSelf: 'flex-start'}}>Inventory</h1>
+      <AddWeaponModal character={character}></AddWeaponModal>
+      <SearchBar handleSearch={handleSearch}></SearchBar>
+      <WeaponTable searchedWeapons={Weapons} className="flexGrow1" isCharacter={true}></WeaponTable>
     </div>
   )
 }

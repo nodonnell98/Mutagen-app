@@ -62,13 +62,6 @@ export default function Character(props) {
         medium_range: 0,
         long_range: 0,
       },
-      strength: 20,
-      discipline: 20,
-      constitution: 20,
-      intelligence: 20,
-      sense: 20,
-      will: 20,
-      charm: 20,
     },
   });
 
@@ -144,7 +137,6 @@ export default function Character(props) {
         <h1 className="flexGrow1" style={{ color: "#66FCF1" }}>
           {character.name}
         </h1>
-        <span className="flexGrow1"></span>
         <CharacterNavLinks setView={setView}></CharacterNavLinks>
         <span className="flexGrow3"></span>
         <div className="flexGrow1 flexBoxRow">
@@ -160,6 +152,7 @@ export default function Character(props) {
           <DeleteCharacter id={character.id}></DeleteCharacter>
         </div>
       </section>
+      <section>
       { view == 'stats' ?
       <CharacterStats
         character={character}
@@ -172,6 +165,7 @@ export default function Character(props) {
         edit={edit}
         setCharacter={setCharacter}
       ></Inventory> : false }
+      </section>
 
     </div>
   );

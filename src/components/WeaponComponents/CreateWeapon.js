@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { withRouter } from 'react-router-dom';
 import WeaponDataService from "../../services/weapon.service.js";
 
-class AddWeapon extends Component {
+class CreateWeapon extends Component {
 
     addWeapon = (weapon) => {
         WeaponDataService.create(weapon).then(response => {
@@ -134,4 +134,4 @@ const flexitem = {
   display: 'inline'
 }
 
-export default withRouter (AddWeapon);
+export default withRouter (CreateWeapon);
