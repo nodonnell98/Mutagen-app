@@ -7,12 +7,17 @@ export default function AddCharacterWeapon(props) {
   const weapon = props.weapon
 
   const updateWeapon = () => {
-    // let newCharIds = weapon.character_ids.push[character.id]
+    let newCharIds = weapon.character_ids
+    newCharIds.push(character.id)
     let params = {
-      id: weapon.id,
-      character_ids: [character.id]
+      weapon: {
+        dice_type: 8,
+        character_ids: newCharIds
+      }
     }
-    WeaponService.update(weapon.id, params).then(() => {
+    WeaponService.update(weapon.id, params).then((res) => {
+      console.log(res.data)
+      props.retrieveCharacterWeapons()
 
     })
 
@@ -20,7 +25,7 @@ export default function AddCharacterWeapon(props) {
 
   return (
     <div>
-      <button className="navBtn" value="edit" onClick={() => updateWeapon() && props.setModalIsOpenToFalse}>Add</button>
+      <button className="navBtn" value="edit" onClick={() => updateWeapon()}>AddMe</button>
     </div>
   )
 }

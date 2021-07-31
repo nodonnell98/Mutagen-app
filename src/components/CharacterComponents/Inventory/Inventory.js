@@ -8,9 +8,10 @@ export default function Inventory(props) {
   const character = props.character
   const [Weapons, setWeapons] = useState([])
 
-  const retrieveWeapons = useCallback(() => {
+  const retrieveCharacterWeapons = useCallback(() => {
     WeaponService.index().then((response) => {
       let character_weapons = [];
+      console.log(response.data)
 
       response.data.map((weapon) => {
         // Loop through each weapon, for each weapon make an array of the character ids
@@ -31,8 +32,8 @@ export default function Inventory(props) {
 
   // Fetch list of Weapons on load
   useEffect(() => {
-    retrieveWeapons();
-  }, [retrieveWeapons]);
+    retrieveCharacterWeapons();
+  }, [retrieveCharacterWeapons]);
 
   const handleSearch = (e) => {
 
@@ -41,7 +42,7 @@ export default function Inventory(props) {
   return (
     <div class="container flexBoxColumn flexGrow1" style={{ marginTop: '1%', height: '500px'}}>
       <h1 className="flexGrow1" style={{alignSelf: 'flex-start'}}>Inventory</h1>
-      <AddWeaponModal character={character}></AddWeaponModal>
+      <AddWeaponModal character={character} retrieveCharacterWeapons={retrieveCharacterWeapons}></AddWeaponModal>
       <SearchBar handleSearch={handleSearch}></SearchBar>
       <WeaponTable searchedWeapons={Weapons} className="flexGrow1" isCharacter={true}></WeaponTable>
     </div>

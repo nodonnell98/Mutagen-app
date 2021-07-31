@@ -96,7 +96,7 @@ export default function AddWeaponModal(props) {
 
         <div className="flexBoxRow flexGrow3">
           <WeaponTable searchedWeapons={weapons} setWeapon={setWeapon}></WeaponTable>
-          <WeaponContainer character={props.character} weapon={selectedWeapon} setModalIsOpenToFalse={setModalIsOpenToFalse}></WeaponContainer>
+          <WeaponContainer retrieveCharacterWeapons={props.retrieveCharacterWeapons} character={props.character} weapon={selectedWeapon} setModalIsOpenToFalse={props.setModalIsOpenToFalse}></WeaponContainer>
         </div>
       </Modal>
     </div>

@@ -35,7 +35,7 @@ export default function WeaponContainer(props) {
               { weapon ? <Weapon weapon={weapon}></Weapon> : 'Select a weapon' }
             </div>
             <div className="btn-group" role="group" style={containerNav}>
-              <AddCharacterWeapon character={props.character} weapon={props.weapon}></AddCharacterWeapon>
+              <AddCharacterWeapon retrieveCharacterWeapons={props.retrieveCharacterWeapons} character={props.character} setModalIsOpenToFalse={props.setModalIsOpenToFalse} weapon={props.weapon}></AddCharacterWeapon>
             </div>
           </div>
   )
