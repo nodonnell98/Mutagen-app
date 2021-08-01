@@ -1,13 +1,13 @@
 import React, { useState, useEffect, useCallback } from "react";
 import CharacterService from "../../services/character.service";
-
 import DeleteCharacter from "../CharacterComponents/DeleteCharacter";
-
 import CharacterNavLinks from "../CharacterComponents/CharacterNavLinks";
 import CharacterStats from "../CharacterComponents/Stats/CharacterStats";
+import Inventory from "../CharacterComponents/Inventory/Inventory";
 
 export default function Character(props) {
   const [character, setCharacter] = useState({
+    weapon_ids: [2],
     id: 0,
     name: "Name",
     description: "Description",
@@ -62,16 +62,10 @@ export default function Character(props) {
         medium_range: 0,
         long_range: 0,
       },
-      strength: 20,
-      discipline: 20,
-      constitution: 20,
-      intelligence: 20,
-      sense: 20,
-      will: 20,
-      charm: 20,
     },
   });
 
+  const [view, setView] = useState('stats');
   const [edit, setEdit] = useState(true);
   const id = props.id.match.params.id;
 
@@ -107,7 +101,6 @@ export default function Character(props) {
   const retrieveCharacter = useCallback(() => {
     CharacterService.get(id).then((response) => {
       setCharacter(response.data);
-      console.log(response.data);
     });
   }, [setCharacter]);
 
@@ -115,6 +108,22 @@ export default function Character(props) {
   useEffect(() => {
     retrieveCharacter();
   }, [retrieveCharacter]);
+
+  const checkStatsView = () => {
+    if (view == 'stats') {
+      return true
+    } else {
+      return false
+    }
+  }
+
+  const checkInventoryView = () => {
+    if (view == 'inventory') {
+      return true
+    } else {
+      return false
+    }
+  }
 
   return (
     <div style={characterContainerStyle}>
@@ -128,8 +137,7 @@ export default function Character(props) {
         <h1 className="flexGrow1" style={{ color: "#66FCF1" }}>
           {character.name}
         </h1>
-        <span className="flexGrow1"></span>
-        <CharacterNavLinks></CharacterNavLinks>
+        <CharacterNavLinks setView={setView}></CharacterNavLinks>
         <span className="flexGrow3"></span>
         <div className="flexGrow1 flexBoxRow">
           <button
@@ -144,11 +152,21 @@ export default function Character(props) {
           <DeleteCharacter id={character.id}></DeleteCharacter>
         </div>
       </section>
+      <section>
+      { view == 'stats' ?
       <CharacterStats
         character={character}
         edit={edit}
         setCharacter={setCharacter}
-      ></CharacterStats>
+      ></CharacterStats> : false }
+      { view == 'inventory' ?
+      <Inventory
+        character={character}
+        edit={edit}
+        setCharacter={setCharacter}
+      ></Inventory> : false }
+      </section>
+
     </div>
   );
 }

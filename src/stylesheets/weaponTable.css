@@ -36,12 +36,12 @@ td {
     font-family: 'Orbitron', sans-serif;
     font-size: large;
     color: #66FCF1;
-    cursor: pointer;
 }
 
-.navBtn:hover {
+.navBtnHover:hover {
     background-color: #66FCF1;
     color: #224e4c;
+    cursor: pointer
 }
 
 .tableBtn {

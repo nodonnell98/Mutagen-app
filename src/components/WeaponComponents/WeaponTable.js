@@ -4,6 +4,8 @@ import {useTable, useSortBy, usePagination} from 'react-table';
 export default function WeaponTable(props) {
 
   const data = props.searchedWeapons
+  const pageSize = props.pageSize
+
   const columns = [
 
     {
@@ -16,14 +18,86 @@ export default function WeaponTable(props) {
         </button>
       )
     }, {
+      display: 'none',
       Header: 'Damage Type',
       accessor: 'damage_type',
-      sortType: 'basic'
+      sortType: 'basic',
+      Cell: ({ cell }) => (
+        <button className="tableBtn" value={cell.row.values.name} onClick={props.setWeapon}>
+          {cell.row.values.damage_type}
+        </button>
+      )
     }, {
-      Header: 'Quality',
-      accessor: 'quality',
-      sortType: 'basic'
+      Header: 'Type',
+      accessor: 'weapon_type',
+      sortType: 'basic',
+      Cell: ({ cell }) => (
+        <button className="tableBtn" value={cell.row.values.name} onClick={props.setWeapon}>
+          {cell.row.values.weapon_type}
+        </button>
+      )
+    },
+    {
+      Header: 'Range',
+      accessor: 'range',
+      sortType: 'basic',
+      Cell: ({ cell }) => (
+        <button className="tableBtn" value={cell.row.values.name} onClick={props.setWeapon}>
+          {cell.row.values.range}
+        </button>
+      )
+    },
+    {
+      Header: 'Ammo',
+      accessor: 'ammo',
+      sortType: 'basic',
+      Cell: ({ cell }) => (
+        <button className="tableBtn" value={cell.row.values.name} onClick={props.setWeapon}>
+          {cell.row.values.ammo}
+        </button>
+      )
+    },
+    {
+      Header: 'Prof. Bonus',
+      accessor: 'proficiency',
+      sortType: 'basic',
+      Cell: ({ cell }) => (
+        <button className="tableBtn" value={cell.row.values.name} onClick={props.setWeapon}>
+          {cell.row.values.proficiency}
+        </button>
+      )
+    },
+    {
+      Header: 'Dice Qty',
+      accessor: 'dice_qty',
+      sortType: 'basic',
+      Cell: ({ cell }) => (
+        <button className="tableBtn" value={cell.row.values.name} onClick={props.setWeapon}>
+          {cell.row.values.dice_qty}
+        </button>
+      )
+    },
+    {
+      Header: 'Dice Type',
+      accessor: 'dice_type',
+      sortType: 'basic',
+      Cell: ({ cell }) => (
+        <button className="tableBtn" value={cell.row.values.name} onClick={props.setWeapon}>
+          {cell.row.values.dice_type}
+        </button>
+      )
     }
+    // {
+    //   display: 'none',
+    //   Header: 'Actions',
+    //   accessor: 'delete',
+    //   Cell: ({ cell }) => (
+    //     <button className="tableBtn" value={cell.row.values.delete} onClick={props.removeWeapon}>
+    //         Delete
+    //     </button>
+    //   )
+    // }
+
   ]
 
   const Table = ({columns, data}) => {
@@ -43,21 +117,21 @@ export default function WeaponTable(props) {
       previousPage,
       setPageSize,
       state: {
-        pageIndex,
-        pageSize
+        pageIndex
       }
     } = useTable({
       columns,
       data,
       initialState: {
-        pageIndex: 0
+        pageIndex: 0,
+        pageSize: `${pageSize}`
       }
 
     }, useSortBy, usePagination);
 
     return (
-      <div>
-        <table {...getTableProps()}>
+      <div className="flexBoxColumn" style={{ justifyContent: 'space-evenly' }}>
+        <table {...getTableProps()} className="flexGrow1">
           <thead>
             {headerGroups.map(headerGroup => (
               <tr {...headerGroup.getHeaderGroupProps()}>
@@ -92,7 +166,7 @@ export default function WeaponTable(props) {
             })}
           </tbody>
         </table>
-        <div className="pagination">
+        <div className="pagination flexGrow1" style={{ alignSelf: 'flex-end' }}>
           <button
             className="input"
             onClick={() => gotoPage(0)}

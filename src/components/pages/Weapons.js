@@ -71,24 +71,8 @@ class Weapons extends Component {
         <SearchBar handleSearch={this.handleSearch}/>
 
         <div style={containerStyle}>
-          <div style={{flexBasis: '50%'}}>
-          <WeaponTable setWeapon={this.setWeapon} searchedWeapons={searchedWeapons}/>
-          </div>
-          <div className="container" style={weaponContainerStyle}>
-            <div className="btn-group" role="group" style={containerNav}>
-              <button className="navBtn" value="weapon" onClick={this.handleButton}>Weapon</button>
-              <button className="navBtn" value="add" onClick={this.handleButton}>Add</button>
-            </div>
-            <div style={{flexGrow: '10'}}>
-              <WeaponContainer style={{ flexGrow: '10%', marginTop: '1em' }}
-              weapon={this.state.selectedWeapon}
-              component={this.state.containerComponent}
-              fetchWeapons={this.fetchWeapons}/>
-            </div>
-            <div className="btn-group" role="group" style={containerNav}>
-              <button className="navBtn" value="edit">Edit</button>
-              <button className="navBtn" value="weapon">Delete</button>
-            </div>
+          <div style={{flexBasis: '100%'}}>
+          <WeaponTable setWeapon={this.setWeapon} searchedWeapons={searchedWeapons} pageSize={15}/>
           </div>
         </div>
 
@@ -112,25 +96,6 @@ const pageHeader = {
 
 const pageContainer = {
   width: '80%'
-}
-
-const weaponContainerStyle = {
-  marginLeft: '1em',
-  height: '550px',
-  width: '40%',
-  display: 'flex',
-  justifyContent: 'start',
-  flexDirection: 'column',
-  padding: '0'
-}
-
-const containerNav = {
-  width: '100%',
-  height: '10%',
-  backgroundColor: 'transparent',
-  borderBottom: '2px solid #66FCF1',
-  display: 'flex',
-  flexBasis: '10%'
 }
 
 export default Weapons;

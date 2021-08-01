@@ -13,7 +13,6 @@ export default function DeleteCharacter(props) {
     setModalIsOpen(false);
   };
   const handleDeleteClick = (e) => {
-    console.log("delete");
     e.preventDefault();
     setModalIsOpenToTrue();
   };
