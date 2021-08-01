@@ -6,13 +6,22 @@ export default function Class(props) {
   const character = props.character
   const classification = props.classification
 
-  return (
-    <div className="flexBoxColumn">
-      <div className="flexBoxRow flexGrow1" style={{justifyContent: 'flex-start'}}>
+  const classInfoStyle = {
+    marginTop: '2%',
+    color: '#66FCF1',
 
-      </div>
-      <h1 style={{color: '#66FCF1'}}>{classification.name}</h1>
-      <p style={{color: '#66FCF1', fontSize: '25px'}}>{classification.description}</p>
+  }
+
+  return (
+    <div className="flexBoxColumn" >
+      <h1 style={classInfoStyle} className="flexGrow1">{classification.name}</h1>
+      <h3 style={classInfoStyle } className="flexGrow1">{classification.description}</h3>
+      <h3 style={classInfoStyle } className="flexGrow1">Strike Stat: {classification.strike_stat}</h3>
+      <h3 style={classInfoStyle } className="flexGrow1">Might Stat: {classification.might_stat}</h3>
+      <h3 style={classInfoStyle } className="flexGrow1">Dodge Stat: {classification.dodge_stat}</h3>
+      <h3 style={classInfoStyle } className="flexGrow1">Gene Pool: {classification.gene_pool}</h3>
+
+
     </div>
   )
 }
