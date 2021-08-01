@@ -40,11 +40,11 @@ export default function Inventory(props) {
   }
 
   return (
-    <div class="container flexBoxColumn flexGrow1" style={{ marginTop: '1%', height: '500px'}}>
+    <div class="container flexBoxColumn flexGrow1" style={{ marginTop: '1%', height: '700px'}}>
       <h1 className="flexGrow1" style={{alignSelf: 'flex-start'}}>Inventory</h1>
       <AddWeaponModal character={character} retrieveCharacterWeapons={retrieveCharacterWeapons}></AddWeaponModal>
       <SearchBar handleSearch={handleSearch}></SearchBar>
-      <WeaponTable searchedWeapons={Weapons} className="flexGrow1" isCharacter={true}></WeaponTable>
+      <WeaponTable searchedWeapons={Weapons} className="flexGrow1" isCharacter={true}  pageSize={5}></WeaponTable>
     </div>
   )
 }

@@ -5,6 +5,7 @@ export default function WeaponTable(props) {
 
   const isCharacter = props.isCharacter
   const data = props.searchedWeapons
+  const pageSize = props.pageSize
 
   const columns = [
 
@@ -80,20 +81,21 @@ export default function WeaponTable(props) {
       previousPage,
       setPageSize,
       state: {
-        pageIndex,
-        pageSize
+        pageIndex
       }
     } = useTable({
       columns,
       data,
       initialState: {
-        pageIndex: 0
+        pageIndex: 0,
+        pageSize: `${pageSize}`
       }
 
     }, useSortBy, usePagination);
 
     return (
       <div className="flexBoxColumn" style={{ justifyContent: 'space-evenly' }}>
+        {console.log(pageSize)}
         <table {...getTableProps()} className="flexGrow1">
           <thead>
             {headerGroups.map(headerGroup => (

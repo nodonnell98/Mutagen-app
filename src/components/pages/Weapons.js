@@ -73,7 +73,7 @@ class Weapons extends Component {
         <div style={containerStyle}>
           <div style={{flexBasis: '100%'}}>
             {console.log(searchedWeapons)}
-          <WeaponTable setWeapon={this.setWeapon} searchedWeapons={searchedWeapons}/>
+          <WeaponTable setWeapon={this.setWeapon} searchedWeapons={searchedWeapons} pageSize={15}/>
           </div>
         </div>
 
