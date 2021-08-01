@@ -4,26 +4,16 @@ import { Form, Button, Dropdown } from "react-bootstrap";
 import CharacterService from "../../services/character.service";
 import ClassificationService from "../../services/classification.service";
 
-export default function CharacterForm() {
+export default function CharacterForm(props) {
   const [name, setName] = useState("");
-  const [description, setDescription] = useState("");
   const [error, setError] = useState("");
-  const [classification_id, setClassificationId] = useState()
-  const [classifications, setClassifications] = useState([])
   const [label, setLabel] = useState('Select Class')
 
+  const classification_id = props.classification_id
+  const classifications = props.classifications
+  const setClassificationId = props.setClassificationId
 
-  const retrieveClassifications = useCallback(() => {
-    ClassificationService.index().then((response) => {
-      setClassifications(response.data);
 
-    });
-  }, [setClassifications]);
-
-  // Fetch list of characters on load
-  useEffect(() => {
-    retrieveClassifications();
-  }, [retrieveClassifications]);
 
   let params = {
     character: {
@@ -75,7 +65,7 @@ export default function CharacterForm() {
         <Form.Group size="lg" controlId="description">
           <Form.Label>Class</Form.Label>
           <Dropdown>
-            <Dropdown.Toggle variant="success" id="dropdown-basic">
+            <Dropdown.Toggle variant="success" id="dropdown-basic" style={{backgroundColor: '#66FCF1', border: '#66FCF1', color: '#2a615e'}}>
               {label}
             </Dropdown.Toggle>
 
@@ -98,7 +88,7 @@ export default function CharacterForm() {
             marginTop: "2%",
             marginBottom: "2%",
             backgroundColor: "#66FCF1",
-            color: " white",
+            color: "#2a615e",
             border: "none",
             cursor: "pointer",
           }}

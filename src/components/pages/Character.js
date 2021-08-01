@@ -105,7 +105,6 @@ export default function Character(props) {
 
   const retrieveCharacterInformation = useCallback(() => {
     CharacterService.get(id).then((response) => {
-      console.log(response.data)
       setCharacter(response.data);
       ClassificationService.get(response.data.classification_ids[0]).then((response) => {
         setClassification(response.data)

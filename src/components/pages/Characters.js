@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import CharacterService from "../../services/character.service";
+import ClassificationService from "../../services/classification.service";
 import CharacterCard from "../CharacterComponents/CharacterCard";
 import {Link} from 'react-router-dom';
 import { Card } from "react-bootstrap";
@@ -8,6 +9,8 @@ import '../../App.css'
 
 export default function Characters() {
   const [characters, setCharacters] = useState([]);
+  const [classification_id, setClassificationId] = useState()
+  const [classifications, setClassifications] = useState([])
 
   const containerStyle = {
     display: "flex",
@@ -38,26 +41,30 @@ export default function Characters() {
     transition: '0.3s'
   }
 
-  const retrieveCharacters = useCallback(() => {
+  const retrieveCharactersInformation = useCallback(() => {
     CharacterService.index().then((response) => {
       setCharacters(response.data);
+      ClassificationService.index().then((response) => {
+        setClassifications(response.data);
+      });
     });
-  }, [setCharacters]);
+  }, [setCharacters, setClassifications]);
 
   // Fetch list of characters on load
   useEffect(() => {
-    retrieveCharacters();
-  }, [retrieveCharacters]);
+    retrieveCharactersInformation();
+  }, [retrieveCharactersInformation]);
+
 
   return (
     <div style={containerStyle}>
       {characters.map((char, i) => {
          return (<div style={cardContainerStyle} >
-          <Link to={"/character/" + char.id}><CharacterCard class="card" style={cardStyle} key={i} character={char} cardStyle={cardStyle}></CharacterCard></ Link>
+          <Link to={"/character/" + char.id}><CharacterCard class="card" style={cardStyle} key={i} character={char} classifications={classifications} cardStyle={cardStyle} prop></CharacterCard></ Link>
         </div>)
       })}
       <div style={cardContainerStyle} >
-        <Card style={cardStyle}><CharacterForm></CharacterForm></Card>
+        <Card style={cardStyle}><CharacterForm classification_id={classification_id} classifications={classifications} setClassificationId={setClassificationId}></CharacterForm></Card>
       </div>
     </div>
   );
