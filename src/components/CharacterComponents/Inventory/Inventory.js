@@ -11,7 +11,6 @@ export default function Inventory(props) {
   const retrieveCharacterWeapons = useCallback(() => {
     WeaponService.index().then((response) => {
       let character_weapons = [];
-      console.log(response.data)
 
       response.data.map((weapon) => {
         // Loop through each weapon, for each weapon make an array of the character ids

@@ -40,7 +40,6 @@ export default function Characters() {
 
   const retrieveCharacters = useCallback(() => {
     CharacterService.index().then((response) => {
-      console.log(response.data)
       setCharacters(response.data);
     });
   }, [setCharacters]);

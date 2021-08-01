@@ -95,7 +95,6 @@ export default function WeaponTable(props) {
 
     return (
       <div className="flexBoxColumn" style={{ justifyContent: 'space-evenly' }}>
-        {console.log(pageSize)}
         <table {...getTableProps()} className="flexGrow1">
           <thead>
             {headerGroups.map(headerGroup => (
