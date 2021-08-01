@@ -19,38 +19,74 @@ export default function WeaponTable(props) {
         </button>
       )
     }, {
+      display: 'none',
       Header: 'Damage Type',
       accessor: 'damage_type',
-      sortType: 'basic'
+      sortType: 'basic',
+      Cell: ({ cell }) => (
+        <button className="tableBtn" value={cell.row.values.name} onClick={props.setWeapon}>
+          {cell.row.values.damage_type}
+        </button>
+      )
     }, {
       Header: 'Type',
       accessor: 'weapon_type',
-      sortType: 'basic'
+      sortType: 'basic',
+      Cell: ({ cell }) => (
+        <button className="tableBtn" value={cell.row.values.name} onClick={props.setWeapon}>
+          {cell.row.values.weapon_type}
+        </button>
+      )
     },
     {
       Header: 'Range',
       accessor: 'range',
-      sortType: 'basic'
+      sortType: 'basic',
+      Cell: ({ cell }) => (
+        <button className="tableBtn" value={cell.row.values.name} onClick={props.setWeapon}>
+          {cell.row.values.range}
+        </button>
+      )
     },
     {
       Header: 'Ammo',
       accessor: 'ammo',
-      sortType: 'basic'
+      sortType: 'basic',
+      Cell: ({ cell }) => (
+        <button className="tableBtn" value={cell.row.values.name} onClick={props.setWeapon}>
+          {cell.row.values.ammo}
+        </button>
+      )
     },
     {
       Header: 'Prof. Bonus',
       accessor: 'proficiency',
-      sortType: 'basic'
+      sortType: 'basic',
+      Cell: ({ cell }) => (
+        <button className="tableBtn" value={cell.row.values.name} onClick={props.setWeapon}>
+          {cell.row.values.proficiency}
+        </button>
+      )
     },
     {
       Header: 'Dice Qty',
       accessor: 'dice_qty',
-      sortType: 'basic'
+      sortType: 'basic',
+      Cell: ({ cell }) => (
+        <button className="tableBtn" value={cell.row.values.name} onClick={props.setWeapon}>
+          {cell.row.values.dice_qty}
+        </button>
+      )
     },
     {
       Header: 'Dice Type',
       accessor: 'dice_type',
-      sortType: 'basic'
+      sortType: 'basic',
+      Cell: ({ cell }) => (
+        <button className="tableBtn" value={cell.row.values.name} onClick={props.setWeapon}>
+          {cell.row.values.dice_type}
+        </button>
+      )
     },{
       display: 'none',
       Header: 'Actions',
