@@ -16,7 +16,6 @@ export default function AddCharacterWeapon(props) {
       }
     }
     WeaponService.update(weapon.id, params).then((res) => {
-      console.log(res.data)
       props.retrieveCharacterWeapons()
 
     })
@@ -24,8 +23,8 @@ export default function AddCharacterWeapon(props) {
   }
 
   return (
-    <div>
-      <button className="navBtn" value="edit" onClick={() => updateWeapon()}>AddMe</button>
-    </div>
+
+      <button className="navBtn navBtnHover" value="edit" onClick={() => updateWeapon()}>Add Weapon</button>
+
   )
 }

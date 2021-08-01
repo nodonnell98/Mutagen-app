@@ -3,11 +3,13 @@ import Modal from "react-modal";
 import WeaponTable from "../../WeaponComponents/WeaponTable";
 import WeaponService from "../../../services/weapon.service";
 import WeaponContainer from "../../WeaponComponents/WeaponContainer";
+import SearchBar from '../../SearchBar'
 
 export default function AddWeaponModal(props) {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [weapons, setWeapons] = useState([]);
   const [selectedWeapon, setSelectedWeapon] = useState();
+  const [searchedWeapons, setSearchedWeapons] = useState([]);
 
 
   const setModalIsOpenToTrue = () => {
@@ -47,6 +49,12 @@ export default function AddWeaponModal(props) {
     retrieveWeapons();
   }, [retrieveWeapons]);
 
+  const handleSearch = (e) => {
+    setSearchedWeapons(e.target.value)
+  }
+
+
+
   const modalStyle = {
     color: "66FCF1",
     content: {
@@ -73,6 +81,14 @@ export default function AddWeaponModal(props) {
     fontSize: "20px",
   };
 
+  let foundWeapons = weapons
+  .filter((weapon) => {
+    return weapon
+      .name
+      .toLowerCase()
+      .includes(searchedWeapons)
+  })
+
   return (
     <div className="flexGrow1">
       <button
@@ -93,9 +109,11 @@ export default function AddWeaponModal(props) {
         </h1>
         <button style={buttonStyle} onClick={setModalIsOpenToFalse}>X</button>
         </div>
-
         <div className="flexBoxRow flexGrow3">
-          <WeaponTable searchedWeapons={weapons} setWeapon={setWeapon}></WeaponTable>
+          <div className="flexGrow1 flexBoxColumn">
+          <SearchBar handleSearch={handleSearch}></SearchBar>
+          <WeaponTable searchedWeapons={foundWeapons} setWeapon={setWeapon} pageSize={15}></WeaponTable>
+          </div>
           <WeaponContainer retrieveCharacterWeapons={props.retrieveCharacterWeapons} character={props.character} weapon={selectedWeapon} setModalIsOpenToFalse={props.setModalIsOpenToFalse}></WeaponContainer>
         </div>
       </Modal>
