@@ -3,7 +3,6 @@ import {useTable, useSortBy, usePagination} from 'react-table';
 
 export default function WeaponTable(props) {
 
-  const isCharacter = props.isCharacter
   const data = props.searchedWeapons
   const pageSize = props.pageSize
 
@@ -87,16 +86,17 @@ export default function WeaponTable(props) {
           {cell.row.values.dice_type}
         </button>
       )
-    },{
-      display: 'none',
-      Header: 'Actions',
-      accessor: 'delete',
-      Cell: ({ cell }) => (
-        <button className="tableBtn" value={cell.row.values.delete} onClick={props.removeWeapon}>
-            Delete
-        </button>
-      )
     }
+    // {
+    //   display: 'none',
+    //   Header: 'Actions',
+    //   accessor: 'delete',
+    //   Cell: ({ cell }) => (
+    //     <button className="tableBtn" value={cell.row.values.delete} onClick={props.removeWeapon}>
+    //         Delete
+    //     </button>
+    //   )
+    // }
 
   ]
 

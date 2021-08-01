@@ -30,7 +30,7 @@ export default function WeaponContainer(props) {
       <div className="flexGrow1" role="group" style={containerNav}>
         <button style={{cursor: 'default'}}className="navBtn">Weapon</button>
       </div>
-      <div className="flexGrow1" style={{ flexGrow: "10" }}>
+      <div className="flexGrow1 flexBoxColumn" style={{ flexGrow: "10", alignItems: 'center' }}>
         {weapon ? <Weapon weapon={weapon}></Weapon> : "Select a weapon"}
       </div>
       <div className="flexGrow1" role="group" style={containerNav}>
