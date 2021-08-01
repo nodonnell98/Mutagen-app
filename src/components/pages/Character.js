@@ -4,10 +4,13 @@ import DeleteCharacter from "../CharacterComponents/DeleteCharacter";
 import CharacterNavLinks from "../CharacterComponents/CharacterNavLinks";
 import CharacterStats from "../CharacterComponents/Stats/CharacterStats";
 import Inventory from "../CharacterComponents/Inventory/Inventory";
+import Class from '../CharacterComponents/Class/Class';
+import ClassificationService from '../../services/classification.service'
 
 export default function Character(props) {
   const [character, setCharacter] = useState({
-    weapon_ids: [2],
+    weapon_ids: [],
+    classification_ids: [],
     id: 0,
     name: "Name",
     description: "Description",
@@ -65,6 +68,8 @@ export default function Character(props) {
     },
   });
 
+  const [classification, setClassification] = useState('');
+
   const [view, setView] = useState('stats');
   const [edit, setEdit] = useState(true);
   const id = props.id.match.params.id;
@@ -98,32 +103,21 @@ export default function Character(props) {
     edit ? i++ : CharacterService.update(id, character);
   };
 
-  const retrieveCharacter = useCallback(() => {
+  const retrieveCharacterInformation = useCallback(() => {
     CharacterService.get(id).then((response) => {
       setCharacter(response.data);
+      ClassificationService.get(response.data.classification_ids[0]).then((response) => {
+        setClassification(response.data)
     });
-  }, [setCharacter]);
+    });
+  }, [setCharacter, setClassification]);
 
   // Fetch list of characters on load
   useEffect(() => {
-    retrieveCharacter();
-  }, [retrieveCharacter]);
+    retrieveCharacterInformation();
+    // retrieveCharacterClass();
+  }, [retrieveCharacterInformation]);
 
-  const checkStatsView = () => {
-    if (view == 'stats') {
-      return true
-    } else {
-      return false
-    }
-  }
-
-  const checkInventoryView = () => {
-    if (view == 'inventory') {
-      return true
-    } else {
-      return false
-    }
-  }
 
   return (
     <div style={characterContainerStyle}>
@@ -165,6 +159,11 @@ export default function Character(props) {
         edit={edit}
         setCharacter={setCharacter}
       ></Inventory> : false }
+       { view == 'class' ?
+      <Class
+      character={character}
+      classification={classification}
+      ></Class> : false }
       </section>
 
     </div>

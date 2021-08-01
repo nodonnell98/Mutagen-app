@@ -1,16 +1,25 @@
-import React, { useState, useCallback } from "react";
-import { Form, Button } from "react-bootstrap";
+import React, { useState, useCallback, useEffect } from "react";
+import { Form, Button, Dropdown } from "react-bootstrap";
 
 import CharacterService from "../../services/character.service";
+import ClassificationService from "../../services/classification.service";
 
-export default function CharacterForm() {
+export default function CharacterForm(props) {
   const [name, setName] = useState("");
-  const [description, setDescription] = useState("");
   const [error, setError] = useState("");
+  const [label, setLabel] = useState('Select Class')
+
+  const classification_id = props.classification_id
+  const classifications = props.classifications
+  const setClassificationId = props.setClassificationId
+
+
 
   let params = {
-    name: name,
-    description: description,
+    character: {
+      name: name,
+      classification_ids: [classification_id]
+    }
   };
 
   const onSubmit = useCallback(
@@ -25,22 +34,28 @@ export default function CharacterForm() {
           setError(e.response.data.errors);
         });
     },
-    [name, description]
+    [name, classification_id]
   );
 
   function validateForm() {
-    return name.length > 0;
+    return name.length > 0 && classification_id != undefined;
   }
 
   return (
-    <div className="flexBoxColumn" style={{padding: '5%'}}>
-      <h1 className="flexGrow1" style={{ fontSize: '20px' }}>Create Character</h1>
+    <div className="flexBoxColumn" style={{ padding: "5%" }}>
+      <h1 className="flexGrow1" style={{ fontSize: "20px" }}>
+        Create Character
+      </h1>
       <Form className="flexGrow1" onSubmit={onSubmit}>
         <Form.Group size="lg" controlId="name">
           <Form.Label>Name</Form.Label>
           <Form.Control
             autoFocus
-            style={{ textAlign: "center", backgroundColor: '#224e4c', color: 'white' }}
+            style={{
+              textAlign: "center",
+              backgroundColor: "#224e4c",
+              color: "white",
+            }}
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
@@ -48,14 +63,21 @@ export default function CharacterForm() {
         </Form.Group>
 
         <Form.Group size="lg" controlId="description">
-          <Form.Label>Description</Form.Label>
-          <Form.Control
-            autoFocus
-            style={{ textAlign: "center", backgroundColor: '#224e4c', color: 'white' }}
-            type="text"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-          />
+          <Form.Label>Class</Form.Label>
+          <Dropdown>
+            <Dropdown.Toggle variant="success" id="dropdown-basic" style={{backgroundColor: '#66FCF1', border: '#66FCF1', color: '#2a615e'}}>
+              {label}
+            </Dropdown.Toggle>
+
+            <Dropdown.Menu>
+
+              { classifications.map((classificationArr, i) => {
+                return (
+                  <Dropdown.Item href="#/action-1" key={i} onClick={()=> setLabel(classificationArr.name)} onSelect={() => setClassificationId(classificationArr.id)}>{classificationArr.name}</Dropdown.Item>
+                )
+              })}
+            </Dropdown.Menu>
+          </Dropdown>
         </Form.Group>
 
         <Button
@@ -66,7 +88,7 @@ export default function CharacterForm() {
             marginTop: "2%",
             marginBottom: "2%",
             backgroundColor: "#66FCF1",
-            color: " white",
+            color: "#2a615e",
             border: "none",
             cursor: "pointer",
           }}

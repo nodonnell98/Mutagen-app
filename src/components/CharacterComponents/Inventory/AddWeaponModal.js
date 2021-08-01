@@ -114,7 +114,7 @@ export default function AddWeaponModal(props) {
           <SearchBar handleSearch={handleSearch}></SearchBar>
           <WeaponTable searchedWeapons={foundWeapons} setWeapon={setWeapon} pageSize={15}></WeaponTable>
           </div>
-          <WeaponContainer retrieveCharacterWeapons={props.retrieveCharacterWeapons} character={props.character} weapon={selectedWeapon} setModalIsOpenToFalse={props.setModalIsOpenToFalse}></WeaponContainer>
+          <WeaponContainer retrieveCharacterWeapons={props.retrieveCharacterWeapons} character={props.character} weapon={selectedWeapon} setModalIsOpenToFalse={setModalIsOpenToFalse}></WeaponContainer>
         </div>
       </Modal>
     </div>
