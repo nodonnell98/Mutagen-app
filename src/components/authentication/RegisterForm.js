@@ -97,7 +97,8 @@ export default function RegisterForm() {
           }} disabled={!validateForm()}>
             Register
           </Button>
-
+          {error ? <p style={{color: '#fbff8d'}}>{error}</p> : false }
+          { ((passwordConfirmation != password) && (passwordConfirmation.length >= 1)) ?  <p style={{color: '#fbff8d'}}>Passwords don't match</p> : false }
         </Form>
       </div>
     </div>

@@ -22,6 +22,7 @@ export default function LoginForm() {
         })
         .catch((e) => {
           setError(e.response.data.errors);
+          console.log(e.response.data)
         });
   }
 
@@ -54,7 +55,7 @@ export default function LoginForm() {
               marginTop: '2%',
               marginBottom: '2%',
               backgroundColor: '#66FCF1',
-              color:' white',
+              color:'#224e4c',
               border: 'none',
               cursor: 'pointer'
             }}
@@ -62,6 +63,7 @@ export default function LoginForm() {
           }>
             Login
           </Button>
+          {error ? <p style={{color: '#fbff8d'}}>{error}</p> : false }
 
         </Form>
       </div>
