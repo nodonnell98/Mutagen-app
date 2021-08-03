@@ -7,12 +7,14 @@ export default function CharacterNotes(props) {
     border: 'none',
     border: '1px solid #66FCF1',
     width: '100%',
-    minHeight: '60%'
+    minHeight: '60%',
+    fontSize: '20px'
   }
   const textDisabled = {
     background: 'none',
     width: '100%',
-    minHeight: '60%'
+    minHeight: '60%',
+    fontSize: '20px'
   }
 
   const handleChange = event => props.setCharacter({
