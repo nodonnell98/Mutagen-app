@@ -3,7 +3,7 @@ import React from 'react';
 export default function SearchBar(props) {
     return (
         <div>
-            <input style={searchStyle} onChange={props.handleSearch} type='text' placeholder="Search"></input>
+            <input style={searchStyle} onChange={props.handleSearch} type='text' placeholder="Search by name"></input>
         </div>
     )
 }
