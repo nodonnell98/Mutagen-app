@@ -1,9 +1,12 @@
 body {
   margin: 0;
   font-family: 'Orbitron', sans-serif;
+  /* font-family: 'Cairo', sans-serif; */
+  /* font-family: 'Abel', sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #1F2833
+  background-color: #1F2833;
+  letter-spacing: 2px
   ;
 }
 
