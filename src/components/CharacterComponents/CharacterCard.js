@@ -1,4 +1,3 @@
-import React, { useState, useCallback, useEffect } from "react";
 import { Card } from "react-bootstrap";
 
 export default function CharacterCard(props) {
