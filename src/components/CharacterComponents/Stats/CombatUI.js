@@ -4,17 +4,19 @@ export default function CombatUI(props) {
   const character = props.character;
 
   const combatStatContainerStyle = {
-    marginTop: '5%'
+    marginTop: "5%",
   };
-
-  console.log(character.traits)
-  console.log(character.classification_ids[0])
-
 
   return (
     <div className="flexBoxColumn flexGrow1 container">
-      <div className="flexBoxRow flexGrow1" style={combatStatContainerStyle, {width:'100%', marginTop: '5%', borderBottom: '1px solid #66FCF1'}}>
-        <div className="flexBoxColumn flexGrow1" >
+      <div
+        className="flexBoxRow flexGrow1"
+        style={
+          (combatStatContainerStyle,
+          { width: "100%", marginTop: "5%", borderBottom: "1px solid #66FCF1" })
+        }
+      >
+        <div className="flexBoxColumn flexGrow1">
           <h1 style={{ fontSize: "20px" }}>Dodge</h1>
           <p>{Math.floor(character.traits.strength / 5)}</p>
         </div>
