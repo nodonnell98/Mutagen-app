@@ -58,14 +58,15 @@ export default function Characters() {
 
   return (
     <div style={containerStyle}>
+       <div style={cardContainerStyle} >
+        <Card style={cardStyle} class="noHover"><CharacterForm classification_id={classification_id} classifications={classifications} setClassificationId={setClassificationId}></CharacterForm></Card>
+      </div>
       {characters.map((char, i) => {
          return (<div style={cardContainerStyle} >
-          <Link to={"/character/" + char.id}><CharacterCard class="card" style={cardStyle} key={i} character={char} classifications={classifications} cardStyle={cardStyle} prop></CharacterCard></ Link>
+          <Link to={"/character/" + char.id}><CharacterCard style={cardStyle} key={i} character={char} classifications={classifications} cardStyle={cardStyle} className="cardHover"></CharacterCard></ Link>
         </div>)
       })}
-      <div style={cardContainerStyle} >
-        <Card style={cardStyle}><CharacterForm classification_id={classification_id} classifications={classifications} setClassificationId={setClassificationId}></CharacterForm></Card>
-      </div>
+
     </div>
   );
 }

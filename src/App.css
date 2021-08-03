@@ -53,6 +53,12 @@ a:hover {
   box-shadow: -1px 0px 34px 0px rgba(62,170,184,0.92);
 }
 
+.noHover:hover {
+  transform: scale(1.00);
+  transition: 0.2s;
+  box-shadow: -1px 0px 34px 0px rgba(62,170,184,0.92);
+}
+
 .chart {
   width: 100%;
   height: 300px;
