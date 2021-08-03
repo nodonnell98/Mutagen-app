@@ -51,7 +51,7 @@ export default function Skills(props) {
           return (
             <div>
             <div className={"flexBoxRow flexGrow1"} style={skillStyle} key={i}>
-              <p className="flexGrow1">{skill}</p>
+              <p className="flexGrow1">{skill.toUpperCase()}</p>
               <p className="flexGrow1" style={profStyle(character.skills[skillCategory][skill])}>{getProficiency(character.skills[skillCategory][skill])}</p>
             </div>
             <div className="flexGrow1" style={{borderBottom: '1px solid #66FCF1', height: '1px'}}> </div>
