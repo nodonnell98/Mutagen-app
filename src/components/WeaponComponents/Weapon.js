@@ -29,11 +29,11 @@ export class Weapon extends Component {
     let src = '';
     switch (this.props.weapon.damage_type) {
       case 'Cryo':
-        src = '/images/weaponIcons/cold.png';
+        src = '/images/weaponImg/knife.png';
         break;
 
       case 'Kinetic':
-        src = '/images/weaponIcons/kinetic.png';
+        src = '/images/weaponImg/knife.png';
         break;
 
       case 'Incendiary':
@@ -77,7 +77,7 @@ export class Weapon extends Component {
           }}>{name}</p>
         </div>
         <div style={statItem}>
-          <img src={this.getDamageType()} style={weaponIcon}/>
+          <img src={this.getDamageType()} style={weaponKnife}/>
         </div>
         <div style={this.weaponName()}>
 
@@ -140,6 +140,10 @@ const weaponInfo = {
 
 const weaponIcon = {
   height: '30px'
+}
+
+const weaponKnife = {
+  height: '100px'
 }
 
 Weapon.propTypes = {
