@@ -62,7 +62,7 @@ export default function CharacterForm(props) {
           />
         </Form.Group>
 
-        <Form.Group size="lg" controlId="description">
+        <Form.Group size="lg" controlId="class">
           <Form.Label>Class</Form.Label>
           <Dropdown>
             <Dropdown.Toggle variant="success" id="dropdown-basic" style={{backgroundColor: '#66FCF1', border: '#66FCF1', color: '#2a615e'}}>
