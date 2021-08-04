@@ -24,9 +24,9 @@ export default function CharacterNotes(props) {
   });
 
   return (
-    <div class="flexBoxColumn container flexGrow1" style={{alignItems: 'flex-start', height: '600px', justifyContent: 'flex-start', paddingTop: '2%'}}>
+    <div class="flexBoxColumn container flexGrow1" style={{ height: '600px', justifyContent: 'flex-start', paddingTop: '2%'}}>
       <h1 style={{borderBottom: '1px solid #66FCF1', marginBottom: '5%'}}>Description</h1>
-      <textarea cols="40" wrap="hard" disabled={props.edit} value={props.character.description} onChange={handleChange} style={ props.edit ? textDisabled : textAreaStyle}></textarea>
+      <textarea placeholder="Enter a description..." cols="40" wrap="hard" disabled={props.edit} value={props.character.description} onChange={handleChange} style={ props.edit ? textDisabled : textAreaStyle}></textarea>
     </div>
   )
 }
