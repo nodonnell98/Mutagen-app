@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button'
 import WeaponDataService from "../../services/weapon.service.js";
 import WeaponTable from '../WeaponComponents/WeaponTable'
 import SearchBar from '../SearchBar';
-import WeaponContainer from '../WeaponComponents/WeaponContainer';
+import WeaponList from '../WeaponComponents/WeaponList.js';
 
 class Weapons extends Component {
   state = {
@@ -68,14 +68,7 @@ class Weapons extends Component {
     return (
       <div style={pageContainer}>
         <h2 style={pageHeader}>Welcome to the Armoury</h2>
-        <SearchBar handleSearch={this.handleSearch}/>
-
-        <div style={containerStyle}>
-          <div style={{flexBasis: '100%'}}>
-          <WeaponTable setWeapon={this.setWeapon} searchedWeapons={searchedWeapons} pageSize={15}/>
-          </div>
-        </div>
-
+        <WeaponList></WeaponList>
       </div>
     )
   }

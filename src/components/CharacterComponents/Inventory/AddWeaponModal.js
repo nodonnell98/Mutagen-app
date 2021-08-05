@@ -2,8 +2,9 @@ import React, { useState, useCallback, useEffect } from "react";
 import Modal from "react-modal";
 import WeaponTable from "../../WeaponComponents/WeaponTable";
 import WeaponService from "../../../services/weapon.service";
-import WeaponContainer from "../../WeaponComponents/WeaponContainer";
+import WeaponContainer from "../../WeaponComponents/WeaponContainer/WeaponContainer";
 import SearchBar from '../../SearchBar'
+import WeaponList from "../../WeaponComponents/WeaponList";
 
 export default function AddWeaponModal(props) {
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -109,13 +110,7 @@ export default function AddWeaponModal(props) {
         </h1>
         <button style={buttonStyle} onClick={setModalIsOpenToFalse}>X</button>
         </div>
-        <div className="flexBoxRow flexGrow3">
-          <div className="flexGrow1 flexBoxColumn">
-          <SearchBar handleSearch={handleSearch}></SearchBar>
-          <WeaponTable searchedWeapons={foundWeapons} setWeapon={setWeapon} pageSize={15}></WeaponTable>
-          </div>
-          <WeaponContainer retrieveCharacterWeapons={props.retrieveCharacterWeapons} character={props.character} weapon={selectedWeapon} setModalIsOpenToFalse={setModalIsOpenToFalse}></WeaponContainer>
-        </div>
+        <WeaponList character={props.character} setModalIsOpenToFalse={setModalIsOpenToFalse} addCharacter={true}></WeaponList>
       </Modal>
     </div>
   );
