@@ -61,7 +61,7 @@ export default function AddWeaponModal(props) {
           >
             Add Weapon
           </h1>
-          <button style={buttonStyle} onClick={setModalIsOpenToFalse}>
+          <button style={buttonStyle} className="textGlow" onClick={setModalIsOpenToFalse}>
             X
           </button>
         </div>
