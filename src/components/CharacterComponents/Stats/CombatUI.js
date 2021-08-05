@@ -46,8 +46,14 @@ export default function CombatUI(props) {
       </div>
       <div className="flexGrow1 " style={combatStatContainerStyle}>
         <div className="flexBoxColumn flexGrow1">
-          <h1 style={{ fontSize: "20px" }}>Health</h1>
+          <h1 style={{ fontSize: "20px" }}>Max Health</h1>
           <p>{Math.floor(character.traits.constitution / 10) + 10}</p>
+        </div>
+      </div>
+      <div className="flexGrow1 " style={combatStatContainerStyle}>
+        <div className="flexBoxColumn flexGrow1">
+          <h1 style={{ fontSize: "20px" }}>Speed</h1>
+          <p>{Math.floor(character.speed)}</p>
         </div>
       </div>
     </div>
