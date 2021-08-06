@@ -23,7 +23,6 @@ export default function TraitCard(props) {
     border: "0",
     borderBottom: 'none',
     fontSize: '18px',
-    marginLeft: "15px",
     borderBottom: "1px solid transparent"
   };
 
@@ -35,7 +34,6 @@ export default function TraitCard(props) {
     color: "#66FCF1",
     border: "0",
     borderBottom: "1px solid #66FCF1",
-    marginLeft: "15px",
     fontSize: '18px'
   };
 

@@ -17,6 +17,7 @@
   color: #66FCF1;
   border-radius: 10px;
   box-shadow: -9px 10px 16px -8px rgb(0,0,0);
+  box-shadow: 2px 2px 21px -3px rgba(0,0,0,0.75) inset;
 }
 
 .containerDark {
@@ -139,6 +140,17 @@ input[type=number] {
 .WeaponTable {
   flex-grow: 3;
   height: 300px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }
 
 
