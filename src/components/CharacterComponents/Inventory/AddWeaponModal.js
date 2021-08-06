@@ -43,13 +43,24 @@ export default function AddWeaponModal(props) {
     fontSize: "20px",
   };
 
+  const addButton = {
+    backgroundColor: "#66FCF1",
+    color: '#1d232b',
+    border: "none",
+    padding: "10px",
+    borderRadius: "40px",
+    paddingLeft: "20px",
+    paddingRight: "20px"
+  }
+
   return (
     <div className="flexGrow1">
       <button
-        className="flexGrow1 containerDark"
+        className="flexGrow1"
         onClick={(e) => {
           handleDeleteClick(e);
         }}
+        style={addButton}
       >
         Add Weapon
       </button>

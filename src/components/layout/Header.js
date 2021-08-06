@@ -6,14 +6,14 @@ import AuthenticationService from '../../services/authentication.service'
 export default function Header() {
 
   const headerStyle = {
-    background: '#1F2833',
+    background: '#17191c',
     color: '#EDF4ED',
     textAlign: 'center',
     padding: '2px',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-evenly',
-    // borderBottom: '3px solid #66FCF1',
+    // borderBottom: '2px solid #66FCF1',
     textDecoration: 'none',
     height: '10vh',
     position: 'fixed',

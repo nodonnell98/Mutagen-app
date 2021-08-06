@@ -119,7 +119,8 @@ export default function Character(props) {
     height: '90vh',
     padding: '2%',
     boxShadow: '20px -1px 11px -12px rgba(0,0,0,0.75)',
-    position: 'fixed'
+    position: 'fixed',
+    marginTop: '5vh'
   }
 
   const informationContainerStyle = {
