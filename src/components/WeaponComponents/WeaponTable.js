@@ -78,7 +78,7 @@ export default function WeaponTable(props) {
       ),
     },
     {
-      Header: "Prof. Bonus",
+      Header: "Aim",
       accessor: "proficiency",
       sortType: "basic",
       Cell: ({ cell }) => (
@@ -167,7 +167,7 @@ export default function WeaponTable(props) {
         data,
         initialState: {
           pageIndex: 0,
-          pageSize: 5,
+          pageSize: 8,
         },
       },
       useSortBy,
@@ -284,7 +284,7 @@ export default function WeaponTable(props) {
 
   return (
     <div className="WeaponTable">
-      <Table columns={columns} data={data} />
+      <Table columns={columns} data={data} style={{fontSize: '25px'}}/>
     </div>
   );
 }
