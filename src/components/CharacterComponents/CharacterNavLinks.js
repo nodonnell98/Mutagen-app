@@ -12,7 +12,7 @@ export default function CharacterNavLinks(props) {
   return (
     <div className="flexBoxColumn flexGrow1">
       <a
-        className="flexGrow1 textGlow "
+        className="flexGrow1 textGlow grad"
         style={navLinkStyle}
         href="#overviewSection"
       >

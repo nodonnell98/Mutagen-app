@@ -12,20 +12,21 @@
 }
 
 .container {
-  background-color: #2a615e;
-  border: 3px solid #66FCF1;
+  background-color: #1d232b;
+  border: 1px solid #66FCF1;
   color: #66FCF1;
   border-radius: 10px;
   box-shadow: -9px 10px 16px -8px rgb(0,0,0);
-  box-shadow: 2px 2px 21px -3px rgba(0,0,0,0.75) inset;
+  /* box-shadow: 2px 2px 15px 5px rgba(0,0,0,0.75) inset; */
 }
 
 .containerDark {
   background-color: #224e4c;
-  /* border: 3px solid #66FCF1; */
+  border: 3px solid #66FCF1;
   color: #66FCF1;
   border-radius: 5px;
   box-shadow: -1px 0px 18px 0px rgb(18,94,100, 0.5);
+  box-shadow: 2px 2px 21px -3px rgba(0,0,0,0.75) inset;
 }
 
 .titleHover {
@@ -152,5 +153,8 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
-
+/*
+.grad {
+  background-image: linear-gradient(to right, #66FCF1 , transparent);
+} */
 

@@ -6,14 +6,14 @@ import AuthenticationService from '../../services/authentication.service'
 export default function Header() {
 
   const headerStyle = {
-    background: '#16191d',
+    background: '#1F2833',
     color: '#EDF4ED',
     textAlign: 'center',
     padding: '2px',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-evenly',
-    borderBottom: '3px solid #66FCF1',
+    // borderBottom: '3px solid #66FCF1',
     textDecoration: 'none',
     height: '10vh',
     position: 'fixed',
@@ -43,13 +43,13 @@ export default function Header() {
   return (
     <div>
       <nav style={headerStyle}>
+      <div style={links}>
+          <Link style={titleStyle} className="titleHover" to="/" name="Mutagen">Mutagen</Link>
+        </div>
         <div style={links}>
           <Link style={navLink} to="/characters">My Characters</Link>
           <Link style={navLink} to="/weapons">Armoury</Link>
           <Link style={navLink} to="/coming_soon">Game Rules</Link>
-        </div>
-        <div style={links}>
-          <Link style={titleStyle} className="titleHover" to="/" name="Mutagen">Mutagen</Link>
         </div>
         <div style={links}>
           <LoginLinks />

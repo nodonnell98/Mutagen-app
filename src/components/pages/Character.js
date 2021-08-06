@@ -124,6 +124,7 @@ export default function Character(props) {
 
   const informationContainerStyle = {
     padding: '5%',
+    paddingTop: '0%',
     marginLeft: '15vh'
   }
 

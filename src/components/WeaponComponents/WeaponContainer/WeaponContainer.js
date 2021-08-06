@@ -15,22 +15,15 @@ export default function WeaponContainer(props) {
     padding: "0",
   };
 
-  const containerNav = {
-    width: "100%",
-    height: "10%",
-    backgroundColor: "transparent",
-    borderBottom: "2px solid #66FCF1",
-    display: "flex",
-    flexBasis: "10%",
-  };
   //
 
   return (
     <div className="container flexBoxColumn" style={weaponContainerStyle}>
-      <div className="flexGrow1" role="group" style={containerNav}>
+      {weapon ? <Weapon weapon={weapon}></Weapon> : "Select a weapon"}
+      {/* <div className="flexGrow1" role="group" style={containerNav}>
         <button style={{cursor: 'default'}}className="navBtn">Weapon</button>
       </div>
-      <div className="flexGrow1 flexBoxColumn" style={{ flexGrow: "10", alignItems: 'center' }}>
+      <div className="flexGrow1 flexBoxColumn" style={{ flexGrow: "5", alignItems: 'center' }}>
         {weapon ? <Weapon weapon={weapon}></Weapon> : "Select a weapon"}
       </div>
       <div className="flexGrow1" role="group" style={containerNav}>
@@ -41,7 +34,7 @@ export default function WeaponContainer(props) {
           weapon={props.weapon}
         ></AddCharacterWeapon> : false}
 
-      </div>
+      </div> */}
     </div>
   );
 }

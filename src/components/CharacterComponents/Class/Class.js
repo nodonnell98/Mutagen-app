@@ -8,11 +8,10 @@ export default function Class(props) {
   const classInfoStyle = {
     marginTop: '2%',
     color: '#66FCF1',
-
   }
 
   return (
-    <div className="flexBoxColumn" >
+    <div className="flexBoxColumn container" style={{width: '50%', padding: '3%'}} >
       <h1 style={classInfoStyle} className="flexGrow1">{classification.name}</h1>
       <h3 style={classInfoStyle } className="flexGrow1">{classification.description}</h3>
       <h3 style={classInfoStyle } className="flexGrow1">Strike: {classification.strike_stat ? classification.strike_stat.toUpperCase() :  classification.strike_stat}</h3>

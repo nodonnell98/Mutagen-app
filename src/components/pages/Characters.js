@@ -32,12 +32,12 @@ export default function Characters() {
 
   const cardStyle = {
     height: "20em",
-    backgroundColor: "#2a615e",
-    border: "3px solid #66FCF1",
+    backgroundColor: "#1d232b",
+    border: "1px solid #66FCF1",
     color: "#66FCF1",
     borderRadius: "10px",
     width: "20em",
-    boxShadow: "-9px 10px 16px -8px rgb(0,0,0)", //rgb(62,170,184)
+    boxShadow: "-9px 10px 16px -8px rgb(0,0,0)",
     cursor: "pointer",
     transition: "0.3s",
   };
@@ -58,8 +58,8 @@ export default function Characters() {
 
   return (
     <div style={containerStyle}>
-      <div style={cardContainerStyle}>
-        <Card style={cardStyle} className="noHover">
+      <div style={cardContainerStyle} >
+        <Card style={cardStyle} className="noHover container">
           <CharacterForm
             classification_id={classification_id}
             classifications={classifications}
@@ -69,7 +69,7 @@ export default function Characters() {
       </div>
       {characters.map((char, i) => {
         return (
-          <div style={cardContainerStyle}>
+          <div style={cardContainerStyle} >
             <Link to={"/character/" + char.id}>
               <CharacterCard
                 style={cardStyle}
