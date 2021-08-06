@@ -10,31 +10,29 @@ export default function WeaponList(props) {
   const [selectedWeapon, setSelectedWeapon] = useState();
   const [searchedWeapons, setSearchedWeapons] = useState([]);
 
-  const retrieveCharacterWeapons = useCallback(() => {
-    WeaponService.index().then((response) => {
-      let character_weapons = [];
+  const retrieveWeapons = useCallback((character) => {
+    if (props.list == "character_weapons") {
+      WeaponService.index().then((response) => {
+        let character_weapons = [];
 
-      response.data.map((weapon) => {
-        // Loop through each weapon, for each weapon make an array of the character ids
-        let character_id_keys = Object.keys(weapon.character_ids);
+        response.data.map((weapon) => {
+          // Loop through each weapon, for each weapon make an array of the character ids
+          let character_id_keys = Object.keys(weapon.character_ids);
+          character_id_keys.map((id_key) => {
+            // Loop through each id and check if the id matches the current character id, if it does push that weapon to the weapon array
+            if (weapon.character_ids[id_key] == character.id) {
+              character_weapons.push(weapon);
 
-        character_id_keys.map((id_key) => {
-          // Loop through each id and check if the id matches the current character id, if it does push that weapon to the weapon array
-          if (weapon.character_ids[id_key] == character.id) {
-            character_weapons.push(weapon);
-          }
+            }
+          });
         });
+        //set searched weapons as the weapon array aka all the weapons that match the character id
+         setWeapons(character_weapons);
       });
-
-      //set searched weapons as the weapon array aka all the weapons that match the character id
-      setWeapons(character_weapons);
-    });
-  }, [setWeapons]);
-
-  const retrieveWeapons = useCallback(() => {
-    WeaponService.index().then((response) => {
-      setWeapons(response.data);
-    });
+    } else
+      WeaponService.index().then((response) => {
+        setWeapons(response.data);
+      });
   }, [setWeapons]);
 
   const setWeapon = (e) => {
@@ -57,29 +55,22 @@ export default function WeaponList(props) {
 
   // Fetch list of Weapons on load
   useEffect(() => {
-    if (props.list == "character_weapons") {
-      retrieveCharacterWeapons();
-    } else retrieveWeapons();
-  }, [retrieveCharacterWeapons, retrieveWeapons]);
+    retrieveWeapons(character);
+  }, [retrieveWeapons, character]);
 
   return (
     <div class="flexBoxColumn flexGrow2">
       <SearchBar handleSearch={handleSearch} />
       <div class="flexBoxRow flexGrow1">
-
-        <WeaponTable
-          setWeapon={setWeapon}
-          searchedWeapons={foundWeapons}
-        />
-          <WeaponContainer
-        retrieveCharacterWeapons={retrieveCharacterWeapons}
-        character={character}
-        weapon={selectedWeapon}
-        addCharacter={props.addCharacter}
-        setModalIsOpenToFalse={props.setModalIsOpenToFalse}
-      ></WeaponContainer>
+        <WeaponTable setWeapon={setWeapon} searchedWeapons={foundWeapons} />
+        <WeaponContainer
+          retrieveCharacterWeapons={retrieveWeapons}
+          character={character}
+          weapon={selectedWeapon}
+          addCharacter={props.addCharacter}
+          setModalIsOpenToFalse={props.setModalIsOpenToFalse}
+        ></WeaponContainer>
       </div>
-
     </div>
   );
 }
