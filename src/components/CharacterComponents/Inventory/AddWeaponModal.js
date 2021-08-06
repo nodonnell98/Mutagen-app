@@ -53,7 +53,7 @@ export default function AddWeaponModal(props) {
       >
         Add Weapon
       </button>
-      <Modal style={modalStyle} isOpen={modalIsOpen}>
+      <Modal style={modalStyle} isOpen={modalIsOpen} >
         <div className="flexGrow1 flexBoxRow">
           <h1
             className="flexGrow1"

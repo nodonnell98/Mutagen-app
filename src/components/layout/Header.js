@@ -14,7 +14,10 @@ export default function Header() {
     alignItems: 'center',
     justifyContent: 'space-evenly',
     borderBottom: '3px solid #66FCF1',
-    textDecoration: 'none'
+    textDecoration: 'none',
+    height: '10vh',
+    position: 'fixed',
+    width: '100%'
   }
 
   const titleStyle = {

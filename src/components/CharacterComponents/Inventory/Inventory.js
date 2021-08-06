@@ -1,7 +1,4 @@
 import React, { useState, useCallback, useEffect } from 'react'
-import WeaponTable from '../../WeaponComponents/WeaponTable';
-import WeaponService from '../../../services/weapon.service';
-import SearchBar from '../../SearchBar';
 import AddWeaponModal from './AddWeaponModal';
 import WeaponList from '../../WeaponComponents/WeaponList';
 
