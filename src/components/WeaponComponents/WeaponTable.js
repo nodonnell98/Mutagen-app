@@ -141,8 +141,7 @@ export default function WeaponTable(props) {
     height: '40px',
     alignItems: 'center',
     display: 'flex',
-    justifyContent: 'center',
-    paddingBottom: '5px'
+    justifyContent: 'center'
   }
 
   const Table = ({ columns, data }) => {

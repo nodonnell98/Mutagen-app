@@ -17,7 +17,8 @@ export default function Header() {
     textDecoration: 'none',
     height: '10vh',
     position: 'fixed',
-    width: '100%'
+    width: '100%',
+    zIndex: '100'
   }
 
   const titleStyle = {
@@ -31,7 +32,8 @@ export default function Header() {
 
   const navLink = {
     marginLeft: '1em',
-    marginRight: '1em'
+    marginRight: '1em',
+    fontSize: '20px'
   }
 
   const links = {

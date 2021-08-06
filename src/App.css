@@ -13,7 +13,7 @@
 
 .container {
   background-color: #2a615e;
-  /* border: 3px solid #66FCF1; */
+  border: 3px solid #66FCF1;
   color: #66FCF1;
   border-radius: 10px;
   box-shadow: -9px 10px 16px -8px rgb(0,0,0);

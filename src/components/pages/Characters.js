@@ -19,7 +19,7 @@ export default function Characters() {
     listStyle: "none",
     width: "100%",
     margin: "5%",
-    marginTop: '15vh',
+    marginTop: '10vh',
     justifyContent: "center",
     alignItems: "center",
   };
@@ -33,7 +33,7 @@ export default function Characters() {
   const cardStyle = {
     height: "20em",
     backgroundColor: "#2a615e",
-    // border: "3px solid #66FCF1",
+    border: "3px solid #66FCF1",
     color: "#66FCF1",
     borderRadius: "10px",
     width: "20em",
