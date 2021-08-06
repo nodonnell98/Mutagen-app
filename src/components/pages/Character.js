@@ -94,7 +94,6 @@ export default function Character(props) {
   // Fetch list of characters on load
   useEffect(() => {
     retrieveCharacterInformation();
-    // retrieveCharacterClass();
   }, [retrieveCharacterInformation]);
 
   const characterContainerStyle = {
