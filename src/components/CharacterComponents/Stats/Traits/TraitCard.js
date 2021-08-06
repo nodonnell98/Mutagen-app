@@ -2,7 +2,6 @@ import React from "react";
 
 export default function TraitCard(props) {
   const trait = props.trait;
-  const value = props.value;
 
   const traitCardStyle = {
     height: "100px",
@@ -58,6 +57,8 @@ export default function TraitCard(props) {
         value={props.character.traits[trait]}
         style={props.edit ? inputStyle : inputActiveStyle}
         onChange={handleChange}
+        min='0'
+        max='100'
       ></input>
     </div>
   );
