@@ -1,13 +1,13 @@
 import React, { Component } from "react";
-import Weapon from "./Weapon";
-import AddCharacterWeapon from "../CharacterComponents/Inventory/AddCharacterWeapon";
+import Weapon from "../Weapon";
+import AddCharacterWeapon from "./AddCharacterWeapon";
 
 export default function WeaponContainer(props) {
   const weapon = props.weapon;
 
   const weaponContainerStyle = {
     marginLeft: "1em",
-    height: "550px",
+    height: "475px",
     width: "40%",
     display: "flex",
     justifyContent: "start",
@@ -34,12 +34,13 @@ export default function WeaponContainer(props) {
         {weapon ? <Weapon weapon={weapon}></Weapon> : "Select a weapon"}
       </div>
       <div className="flexGrow1" role="group" style={containerNav}>
-        <AddCharacterWeapon
+        { props.addCharacter ? <AddCharacterWeapon
           retrieveCharacterWeapons={props.retrieveCharacterWeapons}
           character={props.character}
           setModalIsOpenToFalse={props.setModalIsOpenToFalse}
           weapon={props.weapon}
-        ></AddCharacterWeapon>
+        ></AddCharacterWeapon> : false}
+
       </div>
     </div>
   );

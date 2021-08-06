@@ -3,7 +3,7 @@ import { useTable, useSortBy, usePagination } from "react-table";
 
 export default function WeaponTable(props) {
   const data = props.searchedWeapons;
-  const pageSize = props.pageSize;
+  const pageSize = 5;
 
   const columns = [
     {
@@ -136,12 +136,13 @@ export default function WeaponTable(props) {
     marginLeft: '10px',
     backgroundColor: '#224e4c',
     border: '2px solid #66FCF1',
-    borderRadius: '10px',
+    borderRadius: '2px',
     width: '40px',
     height: '40px',
     alignItems: 'center',
     display: 'flex',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    paddingBottom: '5px'
   }
 
   const Table = ({ columns, data }) => {
@@ -167,7 +168,7 @@ export default function WeaponTable(props) {
         data,
         initialState: {
           pageIndex: 0,
-          pageSize: `${pageSize}`,
+          pageSize: 5,
         },
       },
       useSortBy,
