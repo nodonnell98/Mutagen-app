@@ -1,4 +1,5 @@
 import React from "react";
+import TypedText from "../layout/TypedText";
 
 export default function Home() {
   const textStyle = {
@@ -28,10 +29,9 @@ export default function Home() {
   return (
     <div className="flexBoxRow" style={homeContainerStyle}>
       <div className="flexBoxColumn flexGrow1" style={textStyle}>
-        <h1 className="flexGrow1">The TTRPG of the</h1>
-        <h1 className="flexGrow1" style={{fontWeight: 'bold'}}>FUTURE</h1>
-        <p>A game like you have never experienced before</p>
-        <p>Enjoy the award winning game: Mutagen</p>
+        <TypedText></TypedText>
+        <p>Explore this site and discover a new way of playing</p>
+        <p>Completely free, completely fun, completely future</p>
         <button className="primary-button">Learn more</button>
       </div>
       <div className="flexGrow1">
