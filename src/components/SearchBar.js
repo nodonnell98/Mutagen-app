@@ -16,6 +16,5 @@ const searchStyle = {
     height: '2em',
     textAlign: 'center',
     backgroundColor: ' #2b343f',
-    color: '#66FCF1',
-    fontFamily: 'Orbitron'
+    color: '#66FCF1'
 }
