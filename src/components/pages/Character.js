@@ -113,67 +113,87 @@ export default function Character(props) {
   };
 
   const characterSideNavStyle = {
-    maxWidth: '20vh',
-    backgroundColor: 'tranparent',
-    borderRight: '1px solid #66FCF1',
-    height: '90vh',
-    padding: '2%',
-    boxShadow: '20px -1px 11px -12px rgba(0,0,0,0.75)',
-    position: 'fixed',
-    marginTop: '5vh'
-  }
+    maxWidth: "20vh",
+    backgroundColor: "tranparent",
+    borderRight: "1px solid #66FCF1",
+    height: "90vh",
+    padding: "2%",
+    boxShadow: "20px -1px 11px -12px rgba(0,0,0,0.75)",
+    position: "fixed",
+    marginTop: "5vh",
+  };
 
   const informationContainerStyle = {
-    padding: '5%',
-    paddingTop: '0%',
-    marginLeft: '15vh'
-  }
+    padding: "5%",
+    paddingTop: "0%",
+    marginLeft: "15vh",
+  };
 
-  const sectionStyle= {
-    minHeight: '90vh',
-    paddingTop: '10vh'
-  }
-
+  const sectionStyle = {
+    minHeight: "90vh",
+    paddingTop: "10vh",
+  };
 
   return (
     <div style={characterContainerStyle}>
       <div className="flexBoxColumn flexGrow1" style={characterSideNavStyle}>
-        <h1 className="flexGrow1" style={{ color: "#66FCF1", fontSize: '20px' }}>
-          {character.name}
-        </h1>
-        <CharacterNavLinks></CharacterNavLinks>
-        <span className="flexGrow3" style={{ borderTop: '1px solid #66FCF1'}}></span>
-        <div className="flexGrow1 flexBoxRow">
-          <button
-            style={buttonStyle}
-            className="flexGrow1 textGlow"
-            onClick={(e) => {
-              handleEditClick(e);
+        <div className="flexBoxColumn flexGrow1">
+          <h1
+            className=""
+            style={{
+              color: "#66FCF1",
+              fontSize: "20px",
+              fontFamily: "Orbitron, sans-serif",
             }}
           >
-            {edit ? "Edit" : "Save"}
-          </button>
-          <DeleteCharacter id={character.id}></DeleteCharacter>
+            {character.name}
+          </h1>
+          <div className=" flexBoxRow">
+            <button
+              style={buttonStyle}
+              className="flexGrow1 textGlow"
+              onClick={(e) => {
+                handleEditClick(e);
+              }}
+            >
+              {edit ? "Edit" : "Save"}
+            </button>
+            <DeleteCharacter id={character.id}></DeleteCharacter>
+          </div>
+        </div>
+        <div className="flexBoxColumn flexGrow3">
+          <CharacterNavLinks></CharacterNavLinks>
         </div>
       </div>
-      <div className="flexBoxColumn flexGrow3" style={informationContainerStyle}>
-        <section className="flexGrow1" style={sectionStyle} id="overviewSection">
+      <div
+        className="flexBoxColumn flexGrow3"
+        style={informationContainerStyle}
+      >
+        <section
+          className="flexGrow1"
+          style={sectionStyle}
+          id="overviewSection"
+        >
           <CharacterStats
             character={character}
             edit={edit}
             setCharacter={setCharacter}
           ></CharacterStats>
-       </section>
-       <section className="flexGrow1" style={sectionStyle} id="inventorySection">
+        </section>
+        <section
+          className="flexGrow1"
+          style={sectionStyle}
+          id="inventorySection"
+        >
           <Inventory
             character={character}
             edit={edit}
             setCharacter={setCharacter}
           ></Inventory>
         </section>
-      <section className="flexGrow1" style={sectionStyle} id="classSection">
+        <section className="flexGrow1" style={sectionStyle} id="classSection">
           <Class character={character} classification={classification}></Class>
-      </section>
+        </section>
       </div>
     </div>
   );

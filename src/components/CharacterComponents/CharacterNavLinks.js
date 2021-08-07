@@ -7,12 +7,13 @@ export default function CharacterNavLinks(props) {
     marginRight: "10%",
     cursor: "pointer",
     fontSize: "20px",
+    maxHeight: '50px'
   };
 
   return (
-    <div className="flexBoxColumn flexGrow1">
+    <div className="flexBoxColumn flexGrow1" style={{justifyContent: 'flex-start', borderTop: '1px solid #66FCF1', paddingTop: '20px'}}>
       <a
-        className="flexGrow1 textGlow grad"
+        className="flexGrow1 textGlow"
         style={navLinkStyle}
         href="#overviewSection"
       >

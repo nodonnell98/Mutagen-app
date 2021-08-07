@@ -31,7 +31,7 @@ export default function Weapon(props) {
         break;
 
       case "Short Range":
-        src = "/images/weaponImg/knife.png";
+        src = "/images/weaponImg/revolver-2.png";
         break;
 
       case "Medium Range":
@@ -65,7 +65,7 @@ export default function Weapon(props) {
 
   const descriptionStyle = {
     fontStyle: "italic",
-    fontSize: "small",
+    fontSize: "15px",
     paddingTop: "0",
     background: "#224e4c",
     color: "#66FCF1",
@@ -83,29 +83,18 @@ export default function Weapon(props) {
     paddingBottom: "5px",
   };
 
-  const imgContainerStyle = {};
-
-  const weaponName = () => {
-    return {
-      padding: "1em",
-      display: "flex",
-      margin: "0",
-      alignItems: "center",
-      justifyContent: "center",
-      color: "black",
-      flex: 8,
-    };
-  };
-
   const weapon = props.weapon;
 
   return (
     <div className="flexBoxColumn" style={{ textAlign: "center" }}>
+      <div className="containerDark flexGrow1" style={{paddingTop: '20px'}}>
       <img
         src={getWeaponType()}
-        className="containerDark flexGrow1"
-        style={{ transform: "scale(0.8)" }}
+        style={{ maxWidth: '80%',
+          maxHeight:'80%' }}
       />
+      </div>
+
       <h1 className="flexGrow1">{weapon.name}</h1>
       <p>{weapon.weapon_type}</p>
       <div className="flexBoxRow flexGrow1">

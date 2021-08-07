@@ -33,12 +33,10 @@ td {
 }
 
 .navBtn {
-    height: 100%;
-    flex-basis: 25%;
+    max-height: 10%;
     flex-grow: 1;
     background-color: #224e4c;
     border: 1px solid  #66FCF1;
-    font-family: 'Orbitron', sans-serif;
     font-size: large;
     color: #66FCF1;
 }
