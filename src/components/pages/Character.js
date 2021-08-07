@@ -114,7 +114,7 @@ export default function Character(props) {
 
   const characterSideNavStyle = {
     maxWidth: "20vh",
-    backgroundColor: "tranparent",
+    backgroundColor: "#17191c",
     borderRight: "1px solid #66FCF1",
     height: "90vh",
     padding: "2%",
@@ -136,6 +136,7 @@ export default function Character(props) {
 
   return (
     <div style={characterContainerStyle}>
+      <img className="splash blur" src="/images/city.jpg"></img>
       <div className="flexBoxColumn flexGrow1" style={characterSideNavStyle}>
         <div className="flexBoxColumn flexGrow1">
           <h1

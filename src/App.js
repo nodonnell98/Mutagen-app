@@ -19,7 +19,8 @@ class App extends Component {
       <Router>
         <div className="App">
           <Header/>
-          <div className='appContainer imgBck'>
+          <div className='appContainer'>
+
             <Route exact path="/"><Home /></Route>
             <Route exact path="/weapons">< Weapons /></Route>
             <Route exact path="/weapons/add" ><CreateWeapon /></Route>

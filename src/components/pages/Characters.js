@@ -21,7 +21,7 @@ export default function Characters() {
     margin: "5%",
     marginTop: '10vh',
     justifyContent: "center",
-    alignItems: "center",
+    alignItems: "center"
   };
 
   const cardContainerStyle = {
@@ -33,7 +33,7 @@ export default function Characters() {
   const cardStyle = {
     height: "20em",
     backgroundColor: "#1d232b",
-    border: "1px solid #66FCF1",
+    border: "2px solid #66FCF1",
     color: "#66FCF1",
     borderRadius: "10px",
     width: "20em",
@@ -58,6 +58,7 @@ export default function Characters() {
 
   return (
     <div style={containerStyle}>
+      <img className="splash blur" src="/images/cards.jpg"></img>
       <div style={cardContainerStyle} >
         <Card style={cardStyle} className="noHover container">
           <CharacterForm

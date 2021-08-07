@@ -178,5 +178,20 @@ input[type=number] {
   cursor: pointer;
 }
 
+.splash {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: -50;
+  opacity: 0.8;
+
+}
+
+.blur {
+  filter: blur(8px);
+  -webkit-filter: blur(3px);
+}
 
 

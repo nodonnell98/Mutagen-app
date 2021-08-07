@@ -10,16 +10,16 @@ export default function TypedText() {
   React.useEffect(() => {
     const options = {
     	strings: [
-        'a game from the future',
-        'an experience like no other',
-        'MUTAGEN'
+        'This is an experience',
+        'This is the future',
+        'This is MUTAGEN'
       ],
       typeSpeed: 50,
       backSpeed: 50,
       smartBackspace: true,
-      loop: true,
+      loop: false,
       loopCount: Infinity,
-      backDelay: 700
+      backDelay: 1000
     };
 
     // elRef refers to the <span> rendered below
@@ -35,7 +35,7 @@ export default function TypedText() {
 
   return (
     <div className="type-wrap" style={{fontSize: '60px'}}>
-    This is <span style={{ whiteSpace: 'pre' }} ref={el} />
+    <span style={{ whiteSpace: 'pre', textShadow: '1px 2px 4px #000000' }} ref={el} />
   </div>
   )
 }

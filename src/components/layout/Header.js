@@ -6,10 +6,13 @@ import AuthenticationService from '../../services/authentication.service'
 export default function Header() {
 
   const headerStyle = {
-    background: '#17191c',
+    background: 'rgb(2,0,36)',
+    background: 'linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(0,0,0,0.7525385154061625) 52%, rgba(0,0,0,0) 100%)',
     color: '#EDF4ED',
     textAlign: 'center',
-    padding: '2px',
+    paddingTop: '1%',
+    paddingLeft: '7%',
+    paddingRight: '7%',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-evenly',

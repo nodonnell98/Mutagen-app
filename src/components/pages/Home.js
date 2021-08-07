@@ -23,15 +23,16 @@ export default function Home() {
 
   const homeContainerStyle = {
     width: '100vh',
-    height: '100vh'
+    height: '100vh',
   }
 
   return (
     <div className="flexBoxRow" style={homeContainerStyle}>
+      <img className="splash" src="/images/splash.jpg"></img>
       <div className="flexBoxColumn flexGrow1" style={textStyle}>
         <TypedText></TypedText>
-        <p>Explore this site and discover a new way of playing</p>
-        <p>Completely free, completely fun, completely future</p>
+        <p style={{textShadow: '1px 2px 4px #000000'}}>Explore this site and discover a new way of playing</p>
+        <p style={{textShadow: '1px 2px 4px #000000'}}>Completely free, completely fun, completely future</p>
         <button className="primary-button">Learn more</button>
       </div>
       <div className="flexGrow1">
