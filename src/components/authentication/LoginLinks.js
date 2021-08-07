@@ -8,6 +8,7 @@ export default function LoginLinks() {
   const navLink = {
     marginLeft: "1em",
     marginRight: "1em",
+    borderBackground: '#66FCF1'
   };
 
   const links = {
@@ -28,22 +29,18 @@ export default function LoginLinks() {
     return (
       <div>
         {/* <a style={navLink} onClick={(e) => displayUser()}>Account</a> */}
-        <a style={navLink} onClick={(e) => handleLogout()}>
+        <a className="primary-button" onClick={(e) => handleLogout()}>
           Logout
         </a>
       </div>
     );
   } else {
     return (
-      <div style={links}>
-        <Link style={navLink} to="/login">
-          Login
+
+        <Link className="primary-button" to="/login">
+          Sign In
         </Link>
-        |
-        <Link style={navLink} to="/register">
-          Register
-        </Link>
-      </div>
+
     );
   }
 }

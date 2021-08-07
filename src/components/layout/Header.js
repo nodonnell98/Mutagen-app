@@ -33,26 +33,27 @@ export default function Header() {
   const navLink = {
     marginLeft: '1em',
     marginRight: '1em',
-    fontSize: '20px'
+    fontSize: '20px',
+    width: 'auto'
   }
 
+
   const links = {
-    flex: 3
+    flexGrow: 1,
+    marginRight: '2%'
   }
 
   return (
     <div>
       <nav style={headerStyle}>
-      <div style={links}>
+      <div className="flexBoxRow flexGrow1" style={{marginLeft: '2%'}}>
           <Link style={titleStyle} className="titleHover" to="/" name="Mutagen">Mutagen</Link>
         </div>
-        <div style={links}>
-          <Link style={navLink} to="/characters">My Characters</Link>
-          <Link style={navLink} to="/weapons">Armoury</Link>
-          <Link style={navLink} to="/coming_soon">Game Rules</Link>
-        </div>
-        <div style={links}>
-          <LoginLinks />
+        <div style={links} className="flexBoxRow flexGrow1">
+          <Link style={navLink} className="flexGrow2" to="/characters">My Characters</Link>
+          <Link style={navLink} className="flexGrow1"to="/weapons">Armoury</Link>
+          <Link style={navLink} className="flexGrow2"to="/coming_soon">Game Rules</Link>
+          <LoginLinks className="flexGrow1"/>
         </div>
       </nav>
     </div>

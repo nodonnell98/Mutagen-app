@@ -3,6 +3,7 @@ import {Form, Button} from "react-bootstrap";
 import '../../stylesheets/login.css'
 import '../../App.css'
 import AuthenticationService from "../../services/authentication.service";
+import { Link } from "react-router-dom";
 
 export default function LoginForm() {
   const [email, setEmail] = useState("");
@@ -63,6 +64,7 @@ export default function LoginForm() {
           }>
             Login
           </Button>
+          <Link to='/register' style={{textDecoration: 'underline', paddingBottom: '10px'}} className="textGlow">Don't have an account? Register here</Link>
           {error ? <p style={{color: '#fbff8d'}}>{error}</p> : false }
 
         </Form>

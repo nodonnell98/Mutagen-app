@@ -32,7 +32,7 @@ export default function Home() {
         <h1 className="flexGrow1" style={{fontWeight: 'bold'}}>FUTURE</h1>
         <p>A game like you have never experienced before</p>
         <p>Enjoy the award winning game: Mutagen</p>
-        <button style={buttonStyle}>Learn more</button>
+        <button className="primary-button">Learn more</button>
       </div>
       <div className="flexGrow1">
         {/* <img src="/images/stock.jpg" style={imgStyle} ></img> */}
