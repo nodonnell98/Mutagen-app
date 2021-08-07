@@ -23,19 +23,23 @@ export default function Weapon(props) {
     return colour;
   };
 
-  const getDamageType = () => {
+  const getWeaponType = () => {
     let src = "";
-    switch (props.weapon.damage_type) {
-      case "Cryo":
+    switch (props.weapon.weapon_type) {
+      case "Melee":
         src = "/images/weaponImg/knife.png";
         break;
 
-      case "Kinetic":
+      case "Short Range":
         src = "/images/weaponImg/knife.png";
         break;
 
-      case "Incendiary":
-        src = "/images/weaponIcons/fire.png";
+      case "Medium Range":
+        src = "/images/weaponImg/knife.png";
+        break;
+
+      case "Long Range":
+        src = "/images/weaponImg/knife.png";
         break;
     }
     return src;
@@ -96,9 +100,9 @@ export default function Weapon(props) {
   const weapon = props.weapon;
 
   return (
-    <div className="flexBoxColumn">
+    <div className="flexBoxColumn" style={{ textAlign: "center" }}>
       <img
-        src={getDamageType()}
+        src={getWeaponType()}
         className="containerDark flexGrow1"
         style={{ transform: "scale(0.8)" }}
       />
@@ -111,7 +115,7 @@ export default function Weapon(props) {
         </div>
         <div style={statItem}>
           <p>DICE</p>
-          <p>{weapon.dice_qty + 'd' + weapon.dice_type}</p>
+          <p>{weapon.dice_qty + "d" + weapon.dice_type}</p>
         </div>
         <div style={statItem}>
           <p>AMMO</p>
@@ -128,39 +132,5 @@ export default function Weapon(props) {
       </div>
       <p style={descriptionStyle}>{weapon.description}</p>
     </div>
-    // <div style={weaponContainer}>
-    //   <div style={{ flexBasis: "50%", flexGrow: 1 }}>
-    //     <div style={statItem}>
-    //       <p
-    //         style={{
-    //           color: getRarityColour(),
-    //         }}
-    //       >
-    //         {name}
-    //       </p>
-    //     </div>
-    //     <div style={statItem}>
-    //       <img src={getDamageType()} style={weaponKnife} />
-    //     </div>
-    //     <div style={weaponName()}>
-    //       <div style={statItem}>
-    //         <div style={weaponInfo}></div>
-    //         <img src="/images/weaponIcons/aim.png" style={weaponIcon} />
-    //         <p>{range}</p>
-    //       </div>
-    //       <div style={statItem}>
-    //         <img src="/images/weaponIcons/dice.png" style={weaponIcon} />
-    //         <p>
-    //           {dice_qty}d{dice_type}+ {proficiency}
-    //         </p>
-    //       </div>
-    //       <div style={statItem}>
-    //         <img src="/images/weaponIcons/bullets.png" style={weaponIcon} />
-    //         <p>{ammo}</p>
-    //       </div>
-    //     </div>
-    //   </div>
-    //   <p style={descriptionStyle}>"{description}"</p>
-    // </div>
   );
 }

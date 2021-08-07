@@ -20,21 +20,12 @@ export default function WeaponContainer(props) {
   return (
     <div className="container flexBoxColumn" style={weaponContainerStyle}>
       {weapon ? <Weapon weapon={weapon}></Weapon> : "Select a weapon"}
-      {/* <div className="flexGrow1" role="group" style={containerNav}>
-        <button style={{cursor: 'default'}}className="navBtn">Weapon</button>
-      </div>
-      <div className="flexGrow1 flexBoxColumn" style={{ flexGrow: "5", alignItems: 'center' }}>
-        {weapon ? <Weapon weapon={weapon}></Weapon> : "Select a weapon"}
-      </div>
-      <div className="flexGrow1" role="group" style={containerNav}>
-        { props.addCharacter ? <AddCharacterWeapon
+      { props.addCharacter ? <AddCharacterWeapon
           retrieveCharacterWeapons={props.retrieveCharacterWeapons}
           character={props.character}
           setModalIsOpenToFalse={props.setModalIsOpenToFalse}
           weapon={props.weapon}
         ></AddCharacterWeapon> : false}
-
-      </div> */}
     </div>
   );
 }

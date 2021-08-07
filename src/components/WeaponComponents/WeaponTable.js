@@ -12,7 +12,7 @@ export default function WeaponTable(props) {
       accessor: "name",
       Cell: ({ cell }) => (
         <button
-          className="tableBtn"
+          className="tableBtn text-left"
           value={cell.row.values.name}
           onClick={props.setWeapon}
         >
@@ -27,7 +27,7 @@ export default function WeaponTable(props) {
       sortType: "basic",
       Cell: ({ cell }) => (
         <button
-          className="tableBtn"
+          className="tableBtn text-left"
           value={cell.row.values.name}
           onClick={props.setWeapon}
         >
@@ -41,7 +41,7 @@ export default function WeaponTable(props) {
       sortType: "basic",
       Cell: ({ cell }) => (
         <button
-          className="tableBtn"
+          className="tableBtn text-left"
           value={cell.row.values.name}
           onClick={props.setWeapon}
         >

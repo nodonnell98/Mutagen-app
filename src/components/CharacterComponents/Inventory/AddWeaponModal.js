@@ -20,7 +20,7 @@ export default function AddWeaponModal(props) {
   const modalStyle = {
     color: "66FCF1",
     content: {
-      top: "50%",
+      top: "55%",
       left: "50%",
       right: "auto",
       bottom: "auto",
@@ -28,7 +28,7 @@ export default function AddWeaponModal(props) {
       transform: "translate(-50%, -50%)",
       backgroundColor: "#2a615e",
       width: "80%",
-      height: "90%",
+      height: "80%",
       display: "flex",
       justifyContent: "space-evenly",
       flexDirection: "column",
