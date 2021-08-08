@@ -2,7 +2,6 @@ import React from "react";
 
 export default function TraitCard(props) {
   const trait = props.trait;
-  const value = props.value;
 
   const traitCardStyle = {
     height: "100px",
@@ -10,9 +9,9 @@ export default function TraitCard(props) {
   };
 
   const traitHeaderStyle = {
-    fontSize: "12px",
+    fontSize: "18px",
     paddingBottom: "5px",
-    borderBottom: "1px solid #66FCF1",
+    borderBottom: "1px solid #71f1e8",
   };
 
   const inputStyle = {
@@ -20,11 +19,10 @@ export default function TraitCard(props) {
     alignSelf: "center",
     textAlign: "center",
     backgroundColor: "transparent",
-    color: "#66FCF1",
+    color: "#71f1e8",
     border: "0",
     borderBottom: 'none',
     fontSize: '18px',
-    marginLeft: "15px",
     borderBottom: "1px solid transparent"
   };
 
@@ -33,10 +31,9 @@ export default function TraitCard(props) {
     alignSelf: "center",
     textAlign: "center",
     backgroundColor: "#2f6a67",
-    color: "#66FCF1",
+    color: "#71f1e8",
     border: "0",
-    borderBottom: "1px solid #66FCF1",
-    marginLeft: "15px",
+    borderBottom: "1px solid #71f1e8",
     fontSize: '18px'
   };
 
@@ -58,6 +55,8 @@ export default function TraitCard(props) {
         value={props.character.traits[trait]}
         style={props.edit ? inputStyle : inputActiveStyle}
         onChange={handleChange}
+        min='0'
+        max='100'
       ></input>
     </div>
   );

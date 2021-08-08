@@ -4,8 +4,8 @@ import DeleteCharacter from "../CharacterComponents/DeleteCharacter";
 import CharacterNavLinks from "../CharacterComponents/CharacterNavLinks";
 import CharacterStats from "../CharacterComponents/Stats/CharacterStats";
 import Inventory from "../CharacterComponents/Inventory/Inventory";
-import Class from '../CharacterComponents/Class/Class';
-import ClassificationService from '../../services/classification.service'
+import Class from "../CharacterComponents/Class/Class";
+import ClassificationService from "../../services/classification.service";
 
 export default function Character(props) {
   const [character, setCharacter] = useState({
@@ -68,33 +68,10 @@ export default function Character(props) {
     },
   });
 
-  const [classification, setClassification] = useState('');
+  const [classification, setClassification] = useState("");
 
-  const [view, setView] = useState('stats');
   const [edit, setEdit] = useState(true);
   const id = props.id.match.params.id;
-
-  const characterContainerStyle = {
-    display: "flex",
-    width: "100%",
-    padding: "5%",
-    paddingTop: "1%",
-    flexDirection: "column",
-    flexWrap: "wrap",
-    alignItems: "stretch",
-    justifyContent: "flex-start",
-  };
-
-  const sectionStyle = {
-    marginTop: "1%",
-  };
-
-  const buttonStyle = {
-    background: "none",
-    border: "none",
-    color: "#66FCF1",
-    fontSize: "20px",
-  };
 
   const handleEditClick = (e) => {
     let i;
@@ -106,66 +83,120 @@ export default function Character(props) {
   const retrieveCharacterInformation = useCallback(() => {
     CharacterService.get(id).then((response) => {
       setCharacter(response.data);
-      ClassificationService.get(response.data.classification_ids[0]).then((response) => {
-        setClassification(response.data)
-    });
+      ClassificationService.get(response.data.classification_ids[0]).then(
+        (response) => {
+          setClassification(response.data);
+        }
+      );
     });
   }, [setCharacter, setClassification]);
 
   // Fetch list of characters on load
   useEffect(() => {
     retrieveCharacterInformation();
-    // retrieveCharacterClass();
   }, [retrieveCharacterInformation]);
 
+  const characterContainerStyle = {
+    display: "flex",
+    width: "100%",
+    flexDirection: "row",
+    flexWrap: "noWrap",
+    alignItems: "flex-start",
+    justifyContent: "flex-start",
+  };
+
+  const buttonStyle = {
+    background: "none",
+    border: "none",
+    color: "#71f1e8",
+    fontSize: "20px",
+  };
+
+  const characterSideNavStyle = {
+    maxWidth: "20vh",
+    backgroundColor: "#17191c",
+    borderRight: "1px solid #71f1e8",
+    height: "90vh",
+    padding: "2%",
+    boxShadow: "20px -1px 11px -12px rgba(0,0,0,0.75)",
+    position: "fixed",
+    marginTop: "5vh",
+    opacity: '0.9'
+  };
+
+  const informationContainerStyle = {
+    padding: "5%",
+    paddingTop: "0%",
+    marginLeft: "15vh",
+  };
+
+  const sectionStyle = {
+    minHeight: "90vh",
+    paddingTop: "10vh",
+  };
 
   return (
     <div style={characterContainerStyle}>
-      <section
-        className="flexBoxRow flexGrow1"
-        style={
-          (sectionStyle,
-          { borderBottom: "1px solid #66FCF1", alignItems: "center" })
-        }
-      >
-        <h1 className="flexGrow1" style={{ color: "#66FCF1" }}>
-          {character.name}
-        </h1>
-        <CharacterNavLinks setView={setView}></CharacterNavLinks>
-        <span className="flexGrow3"></span>
-        <div className="flexGrow1 flexBoxRow">
-          <button
-            style={buttonStyle}
-            className="flexGrow1 textGlow"
-            onClick={(e) => {
-              handleEditClick(e);
+      <img className="splash blur" src="/images/city.jpg"></img>
+      <div className="flexBoxColumn flexGrow1" style={characterSideNavStyle}>
+        <div className="flexBoxColumn flexGrow1">
+          <h1
+            className=""
+            style={{
+              color: "#71f1e8",
+              fontSize: "20px",
+              fontFamily: "Orbitron, sans-serif",
             }}
           >
-            {edit ? "Edit" : "Save"}
-          </button>
-          <DeleteCharacter id={character.id}></DeleteCharacter>
+            {character.name}
+          </h1>
+          <div className=" flexBoxRow">
+            <button
+              style={buttonStyle}
+              className="flexGrow1 textGlow"
+              onClick={(e) => {
+                handleEditClick(e);
+              }}
+            >
+              {edit ? "Edit" : "Save"}
+            </button>
+            <DeleteCharacter id={character.id}></DeleteCharacter>
+          </div>
         </div>
-      </section>
-      <section>
-      { view == 'stats' ?
-      <CharacterStats
-        character={character}
-        edit={edit}
-        setCharacter={setCharacter}
-      ></CharacterStats> : false }
-      { view == 'inventory' ?
-      <Inventory
-        character={character}
-        edit={edit}
-        setCharacter={setCharacter}
-      ></Inventory> : false }
-       { view == 'class' ?
-      <Class
-      character={character}
-      classification={classification}
-      ></Class> : false }
-      </section>
-
+        <div className="flexBoxColumn flexGrow3">
+          <CharacterNavLinks></CharacterNavLinks>
+        </div>
+      </div>
+      <div
+        className="flexBoxColumn flexGrow3"
+        style={informationContainerStyle}
+      >
+        <section
+          className="flexGrow1"
+          style={sectionStyle}
+          id="overviewSection"
+        >
+          <CharacterStats
+            character={character}
+            edit={edit}
+            setCharacter={setCharacter}
+          ></CharacterStats>
+        </section>
+        <section
+          className="flexGrow1"
+          style={sectionStyle}
+          id="inventorySection"
+        >
+          <Inventory
+            character={character}
+            edit={edit}
+            setCharacter={setCharacter}
+          ></Inventory>
+        </section>
+        <section className="flexGrow1" style={sectionStyle} id="classSection">
+          <Class character={character} classification={classification}></Class>
+        </section>
+      </div>
     </div>
   );
 }

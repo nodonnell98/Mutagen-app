@@ -12,7 +12,7 @@ export default function WeaponTable(props) {
       accessor: "name",
       Cell: ({ cell }) => (
         <button
-          className="tableBtn"
+          className="tableBtn text-left"
           value={cell.row.values.name}
           onClick={props.setWeapon}
         >
@@ -27,7 +27,7 @@ export default function WeaponTable(props) {
       sortType: "basic",
       Cell: ({ cell }) => (
         <button
-          className="tableBtn"
+          className="tableBtn text-left"
           value={cell.row.values.name}
           onClick={props.setWeapon}
         >
@@ -41,7 +41,7 @@ export default function WeaponTable(props) {
       sortType: "basic",
       Cell: ({ cell }) => (
         <button
-          className="tableBtn"
+          className="tableBtn text-left"
           value={cell.row.values.name}
           onClick={props.setWeapon}
         >
@@ -78,7 +78,7 @@ export default function WeaponTable(props) {
       ),
     },
     {
-      Header: "Prof. Bonus",
+      Header: "Aim",
       accessor: "proficiency",
       sortType: "basic",
       Cell: ({ cell }) => (
@@ -135,14 +135,13 @@ export default function WeaponTable(props) {
     fontSize: '25px',
     marginLeft: '10px',
     backgroundColor: '#224e4c',
-    border: '2px solid #66FCF1',
+    border: '2px solid #71f1e8',
     borderRadius: '2px',
     width: '40px',
     height: '40px',
     alignItems: 'center',
     display: 'flex',
-    justifyContent: 'center',
-    paddingBottom: '5px'
+    justifyContent: 'center'
   }
 
   const Table = ({ columns, data }) => {
@@ -168,7 +167,7 @@ export default function WeaponTable(props) {
         data,
         initialState: {
           pageIndex: 0,
-          pageSize: 5,
+          pageSize: 8,
         },
       },
       useSortBy,
@@ -285,7 +284,7 @@ export default function WeaponTable(props) {
 
   return (
     <div className="WeaponTable">
-      <Table columns={columns} data={data} />
+      <Table columns={columns} data={data} style={{fontSize: '25px'}}/>
     </div>
   );
 }

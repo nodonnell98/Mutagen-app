@@ -4,6 +4,7 @@ import Button from "react-bootstrap/Button";
 import '../../stylesheets/login.css';
 import '../../App.css';
 import AuthenticationService from "../../services/authentication.service";
+import { Link } from "react-router-dom";
 
 
 export default function RegisterForm() {
@@ -90,7 +91,7 @@ export default function RegisterForm() {
           <Button block size="lg" type="submit" style={{
             marginTop: '2%',
             marginBottom: '2%',
-            backgroundColor: '#66FCF1',
+            backgroundColor: '#71f1e8',
             color:'#224e4c',
             border: 'none',
             cursor: 'pointer'
@@ -100,6 +101,7 @@ export default function RegisterForm() {
           {error ? <p style={{color: '#fbff8d'}}>{error}</p> : false }
           { ((passwordConfirmation != password) && (passwordConfirmation.length >= 1)) ?  <p style={{color: '#fbff8d'}}>Passwords don't match</p> : false }
         </Form>
+        <Link to='/login' style={{textDecoration: 'underline', paddingBottom: '10px'}} className="textGlow">I just remembered my account! Back to login</Link>
       </div>
     </div>
   );

@@ -14,25 +14,25 @@ export default function CombatUI(props) {
     marginTop: '5%'
   };
 
-  const retrieveClass = useCallback(() => {
+  const retrieveClass = useCallback((character) => {
     classificationService.get(character.classification_ids[0]).then((res) => {
       setClassification(res.data)
-      console.log(character.traits[classification.strike_stat])
     })
   }, [setClassification])
 
    // Fetch list of characters on load
    useEffect(() => {
-    retrieveClass();
+    retrieveClass(character);
 
-  }, [retrieveClass]);
+  }, [retrieveClass, character]);
 
 
   return (
     <div className="flexBoxColumn flexGrow1 container">
-      <div className="flexBoxRow flexGrow1" style={combatStatContainerStyle, {width:'100%', marginTop: '5%', borderBottom: '1px solid #66FCF1'}}>
+      <div className="flexBoxRow flexGrow1" style={combatStatContainerStyle, {width:'100%', marginTop: '5%', borderBottom: '1px solid #71f1e8'}}>
         <div className="flexBoxColumn flexGrow1" >
           <h1 style={{ fontSize: "20px" }}>Dodge</h1>
+
           <p>{Math.floor(5 + (character.traits[classification.dodge_stat] / 5))}</p>
         </div>
         <div className="flexBoxColumn flexGrow1">
@@ -41,6 +41,7 @@ export default function CombatUI(props) {
         </div>
         <div className="flexBoxColumn flexGrow1">
           <h1 style={{ fontSize: "20px" }}>Strike</h1>
+          {console.log(character.traits[classification.strike_stat])}
           <p>{Math.floor(character.traits[classification.strike_stat] / 10)}</p>
         </div>
       </div>
