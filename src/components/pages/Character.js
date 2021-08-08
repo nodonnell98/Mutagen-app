@@ -112,18 +112,6 @@ export default function Character(props) {
     fontSize: "20px",
   };
 
-  const characterSideNavStyle = {
-    maxWidth: "20vh",
-    backgroundColor: "#17191c",
-    borderRight: "1px solid #71f1e8",
-    height: "90vh",
-    padding: "2%",
-    boxShadow: "20px -1px 11px -12px rgba(0,0,0,0.75)",
-    position: "fixed",
-    marginTop: "5vh",
-    opacity: '0.9'
-  };
-
   const informationContainerStyle = {
     padding: "5%",
     paddingTop: "0%",
@@ -138,7 +126,7 @@ export default function Character(props) {
   return (
     <div style={characterContainerStyle}>
       <img className="splash blur" src="/images/city.jpg"></img>
-      <div className="flexBoxColumn flexGrow1" style={characterSideNavStyle}>
+      <div className="flexBoxColumn flexGrow1 side-nav">
         <div className="flexBoxColumn flexGrow1">
           <h1
             className=""
