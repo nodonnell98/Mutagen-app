@@ -15,6 +15,8 @@ const searchStyle = {
     border: '2px solid #71f1e8',
     height: '2em',
     textAlign: 'center',
-    backgroundColor: ' #2b343f',
-    color: '#71f1e8'
+    backgroundColor: ' #303a46',
+    color: '#71f1e8',
+    borderRadius: '50px',
+    outline: 'none'
 }

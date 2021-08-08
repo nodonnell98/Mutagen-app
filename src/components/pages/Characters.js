@@ -5,12 +5,14 @@ import CharacterCard from "../CharacterComponents/CharacterCard";
 import { Link } from "react-router-dom";
 import { Card } from "react-bootstrap";
 import CharacterForm from "../CharacterComponents/CharacterForm";
+import SearchBar from "../SearchBar";
 import "../../App.css";
 
 export default function Characters() {
   const [characters, setCharacters] = useState([]);
   const [classification_id, setClassificationId] = useState();
   const [classifications, setClassifications] = useState([]);
+  const [searchedCharacters, setSearchedCharacters] = useState([]);
 
   const containerStyle = {
     display: "flex",
@@ -19,9 +21,9 @@ export default function Characters() {
     listStyle: "none",
     width: "100%",
     margin: "5%",
-    marginTop: '10vh',
+    marginTop: "8vh",
     justifyContent: "center",
-    alignItems: "center"
+    alignItems: "center",
   };
 
   const cardContainerStyle = {
@@ -56,34 +58,62 @@ export default function Characters() {
     retrieveCharactersInformation();
   }, [retrieveCharactersInformation]);
 
+  const handleSearch = (e) => {
+    setSearchedCharacters(e.target.value);
+  };
+
+  let foundCharacters = characters.filter((character) => {
+    return character.name.toLowerCase().includes(searchedCharacters);
+  });
+
+
+
   return (
-    <div style={containerStyle}>
-      <img className="splash blur" src="/images/orb.jpg"></img>
-      <div style={cardContainerStyle} >
-        <Card style={cardStyle} className="noHover container">
-          <CharacterForm
-            classification_id={classification_id}
-            classifications={classifications}
-            setClassificationId={setClassificationId}
-          ></CharacterForm>
-        </Card>
+    <div style={containerStyle} className="flexBoxColumn">
+      <div className="flexGrow1 flexBoxRow border-bot">
+        <h1
+          className="primary-font flexGrow1"
+          style={{
+            alignSelf: "flex-start",
+            textAlign: "start",
+          }}
+        >
+          My Characters
+        </h1>
+        <div className="flexGrow3">
+          <SearchBar handleSearch={handleSearch}></SearchBar>
+        </div>
       </div>
-      {characters.map((char, i) => {
-        return (
-          <div style={cardContainerStyle} >
-            <Link to={"/character/" + char.id}>
-              <CharacterCard
-                style={cardStyle}
-                key={i}
-                character={char}
-                classifications={classifications}
-                cardStyle={cardStyle}
-                className="cardHover"
-              ></CharacterCard>
-            </Link>
-          </div>
-        );
-      })}
+
+      <div style={containerStyle}>
+        <img className="splash blur" src="/images/orb.jpg"></img>
+        <div style={cardContainerStyle}>
+          <Card style={cardStyle} className="noHover container">
+            <CharacterForm
+              classification_id={classification_id}
+              classifications={classifications}
+              setClassificationId={setClassificationId}
+            ></CharacterForm>
+          </Card>
+        </div>
+        {foundCharacters.map((char, i) => {
+          return (
+            <div style={cardContainerStyle}>
+              <Link to={"/character/" + char.id}>
+                <CharacterCard
+                  style={cardStyle}
+                  key={i}
+                  character={char}
+                  classifications={classifications}
+                  cardStyle={cardStyle}
+                  className="cardHover"
+                  retrieveCharactersInformation={retrieveCharactersInformation}
+                ></CharacterCard>
+              </Link>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }

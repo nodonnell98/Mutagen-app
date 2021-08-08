@@ -60,7 +60,7 @@ export default function AddWeaponModal(props) {
   return (
     <div className="flexGrow1">
       <button
-        className="flexGrow1 primary-button"
+        className="flexGrow1 primary-button fill"
         onClick={(e) => {
           handleDeleteClick(e);
         }}

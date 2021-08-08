@@ -1,4 +1,5 @@
 import { Card } from "react-bootstrap";
+import FavouriteButton from "./FavouriteButton";
 
 export default function CharacterCard(props) {
   const character = props.character;
@@ -11,11 +12,12 @@ export default function CharacterCard(props) {
         <Card.Text>----------</Card.Text>
         <Card.Text>
           {classifications.map((classItem) => {
-            if (classItem.id == character.classification_ids[0]) {
+            if (classItem.id === character.classification_ids[0]) {
               return classItem.name;
             } else return "";
           })}
         </Card.Text>
+        <FavouriteButton character={character} retrieveCharactersInformation={props.retrieveCharactersInformation}></FavouriteButton>
       </Card.Body>
     </Card>
   );

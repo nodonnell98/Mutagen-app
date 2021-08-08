@@ -30,7 +30,7 @@ export default function LoginLinks() {
       <div>
         {/* <a style={navLink} onClick={(e) => displayUser()}>Account</a> */}
         <a
-          className="primary-button"
+          className="primary-button fill"
           style={{ fontWeight: "bold" }}
           onClick={(e) => handleLogout()}
         >
@@ -40,7 +40,7 @@ export default function LoginLinks() {
     );
   } else {
     return (
-      <Link className="primary-button" to="/login">
+      <Link className="primary-button fill" to="/login">
         Sign In
       </Link>
     );

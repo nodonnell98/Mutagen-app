@@ -35,7 +35,7 @@ export default function Weapon(props) {
         break;
 
       case "Short Range":
-        src = "/images/weaponImg/revolver-2.png";
+        src = "/images/weaponImg/revolver3.png";
         break;
 
       case "Medium Range":
