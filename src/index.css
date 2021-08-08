@@ -1,10 +1,12 @@
 body {
   margin: 0;
-  font-family: 'Orbitron', sans-serif;
+  /* font-family: 'Orbitron', sans-serif; */
+  /* font-family: 'Cairo', sans-serif; */
+  font-family: 'Abel', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #1F2833
-  ;
+  background-color: #17191c;
+  letter-spacing: 2px;
 }
 
 a {
@@ -21,10 +23,14 @@ code {
 
 .examplecolors {
   color: '#45A29E TEAL';
-  color: '#66FCF1 TURQUOISE';
+  color: '#71f1e8 TURQUOISE';
   color: '#C5C6C7 GREY';
   color: '#1F2833 DARK';
   color: '#0B0C10 DARKEST';
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 /* <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> */

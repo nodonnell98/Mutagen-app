@@ -2,15 +2,15 @@ import React, { useState, useEffect, useCallback } from "react";
 import CharacterService from "../../services/character.service";
 import ClassificationService from "../../services/classification.service";
 import CharacterCard from "../CharacterComponents/CharacterCard";
-import {Link} from 'react-router-dom';
+import { Link } from "react-router-dom";
 import { Card } from "react-bootstrap";
 import CharacterForm from "../CharacterComponents/CharacterForm";
-import '../../App.css'
+import "../../App.css";
 
 export default function Characters() {
   const [characters, setCharacters] = useState([]);
-  const [classification_id, setClassificationId] = useState()
-  const [classifications, setClassifications] = useState([])
+  const [classification_id, setClassificationId] = useState();
+  const [classifications, setClassifications] = useState([]);
 
   const containerStyle = {
     display: "flex",
@@ -19,8 +19,9 @@ export default function Characters() {
     listStyle: "none",
     width: "100%",
     margin: "5%",
+    marginTop: '10vh',
     justifyContent: "center",
-    alignItems: "center",
+    alignItems: "center"
   };
 
   const cardContainerStyle = {
@@ -31,15 +32,15 @@ export default function Characters() {
 
   const cardStyle = {
     height: "20em",
-    backgroundColor: "#2a615e",
-    border: "3px solid #66FCF1",
-    color: "#66FCF1",
+    backgroundColor: "#1d232b",
+    border: "2px solid #71f1e8",
+    color: "#71f1e8",
     borderRadius: "10px",
     width: "20em",
-    boxShadow: "-1px 0px 18px 0px rgb(18,94,100)", //rgb(62,170,184)
+    boxShadow: "-9px 10px 16px -8px rgb(0,0,0)",
     cursor: "pointer",
-    transition: '0.3s'
-  }
+    transition: "0.3s",
+  };
 
   const retrieveCharactersInformation = useCallback(() => {
     CharacterService.index().then((response) => {
@@ -55,17 +56,34 @@ export default function Characters() {
     retrieveCharactersInformation();
   }, [retrieveCharactersInformation]);
 
-
   return (
     <div style={containerStyle}>
-      {characters.map((char, i) => {
-         return (<div style={cardContainerStyle} >
-          <Link to={"/character/" + char.id}><CharacterCard class="card" style={cardStyle} key={i} character={char} classifications={classifications} cardStyle={cardStyle} prop></CharacterCard></ Link>
-        </div>)
-      })}
+      <img className="splash blur" src="/images/orb.jpg"></img>
       <div style={cardContainerStyle} >
-        <Card style={cardStyle}><CharacterForm classification_id={classification_id} classifications={classifications} setClassificationId={setClassificationId}></CharacterForm></Card>
+        <Card style={cardStyle} className="noHover container">
+          <CharacterForm
+            classification_id={classification_id}
+            classifications={classifications}
+            setClassificationId={setClassificationId}
+          ></CharacterForm>
+        </Card>
       </div>
+      {characters.map((char, i) => {
+        return (
+          <div style={cardContainerStyle} >
+            <Link to={"/character/" + char.id}>
+              <CharacterCard
+                style={cardStyle}
+                key={i}
+                character={char}
+                classifications={classifications}
+                cardStyle={cardStyle}
+                className="cardHover"
+              ></CharacterCard>
+            </Link>
+          </div>
+        );
+      })}
     </div>
   );
 }

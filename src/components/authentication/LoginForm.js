@@ -3,6 +3,7 @@ import {Form, Button} from "react-bootstrap";
 import '../../stylesheets/login.css'
 import '../../App.css'
 import AuthenticationService from "../../services/authentication.service";
+import { Link } from "react-router-dom";
 
 export default function LoginForm() {
   const [email, setEmail] = useState("");
@@ -22,6 +23,7 @@ export default function LoginForm() {
         })
         .catch((e) => {
           setError(e.response.data.errors);
+          console.log(e.response.data)
         });
   }
 
@@ -53,8 +55,8 @@ export default function LoginForm() {
             style={{
               marginTop: '2%',
               marginBottom: '2%',
-              backgroundColor: '#66FCF1',
-              color:' white',
+              backgroundColor: '#71f1e8',
+              color:'#224e4c',
               border: 'none',
               cursor: 'pointer'
             }}
@@ -62,6 +64,8 @@ export default function LoginForm() {
           }>
             Login
           </Button>
+          <Link to='/register' style={{textDecoration: 'underline', paddingBottom: '10px'}} className="textGlow">Don't have an account? Register here</Link>
+          {error ? <p style={{color: '#fbff8d'}}>{error}</p> : false }
 
         </Form>
       </div>

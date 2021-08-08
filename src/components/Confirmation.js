@@ -6,7 +6,7 @@ export default function Confirmation(props) {
   const buttonStyle = {
     background: "none",
     border: "none",
-    color: "#66FCF1",
+    color: "#71f1e8",
     fontSize: "20px",
   };
 

@@ -57,15 +57,16 @@ export default function CharacterForm(props) {
               color: "white",
             }}
             type="text"
+            maxlength="7"
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
         </Form.Group>
 
-        <Form.Group size="lg" controlId="description">
+        <Form.Group size="lg" controlId="class">
           <Form.Label>Class</Form.Label>
           <Dropdown>
-            <Dropdown.Toggle variant="success" id="dropdown-basic" style={{backgroundColor: '#66FCF1', border: '#66FCF1', color: '#2a615e'}}>
+            <Dropdown.Toggle variant="success" id="dropdown-basic" style={{backgroundColor: '#71f1e8', border: '#71f1e8', color: '#2a615e'}}>
               {label}
             </Dropdown.Toggle>
 
@@ -87,7 +88,7 @@ export default function CharacterForm(props) {
           style={{
             marginTop: "2%",
             marginBottom: "2%",
-            backgroundColor: "#66FCF1",
+            backgroundColor: "#71f1e8",
             color: "#2a615e",
             border: "none",
             cursor: "pointer",

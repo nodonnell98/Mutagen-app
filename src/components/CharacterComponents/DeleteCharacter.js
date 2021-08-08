@@ -20,7 +20,7 @@ export default function DeleteCharacter(props) {
   const buttonStyle = {
     background: "none",
     border: "none",
-    color: "#66FCF1",
+    color: "#71f1e8",
     fontSize: "20px",
   };
 
@@ -38,7 +38,7 @@ export default function DeleteCharacter(props) {
       display: 'flex',
       justifyContent: 'space-evenly',
       flexDirection: 'column',
-      border: '3px solid #66FCF1'
+      border: '3px solid #71f1e8'
 
     }
   };
@@ -55,7 +55,7 @@ export default function DeleteCharacter(props) {
         Delete
       </button>
       <Modal style={modalStyle} isOpen={modalIsOpen}>
-        <h1 className="flexGrow1" style={{borderBottom: '1px solid #66FCF1', color: '#66FCF1'}}>Are you sure?</h1>
+        <h1 className="flexGrow1" style={{borderBottom: '1px solid #71f1e8', color: '#71f1e8'}}>Are you sure?</h1>
         <div className="flexBoxRow flexGrow1">
         <button style={{marginRight: '10%', flexGrow: '1'}, buttonStyle}onClick={setModalIsOpenToFalse}>x</button>
         <span class="flexGrow1"></span>

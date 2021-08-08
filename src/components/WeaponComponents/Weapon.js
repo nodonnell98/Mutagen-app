@@ -1,149 +1,107 @@
-import React, {Component} from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
 
-export class Weapon extends Component {
+export default function Weapon(props) {
 
-  getRarityColour = () => {
-    let colour = '';
-    switch (this.props.weapon.quality) {
-      case 'Basic':
-        colour = '#00ffff';
+  const getRarityColour = () => {
+    let colour = "";
+    switch (props.weapon.quality) {
+      case "Basic":
+        colour = "#00ffff";
         break;
 
-      case 'Refined':
-        colour = '#00ff00';
+      case "Refined":
+        colour = "#a1fc66";
         break;
 
-      case 'Superior':
-        colour = '#e600e6';
+      case "Superior":
+        colour = "#cbb5ff";
         break;
 
-      case 'Mythic':
-        colour = '#ffcc00';
-        break;
-    }
-    return colour
-  }
-
-  getDamageType = () => {
-    let src = '';
-    switch (this.props.weapon.damage_type) {
-      case 'Cryo':
-        src = '/images/weaponIcons/cold.png';
-        break;
-
-      case 'Kinetic':
-        src = '/images/weaponIcons/kinetic.png';
-        break;
-
-      case 'Incendiary':
-        src = '/images/weaponIcons/fire.png';
+      case "Mythic":
+        colour = "#fcc966";
         break;
     }
-    return src
-  }
-
-  weaponName = () => {
-    return {
-      padding: '1em',
-      display: 'flex',
-      margin: '0',
-      alignItems: 'center',
-      justifyContent: 'center',
-      color: 'black',
-      flex: 8
+    let color = {
+      color: colour
     }
-  }
+    return color
+  };
 
-  render() {
-    const {
-      name,
-      description,
-      range,
-      quality,
-      dice_type,
-      dice_qty,
-      damage_modifier,
-      proficiency,
-      ammo,
-      damage_type
-    } = this.props.weapon
-    return (
-      <div style={weaponContainer}>
-        <div style={{flexBasis: '50%', flexGrow: 1}}>
-        <div style={statItem}>
-          <p style={{
-            color: this.getRarityColour()
-          }}>{name}</p>
-        </div>
-        <div style={statItem}>
-          <img src={this.getDamageType()} style={weaponIcon}/>
-        </div>
-        <div style={this.weaponName()}>
+  const getWeaponType = () => {
+    let src = "";
+    switch (props.weapon.weapon_type) {
+      case "Melee":
+        src = "/images/weaponImg/knife.png";
+        break;
 
-          <div style={statItem}>
-            <div style={weaponInfo}></div>
-            <img src="/images/weaponIcons/aim.png" style={weaponIcon}/>
-            <p>
-              {range}</p>
-          </div>
-          <div style={statItem}>
-            <img src="/images/weaponIcons/dice.png" style={weaponIcon}/>
-            <p>{dice_qty}d{dice_type}
-              + {proficiency}</p>
-          </div>
-          <div style={statItem}>
-            <img src="/images/weaponIcons/bullets.png" style={weaponIcon}/>
-            <p>{ammo}</p>
-          </div>
-        </div>
+      case "Short Range":
+        src = "/images/weaponImg/revolver-2.png";
+        break;
 
-        </div>
-        <p style={descriptionStyle}>"{description}"</p>
+      case "Medium Range":
+        src = "/images/weaponImg/knife.png";
+        break;
+
+      case "Long Range":
+        src = "/images/weaponImg/knife.png";
+        break;
+    }
+    return src;
+  };
+  const statItem = {
+    padding: "0.5em",
+    margin: "0",
+    flex: "1",
+  };
+
+  const descriptionStyle = {
+    fontStyle: "italic",
+    fontSize: "15px",
+    paddingTop: "0",
+    background: "#224e4c",
+    color: "#71f1e8",
+    margin: "0",
+    padding: "1em",
+    flexGrow: "3",
+  };
+
+  const weapon = props.weapon;
+
+  return (
+    <div className="flexBoxColumn" style={{ textAlign: "center" }}>
+      <div className="containerDark flexGrow1" style={{paddingTop: '20px'}}>
+      <img
+        src={getWeaponType()}
+        style={{ maxWidth: '80%',
+          maxHeight:'80%' }}
+      />
       </div>
-    )
-  }
-}
 
-const weaponContainer = {
-  width: '100%',
-  height: 'auto',
-  color: '#66FCF1',
-  display: 'flex',
-  flexDirection: 'column',
-  justifyContent: 'center',
-  marginBottom: '1em',
-  fontSize: '20px',
-  padding: '0'
+      <h1 className="flexGrow1" style={getRarityColour()}>{weapon.name}</h1>
+      <p>{weapon.weapon_type}</p>
+      <div className="flexBoxRow flexGrow1">
+        <div style={statItem}>
+          <p>AIM</p>
+          <p>{weapon.proficiency}</p>
+        </div>
+        <div style={statItem}>
+          <p>DICE</p>
+          <p>{weapon.dice_qty + "d" + weapon.dice_type}</p>
+        </div>
+        <div style={statItem}>
+          <p>AMMO</p>
+          <p>{weapon.ammo}</p>
+        </div>
+        <div style={statItem}>
+          <p>TYPE</p>
+          <p>{weapon.damage_type}</p>
+        </div>
+        <div style={statItem}>
+          <p>RANGE</p>
+          <p>{weapon.range}</p>
+        </div>
+      </div>
+      <p style={descriptionStyle}>{weapon.description}</p>
+    </div>
+  );
 }
-
-const statItem = {
-  padding: '0.5em',
-  margin: '0',
-  flex: '1'
-}
-
-const descriptionStyle = {
-  fontStyle: 'italic',
-  fontSize: 'small',
-  paddingTop: '0',
-  background: '#224e4c',
-  color: '#66FCF1',
-  margin: '0',
-  padding: '1em',
-  flexGrow: '3'
-}
-
-const weaponInfo = {
-  flex: 2
-}
-
-const weaponIcon = {
-  height: '30px'
-}
-
-Weapon.propTypes = {
-  weapon: PropTypes.object.isRequired
-}
-
-export default Weapon

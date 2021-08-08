@@ -4,6 +4,7 @@ import Button from "react-bootstrap/Button";
 import '../../stylesheets/login.css';
 import '../../App.css';
 import AuthenticationService from "../../services/authentication.service";
+import { Link } from "react-router-dom";
 
 
 export default function RegisterForm() {
@@ -43,10 +44,10 @@ export default function RegisterForm() {
 
   return (
     <div>
-      <img style={{width: '102%', marginTop: '0%', opacity: '0.2'}}src='./images/city.jpeg'></img>
+      <img style={{width: '102%', marginTop: '0%', opacity: '0.2', height: '100vh'}}src='./images/city.jpeg'></img>
       <div className="container login">
         <Form onSubmit={onSubmit}>
-          <Form.Group size="lg" controlId="email">
+          <Form.Group size="lg" controlId="username">
             <Form.Label>Username</Form.Label>
             <Form.Control
               autoFocus
@@ -60,7 +61,6 @@ export default function RegisterForm() {
           <Form.Group size="lg" controlId="email">
             <Form.Label>Email</Form.Label>
             <Form.Control
-              autoFocus
               style={{ textAlign: 'center'}}
               type="email"
               value={email}
@@ -91,15 +91,17 @@ export default function RegisterForm() {
           <Button block size="lg" type="submit" style={{
             marginTop: '2%',
             marginBottom: '2%',
-            backgroundColor: '#66FCF1',
-            color:' white',
+            backgroundColor: '#71f1e8',
+            color:'#224e4c',
             border: 'none',
             cursor: 'pointer'
           }} disabled={!validateForm()}>
             Register
           </Button>
-
+          {error ? <p style={{color: '#fbff8d'}}>{error}</p> : false }
+          { ((passwordConfirmation != password) && (passwordConfirmation.length >= 1)) ?  <p style={{color: '#fbff8d'}}>Passwords don't match</p> : false }
         </Form>
+        <Link to='/login' style={{textDecoration: 'underline', paddingBottom: '10px'}} className="textGlow">I just remembered my account! Back to login</Link>
       </div>
     </div>
   );

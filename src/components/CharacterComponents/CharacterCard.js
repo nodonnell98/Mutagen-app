@@ -1,4 +1,3 @@
-import React, { useState, useCallback, useEffect } from "react";
 import { Card } from "react-bootstrap";
 
 export default function CharacterCard(props) {
@@ -8,7 +7,7 @@ export default function CharacterCard(props) {
   return (
     <Card style={props.cardStyle}>
       <Card.Body>
-        <Card.Title>{character.name}</Card.Title>
+        <Card.Title><h1>{character.name}</h1></Card.Title>
         <Card.Text>----------</Card.Text>
         <Card.Text>
           {classifications.map((classItem) => {
