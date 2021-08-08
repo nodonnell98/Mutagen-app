@@ -21,7 +21,7 @@ export default function Characters() {
     listStyle: "none",
     width: "100%",
     margin: "5%",
-    marginTop: "10vh",
+    marginTop: "8vh",
     justifyContent: "center",
     alignItems: "center",
   };

@@ -20,6 +20,7 @@ const pageHeader = {
 
 const pageContainer = {
   width: "80%",
+  marginTop: '10vh'
 };
 
 export default Weapons;
