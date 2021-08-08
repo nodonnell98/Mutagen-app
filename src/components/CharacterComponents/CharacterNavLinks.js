@@ -1,5 +1,4 @@
-import React, { useEffect, useCallback } from "react";
-import $ from "jquery";
+import React from "react";
 
 export default function CharacterNavLinks(props) {
   const navLinkStyle = {
