@@ -204,4 +204,12 @@ input[type=number] {
   -webkit-filter: blur(1px);
 }
 
+.primary-font {
+  color: #71f1e8;
+}
+
+.border-bot{
+  border-bottom: 1px solid #71f1e8;
+}
+
 
