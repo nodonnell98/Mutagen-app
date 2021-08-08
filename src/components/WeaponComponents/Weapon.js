@@ -1,6 +1,7 @@
 import React from "react";
 
 export default function Weapon(props) {
+
   const getRarityColour = () => {
     let colour = "";
     switch (props.weapon.quality) {
@@ -9,18 +10,21 @@ export default function Weapon(props) {
         break;
 
       case "Refined":
-        colour = "#00ff00";
+        colour = "#a1fc66";
         break;
 
       case "Superior":
-        colour = "#e600e6";
+        colour = "#cbb5ff";
         break;
 
       case "Mythic":
-        colour = "#ffcc00";
+        colour = "#fcc966";
         break;
     }
-    return colour;
+    let color = {
+      color: colour
+    }
+    return color
   };
 
   const getWeaponType = () => {
@@ -44,19 +48,6 @@ export default function Weapon(props) {
     }
     return src;
   };
-
-  const weaponContainer = {
-    width: "100%",
-    height: "auto",
-    color: "#66FCF1",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    marginBottom: "1em",
-    fontSize: "20px",
-    padding: "0",
-  };
-
   const statItem = {
     padding: "0.5em",
     margin: "0",
@@ -68,19 +59,10 @@ export default function Weapon(props) {
     fontSize: "15px",
     paddingTop: "0",
     background: "#224e4c",
-    color: "#66FCF1",
+    color: "#71f1e8",
     margin: "0",
     padding: "1em",
     flexGrow: "3",
-  };
-
-  const weaponInfo = {
-    flex: 2,
-  };
-
-  const weaponIcon = {
-    height: "40px",
-    paddingBottom: "5px",
   };
 
   const weapon = props.weapon;
@@ -95,7 +77,7 @@ export default function Weapon(props) {
       />
       </div>
 
-      <h1 className="flexGrow1">{weapon.name}</h1>
+      <h1 className="flexGrow1" style={getRarityColour()}>{weapon.name}</h1>
       <p>{weapon.weapon_type}</p>
       <div className="flexBoxRow flexGrow1">
         <div style={statItem}>

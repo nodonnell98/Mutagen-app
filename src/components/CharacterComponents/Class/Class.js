@@ -7,7 +7,7 @@ export default function Class(props) {
 
   const classInfoStyle = {
     marginTop: '2%',
-    color: '#66FCF1',
+    color: '#71f1e8',
   }
 
   return (

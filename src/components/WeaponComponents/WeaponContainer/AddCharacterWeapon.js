@@ -15,7 +15,6 @@ export default function AddCharacterWeapon(props) {
       },
     };
     WeaponService.update(weapon.id, params).then((res) => {
-      props.retrieveCharacterWeapons();
       props.setModalIsOpenToFalse();
     });
   };

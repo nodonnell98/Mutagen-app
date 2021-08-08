@@ -91,7 +91,7 @@ export default function RegisterForm() {
           <Button block size="lg" type="submit" style={{
             marginTop: '2%',
             marginBottom: '2%',
-            backgroundColor: '#66FCF1',
+            backgroundColor: '#71f1e8',
             color:'#224e4c',
             border: 'none',
             cursor: 'pointer'

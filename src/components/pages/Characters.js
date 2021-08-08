@@ -33,8 +33,8 @@ export default function Characters() {
   const cardStyle = {
     height: "20em",
     backgroundColor: "#1d232b",
-    border: "2px solid #66FCF1",
-    color: "#66FCF1",
+    border: "2px solid #71f1e8",
+    color: "#71f1e8",
     borderRadius: "10px",
     width: "20em",
     boxShadow: "-9px 10px 16px -8px rgb(0,0,0)",
@@ -58,7 +58,7 @@ export default function Characters() {
 
   return (
     <div style={containerStyle}>
-      <img className="splash blur" src="/images/cards.jpg"></img>
+      <img className="splash blur" src="/images/orb.jpg"></img>
       <div style={cardContainerStyle} >
         <Card style={cardStyle} className="noHover container">
           <CharacterForm

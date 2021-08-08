@@ -11,7 +11,7 @@ export default function TraitCard(props) {
   const traitHeaderStyle = {
     fontSize: "18px",
     paddingBottom: "5px",
-    borderBottom: "1px solid #66FCF1",
+    borderBottom: "1px solid #71f1e8",
   };
 
   const inputStyle = {
@@ -19,7 +19,7 @@ export default function TraitCard(props) {
     alignSelf: "center",
     textAlign: "center",
     backgroundColor: "transparent",
-    color: "#66FCF1",
+    color: "#71f1e8",
     border: "0",
     borderBottom: 'none',
     fontSize: '18px',
@@ -31,9 +31,9 @@ export default function TraitCard(props) {
     alignSelf: "center",
     textAlign: "center",
     backgroundColor: "#2f6a67",
-    color: "#66FCF1",
+    color: "#71f1e8",
     border: "0",
-    borderBottom: "1px solid #66FCF1",
+    borderBottom: "1px solid #71f1e8",
     fontSize: '18px'
   };
 

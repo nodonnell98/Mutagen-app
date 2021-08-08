@@ -108,14 +108,14 @@ export default function Character(props) {
   const buttonStyle = {
     background: "none",
     border: "none",
-    color: "#66FCF1",
+    color: "#71f1e8",
     fontSize: "20px",
   };
 
   const characterSideNavStyle = {
     maxWidth: "20vh",
     backgroundColor: "#17191c",
-    borderRight: "1px solid #66FCF1",
+    borderRight: "1px solid #71f1e8",
     height: "90vh",
     padding: "2%",
     boxShadow: "20px -1px 11px -12px rgba(0,0,0,0.75)",
@@ -142,7 +142,7 @@ export default function Character(props) {
           <h1
             className=""
             style={{
-              color: "#66FCF1",
+              color: "#71f1e8",
               fontSize: "20px",
               fontFamily: "Orbitron, sans-serif",
             }}

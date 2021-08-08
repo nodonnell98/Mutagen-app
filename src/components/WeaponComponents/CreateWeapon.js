@@ -123,8 +123,8 @@ const inputStyle = {
   margin: '10px',
   width: '60%',
   background: 'transparent',
-  border: '2px solid #66FCF1',
-  color: "#66FCF1",
+  border: '2px solid #71f1e8',
+  color: "#71f1e8",
   textAlign: "center"
 }
 

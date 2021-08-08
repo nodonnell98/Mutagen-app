@@ -14,7 +14,7 @@ class Weapons extends Component {
 
 const pageHeader = {
   width: "100%",
-  color: "#66FCF1",
+  color: "#71f1e8",
   mnarginBottom: "0",
 };
 

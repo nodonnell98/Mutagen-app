@@ -6,7 +6,7 @@ export default function Skills(props) {
 
   const skillStyle = {
     display: 'flex',
-    // borderBottom: '1px solid #66FCF1'
+    // borderBottom: '1px solid #71f1e8'
     alignItems: 'center',
     paddingTop: '5px'
   };
@@ -58,7 +58,7 @@ export default function Skills(props) {
             <div>
               <div
                 className={"flexBoxRow flexGrow1"}
-                style={skillStyle, {borderBottom: '1px solid #66FCF1'}}
+                style={skillStyle, {borderBottom: '1px solid #71f1e8'}}
                 key={i}
               >
                 <p className="flexGrow1">{skill.toUpperCase()}</p>

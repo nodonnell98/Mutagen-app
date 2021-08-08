@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Weapon from "../Weapon";
-import AddCharacterWeapon from "./AddCharacterWeapon";
 
 export default function WeaponContainer(props) {
   const weapon = props.weapon;
@@ -19,13 +18,7 @@ export default function WeaponContainer(props) {
 
   return (
     <div className="container flexBoxColumn" style={weaponContainerStyle}>
-      {weapon ? <Weapon weapon={weapon}></Weapon> : "Select a weapon"}
-      { props.addCharacter ? <AddCharacterWeapon
-          retrieveCharacterWeapons={props.retrieveCharacterWeapons}
-          character={props.character}
-          setModalIsOpenToFalse={props.setModalIsOpenToFalse}
-          weapon={props.weapon}
-        ></AddCharacterWeapon> : false}
+      {weapon ? <Weapon weapon={weapon} className="flexGrow1"></Weapon> : "Select a weapon"}
     </div>
   );
 }

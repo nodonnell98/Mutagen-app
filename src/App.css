@@ -13,8 +13,8 @@
 
 .container {
   background-color: #1d232b;
-  border: 1px solid #66FCF1;
-  color: #66FCF1;
+  border: 1px solid #71f1e8;
+  color: #71f1e8;
   border-radius: 10px;
   box-shadow: -9px 10px 16px -8px rgb(0,0,0);
   /* box-shadow: 2px 2px 15px 5px rgba(0,0,0,0.75) inset; */
@@ -22,8 +22,8 @@
 
 .containerDark {
   background-color: #224e4c;
-  border: 1px solid #66FCF1;
-  color: #66FCF1;
+  border: 1px solid #71f1e8;
+  color: #71f1e8;
   border-radius: 5px;
   box-shadow: -1px 0px 18px 0px rgb(18,94,100, 0.5);
   box-shadow: 2px 2px 21px -3px rgba(0,0,0,0.75) inset;
@@ -41,13 +41,13 @@
 
 .input {
   background-color: #224e4c;
-  border: 1px solid #66FCF1;
-  color: #66FCF1;
+  border: 1px solid #71f1e8;
+  color: #71f1e8;
   cursor: pointer;
 }
 
 a:hover {
-  color: #66FCF1;
+  color: #71f1e8;
   text-decoration: none;
 }
 
@@ -119,7 +119,7 @@ a:hover {
 }
 
 ::placeholder {
-  color: #66FCF1;
+  color: #71f1e8;
 }
 
 input[type=number] {
@@ -129,7 +129,7 @@ input[type=number] {
 :disabled {
   opacity: 1;
   background-color: transparent;
-  color: #66FCF1;
+  color: #71f1e8;
   border: none
 }
 
@@ -156,11 +156,11 @@ input[type=number] {
 }
 /*
 .grad {
-  background-image: linear-gradient(to right, #66FCF1 , transparent);
+  background-image: linear-gradient(to right, #71f1e8 , transparent);
 } */
 
 .primary-button {
-  background-color: #66FCF1;
+  background-color: #71f1e8;
   border: none;
   padding: 10px;
   border-radius: 40px;
@@ -190,8 +190,8 @@ input[type=number] {
 }
 
 .blur {
-  filter: blur(8px);
-  -webkit-filter: blur(3px);
+  filter: blur(1px);
+  -webkit-filter: blur(1px);
 }
 
 

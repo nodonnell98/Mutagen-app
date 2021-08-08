@@ -16,7 +16,7 @@ export default function Header() {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-evenly',
-    // borderBottom: '2px solid #66FCF1',
+    // borderBottom: '2px solid #71f1e8',
     textDecoration: 'none',
     height: '10vh',
     position: 'fixed',
@@ -30,7 +30,7 @@ export default function Header() {
     fontSize: '60px',
     fontFamily: 'Staatliches',
     padding: 0,
-    color: '#66FCF1'
+    color: '#71f1e8'
   }
 
   const navLink = {

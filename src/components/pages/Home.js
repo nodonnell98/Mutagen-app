@@ -3,7 +3,7 @@ import TypedText from "../layout/TypedText";
 
 export default function Home() {
   const textStyle = {
-    color: "#66FCF1",
+    color: "#71f1e8",
     position: "absolute",
     top: "30%",
     left: "10%",
@@ -13,7 +13,7 @@ export default function Home() {
   };
 
   const buttonStyle = {
-    backgroundColor: "#66FCF1",
+    backgroundColor: "#71f1e8",
     border: "none",
     padding: "10px",
     borderRadius: "40px",

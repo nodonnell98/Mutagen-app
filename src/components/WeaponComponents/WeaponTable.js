@@ -135,7 +135,7 @@ export default function WeaponTable(props) {
     fontSize: '25px',
     marginLeft: '10px',
     backgroundColor: '#224e4c',
-    border: '2px solid #66FCF1',
+    border: '2px solid #71f1e8',
     borderRadius: '2px',
     width: '40px',
     height: '40px',

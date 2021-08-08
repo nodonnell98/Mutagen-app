@@ -3,7 +3,7 @@ import $ from "jquery";
 
 export default function CharacterNavLinks(props) {
   const navLinkStyle = {
-    color: "#66FCF1",
+    color: "#71f1e8",
     marginRight: "10%",
     cursor: "pointer",
     fontSize: "20px",
@@ -11,7 +11,7 @@ export default function CharacterNavLinks(props) {
   };
 
   return (
-    <div className="flexBoxColumn flexGrow1" style={{justifyContent: 'flex-start', borderTop: '1px solid #66FCF1', paddingTop: '20px'}}>
+    <div className="flexBoxColumn flexGrow1" style={{justifyContent: 'flex-start', borderTop: '1px solid #71f1e8', paddingTop: '20px'}}>
       <a
         className="flexGrow1 textGlow"
         style={navLinkStyle}

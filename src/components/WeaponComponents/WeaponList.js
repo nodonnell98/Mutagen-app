@@ -3,6 +3,7 @@ import WeaponTable from "./WeaponTable";
 import WeaponContainer from "./WeaponContainer/WeaponContainer";
 import SearchBar from "../SearchBar";
 import WeaponService from "../../services/weapon.service";
+import { propTypes } from "react-bootstrap/esm/Image";
 
 export default function WeaponList(props) {
   const character = props.character;
@@ -41,6 +42,13 @@ export default function WeaponList(props) {
     let foundWeapon = weapons.find((weapon) => {
       return weapon.name.toLowerCase().match(weaponName.toLowerCase());
     });
+
+    try {
+      props.setWeaponToAdd(foundWeapon)
+    }
+    catch {
+      console.log('error')
+    }
 
     setSelectedWeapon(foundWeapon);
   };

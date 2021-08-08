@@ -1,20 +1,20 @@
 table {
     background-color: #232a33;
     width: 100%;
-    border: 3px solid #66FCF1;
-    color: #66FCF1;
+    border: 3px solid #71f1e8;
+    color: #71f1e8;
     border-radius: 10px !important;
 }
 
 th {
-    border-bottom: 1px solid #66FCF1;
+    border-bottom: 1px solid #71f1e8;
     padding-bottom: 0.2em;
 }
 
 td {
     padding-top: 10px;
     padding-bottom: 10px;
-    border-top: 1px solid #66FCF1;
+    border-top: 1px solid #71f1e8;
 
 }
 
@@ -25,8 +25,8 @@ td {
 .pagination {
     background-color: #2b343f;
     width: 100%;
-    border: 3px solid #66FCF1;
-    color: #66FCF1;
+    border: 3px solid #71f1e8;
+    color: #71f1e8;
     padding: 5px;
     margin-top: 0.5em;
     border-radius: 5px;
@@ -36,19 +36,19 @@ td {
     max-height: 10%;
     flex-grow: 1;
     background-color: #224e4c;
-    border: 1px solid  #66FCF1;
+    border: 1px solid  #71f1e8;
     font-size: large;
-    color: #66FCF1;
+    color: #71f1e8;
 }
 
 .navBtnHover:hover {
-    background-color: #66FCF1;
+    background-color: #71f1e8;
     color: #224e4c;
     cursor: pointer
 }
 
 .tableBtn {
     background-color: transparent;
-    color: #66FCF1;
+    color: #71f1e8;
     border: none
 }
