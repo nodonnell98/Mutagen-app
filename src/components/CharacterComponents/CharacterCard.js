@@ -1,4 +1,5 @@
 import { Card } from "react-bootstrap";
+import FavouriteButton from "./FavouriteButton";
 
 export default function CharacterCard(props) {
   const character = props.character;
@@ -16,6 +17,7 @@ export default function CharacterCard(props) {
             } else return "";
           })}
         </Card.Text>
+        <FavouriteButton character={character}></FavouriteButton>
       </Card.Body>
     </Card>
   );

@@ -41,7 +41,6 @@ export default function CombatUI(props) {
         </div>
         <div className="flexBoxColumn flexGrow1">
           <h1 style={{ fontSize: "20px" }}>Strike</h1>
-          {console.log(character.traits[classification.strike_stat])}
           <p>{Math.floor(character.traits[classification.strike_stat] / 10)}</p>
         </div>
       </div>

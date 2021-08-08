@@ -13,10 +13,11 @@
 
 .container {
   background-color: #1d232b;
-  border: 1px solid #71f1e8;
+  border: 2px solid #71f1e8;
   color: #71f1e8;
   border-radius: 10px;
   box-shadow: -9px 10px 16px -8px rgb(0,0,0);
+  opacity: 0.93
   /* box-shadow: 2px 2px 15px 5px rgba(0,0,0,0.75) inset; */
 }
 
