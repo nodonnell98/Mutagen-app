@@ -16,14 +16,16 @@ export default function AddCharacterWeapon(props) {
     };
     WeaponService.update(weapon.id, params).then((res) => {
       props.setModalIsOpenToFalse();
+      window.location.reload();
     });
   };
 
   return (
     <button
-      className="navBtn navBtnHover"
+      className="primary-button"
       value="edit"
-      onClick={() => updateWeapon()}
+      style={{width: '80%', alignSelf: 'center', marginTop: '1vh'}}
+      onClick={() => weapon ? updateWeapon() : false}
     >
       Add Weapon
     </button>
