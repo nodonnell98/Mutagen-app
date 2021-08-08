@@ -60,11 +60,11 @@ export default function AddWeaponModal(props) {
   return (
     <div className="flexGrow1">
       <button
-        className="flexGrow1"
+        className="flexGrow1 primary-button"
         onClick={(e) => {
           handleDeleteClick(e);
         }}
-        style={addButton}
+
       >
         Add Weapon
       </button>

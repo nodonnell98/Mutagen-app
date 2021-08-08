@@ -121,6 +121,7 @@ export default function Character(props) {
     boxShadow: "20px -1px 11px -12px rgba(0,0,0,0.75)",
     position: "fixed",
     marginTop: "5vh",
+    opacity: '0.9'
   };
 
   const informationContainerStyle = {
