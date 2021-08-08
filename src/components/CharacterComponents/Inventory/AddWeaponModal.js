@@ -29,8 +29,8 @@ export default function AddWeaponModal(props) {
       marginRight: "-50%",
       transform: "translate(-50%, -50%)",
       backgroundColor: "#2a615e",
-      width: "80%",
-      height: "80%",
+      width: "85%",
+      height: "85%",
       display: "flex",
       justifyContent: "space-evenly",
       flexDirection: "column",
@@ -77,7 +77,7 @@ export default function AddWeaponModal(props) {
             Add Weapon
           </h1>
           <button style={buttonStyle} className="textGlow" onClick={setModalIsOpenToFalse}>
-            X
+            Close
           </button>
         </div>
         <WeaponList
