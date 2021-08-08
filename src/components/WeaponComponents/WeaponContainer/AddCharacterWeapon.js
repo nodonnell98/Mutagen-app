@@ -22,7 +22,7 @@ export default function AddCharacterWeapon(props) {
 
   return (
     <button
-      className="primary-button"
+      className="primary-button fill"
       value="edit"
       style={{width: '80%', alignSelf: 'center', marginTop: '1vh'}}
       onClick={() => weapon ? updateWeapon() : false}

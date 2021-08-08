@@ -5,7 +5,9 @@ export default function FavouriteButton(props) {
 
   const character = props.character
 
-  const toggleFavourite = () => {
+  const toggleFavourite = (e, retrieve) => {
+
+    e.preventDefault();
     let toggle = !character.favourite
 
     let params = {
@@ -14,11 +16,11 @@ export default function FavouriteButton(props) {
       }
     }
     CharacterService.update(character.id, params).then((res) => {
-      console.log(res.data)
+      retrieve()
     })
   }
 
   return (
-    <button onClick={() => toggleFavourite()}>Toggle Favourite</button>
+    <button className={character.favourite ?  "primary-button fill" : "primary-button no-fill"} onClick={(e) => toggleFavourite(e, props.retrieveCharactersInformation)}>Favourite</button>
   )
 }

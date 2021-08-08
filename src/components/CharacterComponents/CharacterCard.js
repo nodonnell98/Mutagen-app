@@ -17,7 +17,7 @@ export default function CharacterCard(props) {
             } else return "";
           })}
         </Card.Text>
-        <FavouriteButton character={character}></FavouriteButton>
+        <FavouriteButton character={character} retrieveCharactersInformation={props.retrieveCharactersInformation}></FavouriteButton>
       </Card.Body>
     </Card>
   );

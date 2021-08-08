@@ -161,22 +161,30 @@ input[type=number] {
 } */
 
 .primary-button {
-  background-color: #71f1e8;
-  border: none;
   padding: 10px;
   border-radius: 40px;
   padding-left: 20px;
   padding-right: 20px;
-  color: #1d232b;
   transition: 0.5s;
   font-weight: 500;
+}
+
+.fill {
+  background-color: #71f1e8;
+  border: none;
+  color: #1d232b;
+}
+
+.no-fill {
+  background-color: transparent;
+  border: 2px solid #71f1e8;
+  color: #71f1e8
 }
 
 .primary-button:hover {
   box-shadow: -1px 0px 18px 0px rgb(18,94,100, 0.5);
   transform: scale(1.05);
   transition: 0.3s;
-  color: #1d232b;
   cursor: pointer;
 }
 

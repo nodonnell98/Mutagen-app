@@ -79,6 +79,7 @@ export default function Characters() {
                 classifications={classifications}
                 cardStyle={cardStyle}
                 className="cardHover"
+                retrieveCharactersInformation={retrieveCharactersInformation}
               ></CharacterCard>
             </Link>
           </div>
