@@ -57,6 +57,7 @@ export default function CharacterForm(props) {
               color: "white",
             }}
             type="text"
+            maxlength="7"
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
