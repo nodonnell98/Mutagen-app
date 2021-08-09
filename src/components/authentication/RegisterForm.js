@@ -102,7 +102,7 @@ export default function RegisterForm() {
           {error ? <p style={{color: '#fbff8d'}}>{error}</p> : false }
           { ((passwordConfirmation != password) && (passwordConfirmation.length >= 1)) ?  <p style={{color: '#fbff8d'}}>Passwords don't match</p> : false }
         </Form>
-        <Link to='/login' style={{textDecoration: 'underline', paddingBottom: '10px'}} className="textGlow">I just remembered my account! Back to login</Link>
+        <Link to='/login' style={{paddingBottom: '10px'}} className="textGlow">I just remembered my account! Back to login</Link>
       </div>
     </div>
   );
