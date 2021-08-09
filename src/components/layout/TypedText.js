@@ -10,8 +10,8 @@ export default function TypedText() {
   React.useEffect(() => {
     const options = {
     	strings: [
-        'This is an experience',
-        'This is the future',
+        'This is a new experience',
+        'This is the future of tabletop',
         'This is MUTAGEN'
       ],
       typeSpeed: 50,

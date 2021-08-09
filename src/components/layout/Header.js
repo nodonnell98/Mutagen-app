@@ -43,7 +43,8 @@ export default function Header() {
 
   const links = {
     flexGrow: 1,
-    marginRight: '2%'
+    marginRight: '2%',
+    alignItems: 'center'
   }
 
   return (
