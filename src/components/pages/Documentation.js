@@ -10,7 +10,7 @@ export default function Documentation() {
         className="flexBoxColumn flexGrow1 side-nav"
         style={{ justifyContent: "flex-start" }}
       >
-        <p className="primary-font flexGrow1">Welcome to the rules</p>
+        <p className="primary-font flexGrow1">Welcome to the rules, this page is still in progress</p>
         <div className="flexGrow1 flexBoxColumn">
           <a
             className="primary-font textGlow flexGrow1"
