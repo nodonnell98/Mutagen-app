@@ -10,12 +10,13 @@ export default function DocumentContainer(props) {
   }
 
   return (
-    <Document file={`./pdfs/${props.fileName}.pdf`} onLoadSuccess={onDocumentLoadSuccess}>
-      {Array.apply(null, Array(numPages))
-        .map((x, i) => i + 1)
-        .map((page) => (
-          <Page pageNumber={page} />
-        ))}
-    </Document>
+    // <Document file={`./pdfs/${props.fileName}.pdf`} onLoadSuccess={onDocumentLoadSuccess}>
+    //   {Array.apply(null, Array(numPages))
+    //     .map((x, i) => i + 1)
+    //     .map((page) => (
+    //       <Page pageNumber={page} />
+    //     ))}
+    // </Document>
+    <div></div>
   );
 }
