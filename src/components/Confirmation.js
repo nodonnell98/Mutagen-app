@@ -7,7 +7,8 @@ export default function Confirmation(props) {
     background: "none",
     border: "none",
     color: "#71f1e8",
-    fontSize: "20px",
+    fontSize: "30px",
+    color: '#f17c7b'
   };
 
   const handleDelete = (e) => {
@@ -18,6 +19,6 @@ export default function Confirmation(props) {
 
 
   return(
-    <button style={{ flexGrow: '3'}, buttonStyle} onClick={(e) => handleDelete()}>Delete</button>
+    <button style={{ flexGrow: '3'}, buttonStyle}  className="textGlow" onClick={(e) => handleDelete()}>Delete</button>
   )
 }

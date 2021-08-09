@@ -21,7 +21,7 @@ export default function DeleteCharacter(props) {
     background: "none",
     border: "none",
     color: "#71f1e8",
-    fontSize: "20px",
+    fontSize: "30px",
   };
 
   const modalStyle = {
@@ -34,20 +34,18 @@ export default function DeleteCharacter(props) {
       marginRight: '-50%',
       transform: 'translate(-50%, -50%)',
       backgroundColor: '#2a615e',
-      width: '300px',
+      width: '30em',
       display: 'flex',
       justifyContent: 'space-evenly',
       flexDirection: 'column',
       border: '3px solid #71f1e8'
-
     }
   };
 
   return (
     <div className= "flexGrow1">
       <button
-        style={buttonStyle}
-        className="flexGrow1 textGlow"
+        className="primary-link textGlow flexGrow1"
         onClick={(e) => {
           handleDeleteClick(e);
         }}
@@ -55,9 +53,9 @@ export default function DeleteCharacter(props) {
         Delete
       </button>
       <Modal style={modalStyle} isOpen={modalIsOpen}>
-        <h1 className="flexGrow1" style={{borderBottom: '1px solid #71f1e8', color: '#71f1e8'}}>Are you sure?</h1>
+        <h1 className="flexGrow1" style={{borderBottom: '1px solid #71f1e8', color: '#71f1e8', marginBottom: '1em', fontSize: '40px'}}>Are you sure you want to delete this character?</h1>
         <div className="flexBoxRow flexGrow1">
-        <button style={{marginRight: '10%', flexGrow: '1'}, buttonStyle}onClick={setModalIsOpenToFalse}>x</button>
+        <button className="textGlow" style={{marginRight: '10%', flexGrow: '1', fontSize: '50px'}, buttonStyle}onClick={setModalIsOpenToFalse}>Cancel</button>
         <span class="flexGrow1"></span>
         <Confirmation
           style={{ flexGrow: '3'}}

@@ -207,7 +207,7 @@ input[type=number] {
 
 .blur {
   filter: blur(1px);
-  -webkit-filter: blur(1px);
+  -webkit-filter: blur(3px);
 }
 
 .primary-font {
@@ -231,5 +231,11 @@ input[type=number] {
     left: 0
 }
 
+.primary-link {
+    background: none;
+    border: none;
+    color: #71f1e8;
+    font-size: 20px;
+}
 
 
