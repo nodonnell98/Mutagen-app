@@ -64,6 +64,7 @@ export default function RegisterForm() {
               style={{ textAlign: 'center'}}
               type="email"
               value={email}
+              maxLength="20"
               onChange={(e) => setEmail(e.target.value)}
             />
           </Form.Group>

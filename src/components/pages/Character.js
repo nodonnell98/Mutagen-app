@@ -69,16 +69,24 @@ export default function Character(props) {
   });
 
   const [classification, setClassification] = useState("");
+  const [strength, setStrength] = useState('')
 
   const [edit, setEdit] = useState(true);
   const id = props.id.match.params.id;
 
   const handleEditClick = (e) => {
-    let i;
     e.preventDefault();
     setEdit((prevEdit) => !prevEdit);
-    edit ? i++ : CharacterService.update(id, character);
+    edit ? CharacterService.get(id) : CharacterService.update(id, character);
   };
+
+  const handleCancelClick = (e) => {
+    e.preventDefault();
+    setEdit((prevEdit) => !prevEdit);
+    CharacterService.get(id)
+    window.location.reload();
+  };
+
 
   const retrieveCharacterInformation = useCallback(() => {
     CharacterService.get(id).then((response) => {
@@ -138,7 +146,8 @@ export default function Character(props) {
           >
             {character.name}
           </h1>
-          <div className=" flexBoxRow">
+          <div className=" flexBoxColumn">
+            <div className={edit ? '' : 'flexBoxRow'}>
             <button
               style={buttonStyle}
               className="flexGrow1 textGlow"
@@ -148,6 +157,16 @@ export default function Character(props) {
             >
               {edit ? "Edit" : "Save"}
             </button>
+            <button
+              style={buttonStyle}
+              className="flexGrow1 textGlow"
+              onClick={(e) => {
+                handleCancelClick(e);
+              }}
+            >
+              {edit ? false : "Cancel"}
+            </button>
+            </div>
             <DeleteCharacter id={character.id}></DeleteCharacter>
           </div>
         </div>
