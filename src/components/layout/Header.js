@@ -43,7 +43,8 @@ export default function Header() {
 
   const links = {
     flexGrow: 1,
-    marginRight: '2%'
+    marginRight: '2%',
+    alignItems: 'center'
   }
 
   return (
@@ -55,7 +56,7 @@ export default function Header() {
         <div style={links} className="flexBoxRow flexGrow1">
           <Link style={navLink} className="flexGrow2" to="/characters">My Characters</Link>
           <Link style={navLink} className="flexGrow1"to="/weapons">Armoury</Link>
-          <Link style={navLink} className="flexGrow2"to="/coming_soon">Game Rules</Link>
+          <Link style={navLink} className="flexGrow2"to="/documentation">Game Rules</Link>
           <LoginLinks className="flexGrow1"/>
         </div>
       </nav>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import TypedText from "../layout/TypedText";
 
 export default function Home() {
@@ -26,6 +26,8 @@ export default function Home() {
     height: '100vh',
   }
 
+  const [buttonTxt, setButtonTxt] = useState(false)
+
   return (
     <div className="flexBoxRow" style={homeContainerStyle}>
       <img className="splash" src="/images/splash.jpg"></img>
@@ -33,10 +35,9 @@ export default function Home() {
         <TypedText></TypedText>
         <p style={{textShadow: '1px 2px 4px #000000'}}>Explore this site and discover a new way of playing</p>
         <p style={{textShadow: '1px 2px 4px #000000'}}>Completely free, completely fun, completely future</p>
-        <button className="primary-button fill">Learn more</button>
+        <button className="primary-button fill" onClick={() => setButtonTxt(!buttonTxt)}>{ buttonTxt ? 'Get rekt' : 'Learn More'}</button>
       </div>
       <div className="flexGrow1">
-        {/* <img src="/images/stock.jpg" style={imgStyle} ></img> */}
       </div>
     </div>
   );
