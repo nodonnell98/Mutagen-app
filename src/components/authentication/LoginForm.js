@@ -63,8 +63,8 @@ export default function LoginForm() {
           }>
             Login
           </Button>
-          <Link to='/register' style={{ paddingBottom: '10px'}} className="textGlow">Don't have an account? Register here</Link>
-          {error ? <p style={{color: '#fbff8d'}}>{error}</p> : false }
+          <Link to='/register' style={{ marginBottom: '20px'}} className="textGlow">Don't have an account? Register here</Link>
+          {error ? <p style={{color: '#fbff8d', marginBottom: '10px'}}>{error}</p> : false }
 
         </Form>
       </div>
