@@ -54,6 +54,7 @@ export default function RegisterForm() {
               style={{ textAlign: 'center'}}
               type="text"
               value={username}
+              maxLength="20"
               onChange={(e) => setUsername(e.target.value)}
             />
           </Form.Group>
@@ -64,7 +65,7 @@ export default function RegisterForm() {
               style={{ textAlign: 'center'}}
               type="email"
               value={email}
-              maxLength="20"
+              maxLength="60"
               onChange={(e) => setEmail(e.target.value)}
             />
           </Form.Group>
@@ -75,6 +76,7 @@ export default function RegisterForm() {
               style={{ textAlign: 'center'}}
               type="password"
               value={password}
+              maxLength="30"
               onChange={(e) => setPassword(e.target.value)}
             />
           </Form.Group>
