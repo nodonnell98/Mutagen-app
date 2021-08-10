@@ -54,6 +54,7 @@ a:hover {
 
 .card {
   position: inherit;
+
 }
 
 .card:hover {
@@ -222,13 +223,16 @@ input[type=number] {
     max-width: 20vh;
     background-color: #17191c;
     border-right: 1px solid #71f1e8;
-    height: 100vh;
+    border-top: 1px solid #71f1e8;
+    border-bottom: 1px solid #71f1e8;
+    height: 90vh;
     padding: 2%;
     box-shadow: 20px -1px 11px -12px rgba(0,0,0,0.75);
     position: fixed;
     margin-top: 5vh;
-    opacity: '0.9';
-    left: 0
+    opacity: 0.8;
+    left: 0;
+    border-radius: 20px;
 }
 
 .primary-link {
@@ -237,5 +241,32 @@ input[type=number] {
     color: #71f1e8;
     font-size: 20px;
 }
+
+.slideLeft {
+  animation-name: slideLeftAnim;
+  animation-duration: 1s;
+}
+
+@keyframes slideLeftAnim {
+
+  0%   {left: -200px; }
+
+  100% {left: 0; }
+
+}
+
+.fadeIn {
+  animation-name: fadeInAnim;
+  animation-duration: 1.5s;
+}
+
+@keyframes fadeInAnim {
+
+  0%   {opacity: 0; transform: scale(0.95); }
+
+  100% {opacity: 1; transform: scale(1);}
+
+}
+
 
 
