@@ -7,8 +7,7 @@ import Header from './components/layout/Header';
 import CreateWeapon from './components/WeaponComponents/CreateWeapon';
 import authenticationService from './services/authentication.service';
 import LoginForm from './components/authentication/LoginForm'
-import RegisterForm from './components/authentication/RegisterForm'
-import ComingSoon from './components/pages/ComingSoon';
+import RegisterForm from './components/authentication/RegisterForm';
 import Characters from './components/pages/Characters';
 import Character from './components/pages/Character';
 import Home from './components/pages/Home.js';
