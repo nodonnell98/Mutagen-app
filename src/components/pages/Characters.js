@@ -88,7 +88,7 @@ export default function Characters() {
       <div style={containerStyle}>
         <img className="splash blur" src="/images/orb.jpg"></img>
         <div style={cardContainerStyle}>
-          <Card style={cardStyle} className="noHover container">
+          <Card style={cardStyle} className="noHover container glass">
             <CharacterForm
               classification_id={classification_id}
               classifications={classifications}

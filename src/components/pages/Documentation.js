@@ -6,7 +6,7 @@ export default function Documentation() {
 
   return (
     <div className="flexBoxRow" style={{ marginTop: "10vh" }}>
-      <div className="flexBoxColumn flexGrow1 side-nav">
+      <div className="flexBoxColumn flexGrow1 side-nav slideLeft">
         <p className="primary-font flexGrow1">
           Welcome to the rules, this page is still in progress
         </p>

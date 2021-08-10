@@ -6,7 +6,7 @@ export default function CharacterCard(props) {
   const classifications = props.classifications;
 
   return (
-    <Card style={props.cardStyle}>
+    <Card style={props.cardStyle} className="glass">
       <Card.Body>
         <Card.Title><h1>{character.name}</h1></Card.Title>
         <Card.Text>----------</Card.Text>

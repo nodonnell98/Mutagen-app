@@ -47,7 +47,7 @@ export default function TraitCard(props) {
   });
 
   return (
-    <div className="container flexGrow1 flexBoxColumn" style={traitCardStyle}>
+    <div className="container glass flexGrow1 flexBoxColumn" style={traitCardStyle}>
       <h1 style={traitHeaderStyle}>{trait.toUpperCase()}</h1>
       <input
         type="number"

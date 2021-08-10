@@ -134,7 +134,7 @@ export default function Character(props) {
   return (
     <div style={characterContainerStyle}>
       <img className="splash blur" src="/images/city.jpg"></img>
-      <div className="flexBoxColumn flexGrow1 side-nav slideLeft">
+      <div className="flexBoxColumn flexGrow1 side-nav glass slideLeft">
         <div className="flexBoxColumn flexGrow1">
           <h1
             className=""
@@ -159,7 +159,7 @@ export default function Character(props) {
             </button>
             <button
               style={buttonStyle}
-              className="flexGrow1 textGlow"
+              className="flexGrow1 textGlow "
               onClick={(e) => {
                 handleCancelClick(e);
               }}

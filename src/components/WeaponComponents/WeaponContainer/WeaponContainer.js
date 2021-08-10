@@ -18,7 +18,7 @@ export default function WeaponContainer(props) {
   //
 
   return (
-    <div className="container flexBoxColumn" style={weaponContainerStyle}>
+    <div className="container glass flexBoxColumn" style={weaponContainerStyle}>
       {weapon ? <Weapon weapon={weapon} className="flexGrow1"></Weapon> : "Select a weapon"}
     </div>
   );
