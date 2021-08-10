@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Document, Page } from "react-pdf/dist/umd/entry.webpack";
+// import { Document, Page } from "react-pdf/dist/umd/entry.webpack";
 
 export default function DocumentContainer(props) {
   const [numPages, setNumPages] = useState(null);
