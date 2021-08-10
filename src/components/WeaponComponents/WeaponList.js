@@ -54,7 +54,7 @@ export default function WeaponList(props) {
   };
 
   const handleSearch = (e) => {
-    setSearchedWeapons(e.target.value);
+    setSearchedWeapons(e.target.value.toLowerCase());
   };
 
   let foundWeapons = weapons.filter((weapon) => {
