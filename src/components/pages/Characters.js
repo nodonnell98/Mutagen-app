@@ -59,7 +59,7 @@ export default function Characters() {
   }, [retrieveCharactersInformation]);
 
   const handleSearch = (e) => {
-    setSearchedCharacters(e.target.value);
+    setSearchedCharacters(e.target.value.toLowerCase());
   };
 
   let foundCharacters = characters.filter((character) => {
