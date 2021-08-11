@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 
 export default function SearchBar(props) {
+
+    const handleClear = useCallback(() => {
+        props.setSearchedWeapons('')
+        document.getElementById("search").value = ''
+    }, [props.setSearchedWeapons]);
+
     return (
-        <div>
-            <input style={searchStyle} maxLength="14" onChange={props.handleSearch} type='text' placeholder="Search by name"></input>
+        <div className="flexBoxRow" style={{alignItems: 'center'}}>
+            <input style={searchStyle} maxLength="14" onChange={props.handleSearch} type='text' id="search" placeholder="Search by name"></input>
+            <button className="flexGrow1 primary-button fill" style={{marginLeft: '1em', borderRadius: '10px'}} onClick={() => handleClear()}>Clear</button>
         </div>
     )
 }
@@ -19,5 +26,6 @@ const searchStyle = {
     color: '#71f1e8',
     borderRadius: '50px',
     outline: 'none',
-    height: '3em'
+    height: '3em',
+    flexGrow: '10'
 }
