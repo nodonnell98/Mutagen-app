@@ -37,7 +37,8 @@ export default function Header() {
     marginLeft: '1em',
     marginRight: '1em',
     fontSize: '20px',
-    width: 'auto'
+    width: 'auto',
+    minWidth: '7em'
   }
 
 
@@ -57,6 +58,7 @@ export default function Header() {
           <Link style={navLink} className="flexGrow2" to="/characters">My Characters</Link>
           <Link style={navLink} className="flexGrow1"to="/weapons">Armoury</Link>
           <Link style={navLink} className="flexGrow2"to="/documentation">Game Rules</Link>
+          {AuthenticationService.loggedIn() ? <Link style={navLink} className="flexGrow2"to="/account">Account</Link> : null}
           <LoginLinks className="flexGrow1"/>
         </div>
       </nav>

@@ -17,13 +17,14 @@
   color: #71f1e8;
   border-radius: 10px;
   box-shadow: -9px 10px 16px -8px rgb(0,0,0);
-  opacity: 0.93
+
   /* box-shadow: 2px 2px 15px 5px rgba(0,0,0,0.75) inset; */
 }
 
 .glass {
   background: rgb(29,35,43);
   background: linear-gradient(40deg, rgba(29,35,43,0.9626225490196079) 0%, rgba(43,52,65,1) 62%, rgba(29,35,43,0.9486169467787114) 100%);
+  opacity: 0.93
 }
 
 .containerDark {
