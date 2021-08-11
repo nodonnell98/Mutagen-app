@@ -81,7 +81,7 @@ export default function Characters() {
           My Characters
         </h1>
         <div className="flexGrow3">
-          <SearchBar handleSearch={handleSearch}></SearchBar>
+          <SearchBar handleSearch={handleSearch} searchType='character' setSearchedCharacters={setSearchedCharacters}></SearchBar>
         </div>
       </div>
 

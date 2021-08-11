@@ -71,7 +71,7 @@ export default function WeaponList(props) {
 
   return (
     <div class="flexBoxColumn flexGrow2">
-      <SearchBar handleSearch={handleSearch} setSearchedWeapons={setSearchedWeapons} />
+      <SearchBar handleSearch={handleSearch} setSearchedWeapons={setSearchedWeapons} searchType='weapon' />
       <div class="flexBoxRow flexGrow1">
         <WeaponTable setWeapon={setWeapon} searchedWeapons={foundWeapons} />
         <WeaponContainer

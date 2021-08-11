@@ -3,7 +3,11 @@ import React, { useCallback } from 'react';
 export default function SearchBar(props) {
 
     const handleClear = useCallback(() => {
+        if (props.searchType == 'weapon') {
         props.setSearchedWeapons('')
+        } else {
+            props.setSearchedCharacters('')
+        }
         document.getElementById("search").value = ''
     }, [props.setSearchedWeapons]);
 
