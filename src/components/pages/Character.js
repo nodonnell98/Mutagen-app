@@ -9,8 +9,8 @@ import ClassificationService from "../../services/classification.service";
 
 export default function Character(props) {
   const [character, setCharacter] = useState({
-    weapon_ids: [],
-    classification_ids: [],
+    weapon_ids: [1],
+    classification_ids: [1],
     id: 0,
     name: "Name",
     description: "Description",

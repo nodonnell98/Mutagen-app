@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback } from "react";
 import WeaponService from "../../../services/weapon.service";
 
 export default function AddCharacterWeapon(props) {
@@ -16,7 +16,8 @@ export default function AddCharacterWeapon(props) {
     };
     WeaponService.update(weapon.id, params).then((res) => {
       props.setModalIsOpenToFalse();
-      window.location.reload();
+      props.setCharacter(character)
+      props.retrieveCharacterWeapons(character, 'character');
     });
   };
 

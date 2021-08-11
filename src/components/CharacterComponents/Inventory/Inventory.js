@@ -8,7 +8,7 @@ export default function Inventory(props) {
   return (
     <div class="container glass flexBoxColumn flexGrow1" style={{ marginTop: '1%', height: '700px'}}>
       <h1 className="flexGrow1" style={{alignSelf: 'flex-start'}}>Inventory</h1>
-      <AddWeaponModal character={character}></AddWeaponModal>
+      <AddWeaponModal character={character} setCharacter={props.setCharacter}></AddWeaponModal>
       <WeaponList list="character_weapons" character={character}></WeaponList>
     </div>
   )

@@ -235,7 +235,7 @@ input[type=number] {
     box-shadow: 20px -1px 11px -12px rgba(0,0,0,0.75);
     position: fixed;
     margin-top: 5vh;
-    opacity: 0.8;
+    opacity: 0.85;
     left: 0;
     border-radius: 20px;
 }
