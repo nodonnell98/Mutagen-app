@@ -20,7 +20,7 @@ export default function Class(props) {
       <h3 style={classInfoStyle } className="flexGrow1">Dodge: {classification.dodge_stat ? classification.dodge_stat.toUpperCase() :  classification.dodge_stat}</h3>
       <h3 style={classInfoStyle } className="flexGrow1">Gene Pool: {classification.gene_pool}</h3>
     </div>
-    <img src="/images/characters/nova2.png" className="flexGrow1" style={{width: '5em', transform: 'translateX(-80px)'}}></img>
+    <img src="/images/characters/nova2.png" className="flexGrow1" style={{width: '5em', transform: 'translateX(-100px)'}}></img>
     </div>
   )
 }
