@@ -23,7 +23,7 @@
 
 .glass {
   background: rgb(29,35,43);
-background: linear-gradient(40deg, rgba(29,35,43,0.9626225490196079) 0%, rgba(43,52,65,1) 62%, rgba(29,35,43,0.9486169467787114) 100%);
+  background: linear-gradient(40deg, rgba(29,35,43,0.9626225490196079) 0%, rgba(43,52,65,1) 62%, rgba(29,35,43,0.9486169467787114) 100%);
 }
 
 .containerDark {
