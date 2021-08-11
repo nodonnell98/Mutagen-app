@@ -60,7 +60,7 @@ export default function Account() {
     <div style={{ marginTop: "15vh" }}>
       <img className="splash blur" src="/images/character.jpg"></img>
       <div
-        style={{ padding: "5em" }}
+        style={{ padding: "5em", width: '80vh', opacity: '1' }}
         className="container glass flexBoxColumn fadeIn"
       >
         <Form className="flexGrow1" onSubmit={onSubmit}>
