@@ -55,10 +55,10 @@ export default function Header() {
           <Link style={titleStyle} className="titleHover" to="/" name="Mutagen">Mutagen</Link>
         </div>
         <div style={links} className="flexBoxRow flexGrow1">
-          <Link style={navLink} className="flexGrow2" to="/characters">My Characters</Link>
-          <Link style={navLink} className="flexGrow1"to="/weapons">Armoury</Link>
-          <Link style={navLink} className="flexGrow2"to="/documentation">Game Rules</Link>
-          {AuthenticationService.loggedIn() ? <Link style={navLink} className="flexGrow2"to="/account">Account</Link> : null}
+          <Link style={navLink} className="flexGrow2 headerLink" to="/characters">My Characters</Link>
+          <Link style={navLink} className="flexGrow1 headerLink"to="/weapons">Armoury</Link>
+          <Link style={navLink} className="flexGrow2 headerLink"to="/documentation">Game Rules</Link>
+          {AuthenticationService.loggedIn() ? <Link style={navLink} className="flexGrow2 headerLink"to="/account">Account</Link> : null}
           <LoginLinks className="flexGrow1"/>
         </div>
       </nav>

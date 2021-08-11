@@ -1,5 +1,7 @@
 import React, {useState} from "react";
 import TypedText from "../layout/TypedText";
+import { Link } from "react-router-dom";
+import AuthenticationService from "../../services/authentication.service";
 
 export default function Home() {
   const textStyle = {
@@ -35,7 +37,7 @@ export default function Home() {
         <TypedText></TypedText>
         <p style={{textShadow: '1px 2px 4px #000000'}}>Explore this site and discover a new way of playing</p>
         <p style={{textShadow: '1px 2px 4px #000000'}}>Completely free, completely fun, completely future</p>
-        <button className="primary-button fill" onClick={() => setButtonTxt(!buttonTxt)}>{ buttonTxt ? 'Get rekt' : 'Learn More'}</button>
+        {AuthenticationService.loggedIn() ? null: <Link className="primary-button fill" to="/register">Register</Link> }
       </div>
       <div className="flexGrow1">
       </div>

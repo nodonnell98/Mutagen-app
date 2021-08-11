@@ -39,7 +39,7 @@ export default function LoginLinks() {
     );
   } else {
     return (
-      <Link className="primary-button fill" to="/login">
+      <Link className="primary-button login-link fill" to="/login">
         Sign In
       </Link>
     );

@@ -54,8 +54,15 @@
 }
 
 a:hover {
-  color: #71f1e8;
   text-decoration: none;
+}
+
+.headerLink:hover {
+  color: #71f1e8;
+}
+
+.login-link:hover {
+  color: #1d232b;
 }
 
 .card {
@@ -185,6 +192,10 @@ input[type=number] {
 .fill {
   background-color: #71f1e8;
   border: none;
+  color: #1d232b;
+}
+
+.fill:hover {
   color: #1d232b;
 }
 
