@@ -205,6 +205,18 @@ input[type=number] {
   color: #71f1e8
 }
 
+.no-fill-delete {
+  background-color: transparent;
+  border: 2px solid #f17571;
+  color: #f17571
+}
+
+/* .no-fill-delete:hover {
+  background-color: #f17571;
+  border: 2px solid #f17571;
+  color: white
+} */
+
 .primary-button:hover {
   box-shadow: -1px 0px 18px 0px rgb(18,94,100, 0.5);
   transform: scale(1.05);

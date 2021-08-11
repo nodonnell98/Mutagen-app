@@ -1,9 +1,14 @@
 import { Card } from "react-bootstrap";
 import FavouriteButton from "./FavouriteButton";
+import DeleteCharacter from "./DeleteCharacter";
 
 export default function CharacterCard(props) {
   const character = props.character;
   const classifications = props.classifications;
+
+  const handleDelete = () => {
+
+  }
 
   return (
     <Card style={props.cardStyle} className="glass">
@@ -17,7 +22,11 @@ export default function CharacterCard(props) {
             } else return "";
           })}
         </Card.Text>
+        <div className="flexBoxColumn" style={{width: '40%', alignItems: 'center', paddingLeft: '50%'}}>
         <FavouriteButton character={character} retrieveCharactersInformation={props.retrieveCharactersInformation}></FavouriteButton>
+        {/* <button className="primary-button no-fill-delete" onClick={() => handleDelete()} style={{marginTop: '1em'}}>Delete</button> */}
+        <DeleteCharacter id={character.id}></DeleteCharacter>
+        </div>
       </Card.Body>
     </Card>
   );
