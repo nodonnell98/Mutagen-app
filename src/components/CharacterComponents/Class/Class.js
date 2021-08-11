@@ -11,7 +11,7 @@ export default function Class(props) {
   }
 
   return (
-    <div className="flexBoxRow">
+    <div className="flexBoxRow" style={{alignItems: 'center'}}>
     <div className="flexBoxColumn container glass flexGrow1" style={{width: '50%', padding: '3%'}} >
       <h1 style={classInfoStyle} className="flexGrow1">{classification.name}</h1>
       <h3 style={classInfoStyle } className="flexGrow1">{classification.description}</h3>

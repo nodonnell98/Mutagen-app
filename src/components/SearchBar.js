@@ -18,5 +18,6 @@ const searchStyle = {
     backgroundColor: ' #303a46',
     color: '#71f1e8',
     borderRadius: '50px',
-    outline: 'none'
+    outline: 'none',
+    height: '3em'
 }
