@@ -30,7 +30,7 @@ export default function LoginLinks() {
       <div>
         {/* <a style={navLink} onClick={(e) => displayUser()}>Account</a> */}
         <a
-          className="primary-button no-fill"
+          className="primary-button fill"
           onClick={(e) => handleLogout()}
         >
           Logout
@@ -39,7 +39,7 @@ export default function LoginLinks() {
     );
   } else {
     return (
-      <Link className="primary-button no-fill" to="/login">
+      <Link className="primary-button fill" to="/login">
         Sign In
       </Link>
     );
