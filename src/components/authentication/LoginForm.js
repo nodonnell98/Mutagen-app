@@ -29,7 +29,7 @@ export default function LoginForm() {
   return (
     <div>
       <img style={{width: '102%', marginTop: '0%', opacity: '0.2'}}src='./images/city.jpeg'></img>
-      <div className="container login">
+      <div className="container login glass">
         <Form onSubmit={handleSubmit}>
           <Form.Group size="lg" controlId="email">
             <Form.Label>Email</Form.Label>

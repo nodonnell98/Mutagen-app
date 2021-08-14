@@ -12,13 +12,19 @@
 }
 
 .container {
-  background-color: #1d232b;
+
   border: 2px solid #71f1e8;
   color: #71f1e8;
   border-radius: 10px;
   box-shadow: -9px 10px 16px -8px rgb(0,0,0);
-  opacity: 0.93
+
   /* box-shadow: 2px 2px 15px 5px rgba(0,0,0,0.75) inset; */
+}
+
+.glass {
+  background: rgb(29,35,43);
+  background: linear-gradient(40deg, rgba(29,35,43,0.9626225490196079) 0%, rgba(43,52,65,1) 62%, rgba(29,35,43,0.9486169467787114) 100%);
+  opacity: 0.93
 }
 
 .containerDark {
@@ -48,12 +54,20 @@
 }
 
 a:hover {
-  color: #71f1e8;
   text-decoration: none;
+}
+
+.headerLink:hover {
+  color: #71f1e8;
+}
+
+.login-link:hover {
+  color: #1d232b;
 }
 
 .card {
   position: inherit;
+
 }
 
 .card:hover {
@@ -181,11 +195,27 @@ input[type=number] {
   color: #1d232b;
 }
 
+.fill:hover {
+  color: #1d232b;
+}
+
 .no-fill {
   background-color: transparent;
   border: 2px solid #71f1e8;
   color: #71f1e8
 }
+
+.no-fill-delete {
+  background-color: transparent;
+  border: 2px solid #f17571;
+  color: #f17571
+}
+
+/* .no-fill-delete:hover {
+  background-color: #f17571;
+  border: 2px solid #f17571;
+  color: white
+} */
 
 .primary-button:hover {
   box-shadow: -1px 0px 18px 0px rgb(18,94,100, 0.5);
@@ -222,13 +252,16 @@ input[type=number] {
     max-width: 20vh;
     background-color: #17191c;
     border-right: 1px solid #71f1e8;
-    height: 100vh;
+    border-top: 1px solid #71f1e8;
+    border-bottom: 1px solid #71f1e8;
+    height: 90vh;
     padding: 2%;
     box-shadow: 20px -1px 11px -12px rgba(0,0,0,0.75);
     position: fixed;
     margin-top: 5vh;
-    opacity: '0.9';
-    left: 0
+    opacity: 0.85;
+    left: 0;
+    border-radius: 20px;
 }
 
 .primary-link {
@@ -237,5 +270,32 @@ input[type=number] {
     color: #71f1e8;
     font-size: 20px;
 }
+
+.slideLeft {
+  animation-name: slideLeftAnim;
+  animation-duration: 1s;
+}
+
+@keyframes slideLeftAnim {
+
+  0%   {left: -200px; }
+
+  100% {left: 0; }
+
+}
+
+.fadeIn {
+  animation-name: fadeInAnim;
+  animation-duration: 1.5s;
+}
+
+@keyframes fadeInAnim {
+
+  0%   {opacity: 0; transform: scale(0.95); }
+
+  100% {opacity: 1; transform: scale(1);}
+
+}
+
 
 

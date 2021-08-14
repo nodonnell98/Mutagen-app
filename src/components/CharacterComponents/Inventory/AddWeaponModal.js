@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Modal from "react-modal";
 import WeaponList from "../../WeaponComponents/WeaponList";
 
-import AddCharacterWeapon from "../../WeaponComponents/WeaponContainer/AddCharacterWeapon";
+
 
 export default function AddWeaponModal(props) {
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -68,7 +68,7 @@ export default function AddWeaponModal(props) {
       >
         Add Weapon
       </button>
-      <Modal style={modalStyle} isOpen={modalIsOpen} >
+      <Modal style={modalStyle} isOpen={modalIsOpen}>
         <div className="flexGrow1 flexBoxRow">
           <h1
             className="flexGrow1"
@@ -85,12 +85,10 @@ export default function AddWeaponModal(props) {
           setModalIsOpenToFalse={setModalIsOpenToFalse}
           addCharacter={true}
           setWeaponToAdd={setWeapon}
-        ></WeaponList>
-        <AddCharacterWeapon
-          character={props.character}
-          setModalIsOpenToFalse={setModalIsOpenToFalse}
           weapon={weapon}
-        ></AddCharacterWeapon>
+          addWeapon={true}
+          setCharacter={props.setCharacter}
+        ></WeaponList>
       </Modal>
     </div>
   );

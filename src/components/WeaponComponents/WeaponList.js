@@ -3,7 +3,7 @@ import WeaponTable from "./WeaponTable";
 import WeaponContainer from "./WeaponContainer/WeaponContainer";
 import SearchBar from "../SearchBar";
 import WeaponService from "../../services/weapon.service";
-import { propTypes } from "react-bootstrap/esm/Image";
+import AddCharacterWeapon from "./WeaponContainer/AddCharacterWeapon";
 
 export default function WeaponList(props) {
   const character = props.character;
@@ -12,6 +12,7 @@ export default function WeaponList(props) {
   const [searchedWeapons, setSearchedWeapons] = useState([]);
 
   const retrieveWeapons = useCallback((character) => {
+    console.log(props)
     if (props.list == "character_weapons") {
       WeaponService.index().then((response) => {
         let character_weapons = [];
@@ -34,6 +35,8 @@ export default function WeaponList(props) {
       WeaponService.index().then((response) => {
         setWeapons(response.data);
       });
+
+
   }, [setWeapons]);
 
   const setWeapon = (e) => {
@@ -54,7 +57,7 @@ export default function WeaponList(props) {
   };
 
   const handleSearch = (e) => {
-    setSearchedWeapons(e.target.value);
+    setSearchedWeapons(e.target.value.toLowerCase());
   };
 
   let foundWeapons = weapons.filter((weapon) => {
@@ -68,7 +71,7 @@ export default function WeaponList(props) {
 
   return (
     <div class="flexBoxColumn flexGrow2">
-      <SearchBar handleSearch={handleSearch} />
+      <SearchBar handleSearch={handleSearch} setSearchedWeapons={setSearchedWeapons} searchType='weapon' />
       <div class="flexBoxRow flexGrow1">
         <WeaponTable setWeapon={setWeapon} searchedWeapons={foundWeapons} />
         <WeaponContainer
@@ -79,6 +82,15 @@ export default function WeaponList(props) {
           setModalIsOpenToFalse={props.setModalIsOpenToFalse}
         ></WeaponContainer>
       </div>
+      { props.addWeapon ?
+      < AddCharacterWeapon
+          character={props.character}
+          setModalIsOpenToFalse={props.setModalIsOpenToFalse}
+          weapon={props.weapon}
+          retrieveCharacterWeapons={retrieveWeapons}
+          setCharacter={props.setCharacter}
+        ></AddCharacterWeapon>
+        : null }
     </div>
   );
 }

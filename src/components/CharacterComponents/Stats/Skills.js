@@ -48,7 +48,7 @@ export default function Skills(props) {
 
   return (
     <div
-      className="container flexBoxColumn flexGrow1"
+      className="container glass flexBoxColumn flexGrow1"
       style={skillsContainerStyle}
     >
       {skillCategoryKeys.map((skillCategory, i) => {

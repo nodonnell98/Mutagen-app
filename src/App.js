@@ -7,12 +7,12 @@ import Header from './components/layout/Header';
 import CreateWeapon from './components/WeaponComponents/CreateWeapon';
 import authenticationService from './services/authentication.service';
 import LoginForm from './components/authentication/LoginForm'
-import RegisterForm from './components/authentication/RegisterForm'
-import ComingSoon from './components/pages/ComingSoon';
+import RegisterForm from './components/authentication/RegisterForm';
 import Characters from './components/pages/Characters';
 import Character from './components/pages/Character';
 import Home from './components/pages/Home.js';
 import Documentation from './components/pages/Documentation';
+import Account from './components/pages/Account';
 
 class App extends Component {
   render() {
@@ -23,6 +23,7 @@ class App extends Component {
           <div className='appContainer'>
 
             <Route exact path="/"><Home /></Route>
+            <Route exact path="/account" ><Account /></Route>
             <Route exact path="/weapons">< Weapons /></Route>
             <Route exact path="/weapons/add" ><CreateWeapon /></Route>
             <Route exact path="/login" ><LoginForm /></Route>

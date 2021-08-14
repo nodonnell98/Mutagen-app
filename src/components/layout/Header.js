@@ -11,8 +11,8 @@ export default function Header() {
     color: '#EDF4ED',
     textAlign: 'center',
     paddingTop: '1%',
-    paddingLeft: '7%',
-    paddingRight: '7%',
+    paddingLeft: '2em',
+    paddingRight: '2em',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-evenly',
@@ -37,7 +37,8 @@ export default function Header() {
     marginLeft: '1em',
     marginRight: '1em',
     fontSize: '20px',
-    width: 'auto'
+    width: 'auto',
+    minWidth: '7em'
   }
 
 
@@ -54,9 +55,10 @@ export default function Header() {
           <Link style={titleStyle} className="titleHover" to="/" name="Mutagen">Mutagen</Link>
         </div>
         <div style={links} className="flexBoxRow flexGrow1">
-          <Link style={navLink} className="flexGrow2" to="/characters">My Characters</Link>
-          <Link style={navLink} className="flexGrow1"to="/weapons">Armoury</Link>
-          <Link style={navLink} className="flexGrow2"to="/documentation">Game Rules</Link>
+          <Link style={navLink} className="flexGrow2 headerLink" to="/characters">My Characters</Link>
+          <Link style={navLink} className="flexGrow1 headerLink"to="/weapons">Armoury</Link>
+          <Link style={navLink} className="flexGrow2 headerLink"to="/documentation">Game Rules</Link>
+          {AuthenticationService.loggedIn() ? <Link style={navLink} className="flexGrow2 headerLink"to="/account">Account</Link> : null}
           <LoginLinks className="flexGrow1"/>
         </div>
       </nav>

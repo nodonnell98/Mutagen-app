@@ -59,7 +59,7 @@ export default function Characters() {
   }, [retrieveCharactersInformation]);
 
   const handleSearch = (e) => {
-    setSearchedCharacters(e.target.value);
+    setSearchedCharacters(e.target.value.toLowerCase());
   };
 
   let foundCharacters = characters.filter((character) => {
@@ -81,14 +81,14 @@ export default function Characters() {
           My Characters
         </h1>
         <div className="flexGrow3">
-          <SearchBar handleSearch={handleSearch}></SearchBar>
+          <SearchBar handleSearch={handleSearch} searchType='character' setSearchedCharacters={setSearchedCharacters}></SearchBar>
         </div>
       </div>
 
       <div style={containerStyle}>
         <img className="splash blur" src="/images/orb.jpg"></img>
         <div style={cardContainerStyle}>
-          <Card style={cardStyle} className="noHover container">
+          <Card style={cardStyle} className="noHover container glass">
             <CharacterForm
               classification_id={classification_id}
               classifications={classifications}

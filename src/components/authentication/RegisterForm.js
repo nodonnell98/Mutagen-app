@@ -45,7 +45,7 @@ export default function RegisterForm() {
   return (
     <div>
       <img style={{width: '102%', marginTop: '0%', opacity: '0.2', height: '100vh'}}src='./images/city.jpeg'></img>
-      <div className="container login">
+      <div className="container glass login">
         <Form onSubmit={onSubmit}>
           <Form.Group size="lg" controlId="username">
             <Form.Label>Username</Form.Label>
@@ -54,6 +54,7 @@ export default function RegisterForm() {
               style={{ textAlign: 'center'}}
               type="text"
               value={username}
+              maxLength="20"
               onChange={(e) => setUsername(e.target.value)}
             />
           </Form.Group>
@@ -64,7 +65,7 @@ export default function RegisterForm() {
               style={{ textAlign: 'center'}}
               type="email"
               value={email}
-              maxLength="20"
+              maxLength="60"
               onChange={(e) => setEmail(e.target.value)}
             />
           </Form.Group>
@@ -75,6 +76,7 @@ export default function RegisterForm() {
               style={{ textAlign: 'center'}}
               type="password"
               value={password}
+              maxLength="30"
               onChange={(e) => setPassword(e.target.value)}
             />
           </Form.Group>

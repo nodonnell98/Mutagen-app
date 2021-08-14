@@ -45,7 +45,8 @@ export default function DeleteCharacter(props) {
   return (
     <div className= "flexGrow1">
       <button
-        className="primary-link textGlow flexGrow1"
+        className="primary-button no-fill-delete"
+        style={{marginTop: '1em', marginBottom: '1em'}}
         onClick={(e) => {
           handleDeleteClick(e);
         }}
@@ -55,7 +56,7 @@ export default function DeleteCharacter(props) {
       <Modal style={modalStyle} isOpen={modalIsOpen}>
         <h1 className="flexGrow1" style={{borderBottom: '1px solid #71f1e8', color: '#71f1e8', marginBottom: '1em', fontSize: '40px'}}>Are you sure you want to delete this character?</h1>
         <div className="flexBoxRow flexGrow1">
-        <button className="textGlow" style={{marginRight: '10%', flexGrow: '1', fontSize: '50px'}, buttonStyle}onClick={setModalIsOpenToFalse}>Cancel</button>
+        <button className="textGlow" style={{marginRight: '10%', flexGrow: '1', fontSize: '50px'}, buttonStyle} onClick={setModalIsOpenToFalse}>Cancel</button>
         <span class="flexGrow1"></span>
         <Confirmation
           style={{ flexGrow: '3'}}

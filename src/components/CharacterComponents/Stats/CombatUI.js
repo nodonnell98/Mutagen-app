@@ -28,7 +28,7 @@ export default function CombatUI(props) {
 
 
   return (
-    <div className="flexBoxColumn flexGrow1 container">
+    <div className="flexBoxColumn flexGrow1 container glass">
       <div className="flexBoxRow flexGrow1" style={combatStatContainerStyle, {width:'100%', marginTop: '5%', borderBottom: '1px solid #71f1e8'}}>
         <div className="flexBoxColumn flexGrow1" >
           <h1 style={{ fontSize: "20px" }}>Dodge</h1>

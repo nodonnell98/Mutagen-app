@@ -12,7 +12,7 @@ export default function CharacterStats(props) {
     marginTop: "1%",
   };
   return (
-    <div>
+    <div className="fadeIn">
       <section
         style={(sectionStyle, { marginBottom: "2%" })}
         className="flexBoxRow flexGrow1"
