@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import Modal from "react-modal";
 import WeaponList from "../../WeaponComponents/WeaponList";
 
-
-
 export default function AddWeaponModal(props) {
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
