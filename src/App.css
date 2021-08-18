@@ -271,6 +271,24 @@ input[type=number] {
     font-size: 20px;
 }
 
+.select-disabled {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: '';
+  font-size: 18px;
+}
+
+.select-active {
+  -webkit-appearance: default;
+  -moz-appearance: default;
+  text-indent: 0px;
+  text-overflow: '';
+  background-color: #224e4c;
+  color: #71f1e8;
+  border: none;
+}
+
 .slideLeft {
   animation-name: slideLeftAnim;
   animation-duration: 1s;

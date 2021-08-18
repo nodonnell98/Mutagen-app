@@ -25,7 +25,7 @@ export default function CharacterStats(props) {
       </section>
       <section style={sectionStyle} className="flexBoxRow flexGrow1">
         <CharacterNotes character={character} edit={edit} setCharacter={props.setCharacter} className="flexGrow1"></CharacterNotes>
-        <Skills character={character}></Skills>
+        <Skills character={character} edit={edit} setCharacter={props.setCharacter}></Skills>
         <CombatUI character={character}></CombatUI>
       </section>
     </div>
