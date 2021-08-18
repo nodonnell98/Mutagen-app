@@ -6,10 +6,6 @@ export default function CharacterCard(props) {
   const character = props.character;
   const classifications = props.classifications;
 
-  const handleDelete = () => {
-
-  }
-
   return (
     <Card style={props.cardStyle} className="glass">
       <Card.Body>
@@ -17,7 +13,7 @@ export default function CharacterCard(props) {
         <Card.Text>----------</Card.Text>
         <Card.Text>
           {classifications.map((classItem) => {
-            if (classItem.id == character.classification_ids[0]) {
+            if (classItem.id === character.classification_ids[0]) {
               return classItem.name;
             } else return "";
           })}

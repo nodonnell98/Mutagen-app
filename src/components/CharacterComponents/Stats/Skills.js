@@ -26,7 +26,7 @@ export default function Skills(props) {
     >
       {skillKeys.map((skill, i) => {
           return (
-            <div>
+            <div key={i}>
               <Skill skill={skill} character={character} skillIndex={i} edit={props.edit} setCharacter={props.setCharacter}></Skill>
             </div>
           );

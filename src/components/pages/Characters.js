@@ -86,7 +86,7 @@ export default function Characters() {
       </div>
 
       <div style={containerStyle}>
-        <img className="splash blur" src="/images/orb.jpg"></img>
+        <img alt="orbs with white glow underneath" className="splash blur" src="/images/orb.jpg"></img>
         <div style={cardContainerStyle}>
           <Card style={cardStyle} className="noHover container glass">
             <CharacterForm
@@ -98,7 +98,7 @@ export default function Characters() {
         </div>
         {foundCharacters.map((char, i) => {
           return (
-            <div style={cardContainerStyle}>
+            <div style={cardContainerStyle} key={i}>
               <Link to={"/character/" + char.id}>
                 <CharacterCard
                   style={cardStyle}

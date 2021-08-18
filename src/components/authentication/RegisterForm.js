@@ -39,12 +39,12 @@ export default function RegisterForm() {
   );
 
   function validateForm() {
-    return email.length > 0 && password.length >= 8 && password == passwordConfirmation;
+    return email.length > 0 && password.length >= 8 && password.length <= 35 && password === passwordConfirmation;
   }
 
   return (
     <div>
-      <img style={{width: '102%', marginTop: '0%', opacity: '0.2', height: '100vh'}}src='./images/city.jpeg'></img>
+      <img alt="blue DNA strand" style={{width: '102%', marginTop: '0%', opacity: '0.2', height: '100vh'}}src='./images/city.jpeg'></img>
       <div className="container glass login">
         <Form onSubmit={onSubmit}>
           <Form.Group size="lg" controlId="username">
@@ -102,7 +102,7 @@ export default function RegisterForm() {
             Register
           </Button>
           {error ? <p style={{color: '#fbff8d'}}>{error}</p> : false }
-          { ((passwordConfirmation != password) && (passwordConfirmation.length >= 1)) ?  <p style={{color: '#fbff8d'}}>Passwords don't match</p> : false }
+          { ((passwordConfirmation !== password) && (passwordConfirmation.length >= 1)) ?  <p style={{color: '#fbff8d'}}>Passwords don't match</p> : false }
         </Form>
         <Link to='/login' style={{paddingBottom: '10px'}} className="textGlow">I just remembered my account! Back to login</Link>
       </div>

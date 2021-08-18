@@ -14,7 +14,7 @@ export default function CharacterStats(props) {
   return (
     <div className="fadeIn">
       <section
-        style={(sectionStyle, { marginBottom: "2%" })}
+        style={{ marginBottom: "2%" }}
         className="flexBoxRow flexGrow1"
       >
         <TraitCards

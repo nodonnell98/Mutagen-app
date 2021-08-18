@@ -3,7 +3,6 @@ import { useTable, useSortBy, usePagination } from "react-table";
 
 export default function WeaponTable(props) {
   const data = props.searchedWeapons;
-  const pageSize = 5;
 
   const columns = [
     {
@@ -149,7 +148,6 @@ export default function WeaponTable(props) {
       getTableProps,
       getTableBodyProps,
       headerGroups,
-      rows,
       prepareRow,
       page,
       canPreviousPage,
@@ -159,7 +157,6 @@ export default function WeaponTable(props) {
       gotoPage,
       nextPage,
       previousPage,
-      setPageSize,
       state: { pageIndex },
     } = useTable(
       {

@@ -1,15 +1,15 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 
 export default function SearchBar(props) {
 
-    const handleClear = useCallback(() => {
-        if (props.searchType == 'weapon') {
+    const handleClear = () => {
+        if (props.searchType === 'weapon') {
         props.setSearchedWeapons('')
         } else {
             props.setSearchedCharacters('')
         }
         document.getElementById("search").value = ''
-    }, [props.setSearchedWeapons]);
+    };
 
     return (
         <div className="flexBoxRow" style={{alignItems: 'center'}}>
@@ -24,7 +24,6 @@ const searchStyle = {
     marginTop: '1em',
     marginBottom: '1em',
     border: '2px solid #71f1e8',
-    height: '2em',
     textAlign: 'center',
     backgroundColor: ' #303a46',
     color: '#71f1e8',

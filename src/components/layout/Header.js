@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {Link} from 'react-router-dom';
 import LoginLinks from '../authentication/LoginLinks'
 import AuthenticationService from '../../services/authentication.service'
@@ -6,7 +6,6 @@ import AuthenticationService from '../../services/authentication.service'
 export default function Header() {
 
   const headerStyle = {
-    background: 'rgb(2,0,36)',
     background: 'linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(0,0,0,0.7525385154061625) 52%, rgba(0,0,0,0) 100%)',
     color: '#EDF4ED',
     textAlign: 'center',
@@ -16,7 +15,6 @@ export default function Header() {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-evenly',
-    // borderBottom: '2px solid #71f1e8',
     textDecoration: 'none',
     height: '10vh',
     position: 'fixed',

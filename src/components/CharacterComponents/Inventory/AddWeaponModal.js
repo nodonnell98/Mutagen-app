@@ -43,16 +43,6 @@ export default function AddWeaponModal(props) {
     fontSize: "20px",
   };
 
-  const addButton = {
-    backgroundColor: "#71f1e8",
-    color: '#1d232b',
-    border: "none",
-    padding: "10px",
-    borderRadius: "40px",
-    paddingLeft: "20px",
-    paddingRight: "20px"
-  }
-
   const [weapon, setWeapon] = useState();
 
   return (

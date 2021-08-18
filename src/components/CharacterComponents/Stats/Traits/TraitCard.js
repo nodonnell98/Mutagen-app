@@ -22,7 +22,6 @@ export default function TraitCard(props) {
     backgroundColor: "transparent",
     color: "#71f1e8",
     border: "0",
-    borderBottom: 'none',
     fontSize: '18px',
     borderBottom: "1px solid transparent"
   };

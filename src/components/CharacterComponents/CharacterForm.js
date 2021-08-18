@@ -1,44 +1,38 @@
-import React, { useState, useCallback, useEffect } from "react";
+import React, { useState } from "react";
 import { Form, Button, Dropdown } from "react-bootstrap";
 
 import CharacterService from "../../services/character.service";
-import ClassificationService from "../../services/classification.service";
 
 export default function CharacterForm(props) {
   const [name, setName] = useState("");
   const [error, setError] = useState("");
-  const [label, setLabel] = useState('Select Class')
+  const [label, setLabel] = useState("Select Class");
 
-  const classification_id = props.classification_id
-  const classifications = props.classifications
-  const setClassificationId = props.setClassificationId
-
-
+  const classification_id = props.classification_id;
+  const classifications = props.classifications;
+  const setClassificationId = props.setClassificationId;
 
   let params = {
     character: {
       name: name,
-      classification_ids: [classification_id]
-    }
+      classification_ids: [classification_id],
+    },
   };
 
-  const onSubmit = useCallback(
-    (e) => {
-      e.preventDefault();
+  const onSubmit = (e) => {
+    e.preventDefault();
 
-      CharacterService.create(params)
-        .then((e) => {
-          window.location.replace("/character/" + e.data.id);
-        })
-        .catch((e) => {
-          setError(e.response.data.errors);
-        });
-    },
-    [name, classification_id]
-  );
-
+    CharacterService.create(params)
+      .then((e) => {
+        window.location.replace("/character/" + e.data.id);
+      })
+      .catch((e) => {
+        setError(e.response.data.errors);
+        console.log(error);
+      });
+  };
   function validateForm() {
-    return name.length > 0 && classification_id != undefined;
+    return name.length > 0 && classification_id !== undefined;
   }
 
   return (
@@ -66,16 +60,30 @@ export default function CharacterForm(props) {
         <Form.Group size="lg" controlId="class">
           <Form.Label>Class</Form.Label>
           <Dropdown>
-            <Dropdown.Toggle variant="success" id="dropdown-basic" style={{backgroundColor: '#71f1e8', border: '#71f1e8', color: '#2a615e'}}>
+            <Dropdown.Toggle
+              variant="success"
+              id="dropdown-basic"
+              style={{
+                backgroundColor: "#71f1e8",
+                border: "#71f1e8",
+                color: "#2a615e",
+              }}
+            >
               {label}
             </Dropdown.Toggle>
 
             <Dropdown.Menu>
-
-              { classifications.map((classificationArr, i) => {
+              {classifications.map((classificationArr, i) => {
                 return (
-                  <Dropdown.Item href="#/action-1" key={i} onClick={()=> setLabel(classificationArr.name)} onSelect={() => setClassificationId(classificationArr.id)}>{classificationArr.name}</Dropdown.Item>
-                )
+                  <Dropdown.Item
+                    href="#/action-1"
+                    key={i}
+                    onClick={() => setLabel(classificationArr.name)}
+                    onSelect={() => setClassificationId(classificationArr.id)}
+                  >
+                    {classificationArr.name}
+                  </Dropdown.Item>
+                );
               })}
             </Dropdown.Menu>
           </Dropdown>
