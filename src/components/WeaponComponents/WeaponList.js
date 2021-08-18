@@ -12,7 +12,6 @@ export default function WeaponList(props) {
   const [searchedWeapons, setSearchedWeapons] = useState([]);
 
   const retrieveWeapons = useCallback((character) => {
-    console.log(props)
     if (props.list == "character_weapons") {
       WeaponService.index().then((response) => {
         let character_weapons = [];
@@ -70,9 +69,9 @@ export default function WeaponList(props) {
   }, [retrieveWeapons, character]);
 
   return (
-    <div class="flexBoxColumn flexGrow2">
+    <div className="flexBoxColumn flexGrow2">
       <SearchBar handleSearch={handleSearch} setSearchedWeapons={setSearchedWeapons} searchType='weapon' />
-      <div class="flexBoxRow flexGrow1">
+      <div className="flexBoxRow flexGrow1">
         <WeaponTable setWeapon={setWeapon} searchedWeapons={foundWeapons} />
         <WeaponContainer
           retrieveCharacterWeapons={retrieveWeapons}

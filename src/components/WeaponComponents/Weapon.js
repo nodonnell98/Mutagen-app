@@ -39,11 +39,11 @@ export default function Weapon(props) {
         break;
 
       case "Medium Range":
-        src = "/images/weaponImg/knife.png";
+        src = "/images/weaponImg/bat.png";
         break;
 
       case "Long Range":
-        src = "/images/weaponImg/knife.png";
+        src = "/images/weaponImg/sniper.png";
         break;
     }
     return src;

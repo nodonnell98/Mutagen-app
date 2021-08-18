@@ -6,6 +6,7 @@ export default function TraitCard(props) {
   const traitCardStyle = {
     height: "100px",
     margin: "1%",
+    paddingTop: '1em'
   };
 
   const traitHeaderStyle = {
@@ -58,6 +59,7 @@ export default function TraitCard(props) {
         min='0'
         max='100'
       ></input>
+      <p className="primary-font" style={{fontSize: '12px', opacity: '0.9'}}>{Math.floor(props.character.traits[trait] / 2)} / {Math.floor(props.character.traits[trait] / 4) }</p>
     </div>
   );
 }
