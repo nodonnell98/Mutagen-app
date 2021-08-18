@@ -11,7 +11,6 @@ import RegisterForm from './components/authentication/RegisterForm';
 import Characters from './components/pages/Characters';
 import Character from './components/pages/Character';
 import Home from './components/pages/Home.js';
-import Documentation from './components/pages/Documentation';
 import Account from './components/pages/Account';
 
 class App extends Component {
@@ -28,7 +27,6 @@ class App extends Component {
             <Route exact path="/weapons/add" ><CreateWeapon /></Route>
             <Route exact path="/login" ><LoginForm /></Route>
             <Route exact path="/register" ><RegisterForm /></Route>
-            <Route exact path="/documentation" ><Documentation /></Route>
             <Route exact path="/characters" >{authenticationService.loggedIn() ? <Characters /> : <LoginForm />}</Route>
             <Route exact path="/character/:id" render={(props) =>  <Character id={props}/>}></Route>
           </div>
