@@ -37,8 +37,7 @@ export default function Skill(props) {
   const skillStyle = {
     display: "flex",
     // borderBottom: '1px solid #71f1e8'
-    alignItems: "center",
-    paddingTop: "5px",
+    alignItems: "center"
   };
 
   skillArr.forEach((val, i) => {
@@ -72,10 +71,10 @@ export default function Skill(props) {
   return (
     <div
       className={"flexBoxRow flexGrow1"}
-      style={(skillStyle, { borderBottom: "1px solid #71f1e8" })}
+      style={(skillStyle, { borderBottom: "1px solid #71f1e8", alignItems: 'center' })}
       key={skillIndex}
     >
-      <p className="flexGrow1" style={{textAlign: 'start'}}>{skill.toUpperCase()}</p>
+      <p className="flexGrow1" style={{textAlign: 'start', margin: '0', fontSize: '20px', marginTop: '0.2em', marginBottom: '0.2em'}}>{skill.toUpperCase()}</p>
       <select
         disabled={props.edit}
         className={props.edit ? "flexGrow1 select-disabled" : "flexGrow1 select-active" }

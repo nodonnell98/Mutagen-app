@@ -276,17 +276,19 @@ input[type=number] {
   -moz-appearance: none;
   text-indent: 1px;
   text-overflow: '';
-  font-size: 18px;
+  font-size: 20px;
 }
 
 .select-active {
   -webkit-appearance: default;
   -moz-appearance: default;
-  text-indent: 0px;
+  text-indent: 1px;
   text-overflow: '';
   background-color: #224e4c;
   color: #71f1e8;
   border: none;
+  font-size: 20px;
+  transform: translateX(-4px);
 }
 
 .slideLeft {

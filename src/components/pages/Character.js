@@ -147,25 +147,25 @@ export default function Character(props) {
             {character.name}
           </h1>
           <div className=" flexBoxColumn">
-            <div className={edit ? '' : 'flexBoxRow'}>
-            <button
-              style={buttonStyle}
-              className="flexGrow1 textGlow"
-              onClick={(e) => {
-                handleEditClick(e);
-              }}
-            >
-              {edit ? "Edit" : "Save"}
-            </button>
-            <button
-              style={buttonStyle}
-              className="flexGrow1 textGlow "
-              onClick={(e) => {
-                handleCancelClick(e);
-              }}
-            >
-              {edit ? false : "Cancel"}
-            </button>
+            <div className={edit ? '' : 'flexBoxColumn'}>
+              <button
+                style={buttonStyle}
+                className="flexGrow1 textGlow"
+                onClick={(e) => {
+                  handleEditClick(e);
+                }}
+              >
+                {edit ? "Edit" : "Save"}
+              </button>
+              <button
+                style={buttonStyle}
+                className="flexGrow1 textGlow "
+                onClick={(e) => {
+                  handleCancelClick(e);
+                }}
+              >
+                {edit ? false : "Cancel"}
+              </button>
             </div>
             <DeleteCharacter id={character.id}></DeleteCharacter>
           </div>

@@ -14,7 +14,7 @@ export default function SearchBar(props) {
     return (
         <div className="flexBoxRow" style={{alignItems: 'center'}}>
             <input style={searchStyle} maxLength="14" onChange={props.handleSearch} type='text' id="search" placeholder="Search by name"></input>
-            <button className="flexGrow1 primary-button fill" style={{marginLeft: '1em', borderRadius: '10px'}} onClick={() => handleClear()}>Clear</button>
+            <button className="flexGrow1 primary-button fill" style={{marginLeft: '0.5em', borderRadius: '50px'}} onClick={() => handleClear()}>Clear</button>
         </div>
     )
 }
