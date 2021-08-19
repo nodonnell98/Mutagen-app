@@ -70,11 +70,10 @@ export default function Characters() {
 
   return (
     <div style={containerStyle} className="flexBoxColumn">
-      <div className="flexGrow1 flexBoxRow border-bot">
+      <div className="flexGrow1 flexBoxRow border-bot" style={{alignItems: 'center'}}>
         <h1
           className="primary-font flexGrow1"
           style={{
-            alignSelf: "flex-start",
             textAlign: "start",
           }}
         >
