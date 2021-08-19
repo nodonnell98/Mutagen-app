@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React from "react";
 import WeaponService from "../../../services/weapon.service";
 
 export default function AddCharacterWeapon(props) {

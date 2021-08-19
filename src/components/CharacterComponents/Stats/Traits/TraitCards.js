@@ -7,9 +7,9 @@ export default function TraitCards(props) {
 
   return (
     <div className="flexBoxRow flexGrow2 fadeIn">
-      {traits.map((trait) => {
+      {traits.map((trait, i) => {
         return (
-          <TraitCard setCharacter={props.setCharacter} trait={trait} edit={props.edit} value={character.traits[trait]} character={character}></TraitCard>
+          <TraitCard key={i} setCharacter={props.setCharacter} trait={trait} edit={props.edit} value={character.traits[trait]} character={character}></TraitCard>
         );
       })}
     </div>

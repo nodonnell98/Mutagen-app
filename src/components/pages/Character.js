@@ -69,7 +69,6 @@ export default function Character(props) {
   });
 
   const [classification, setClassification] = useState("");
-  const [strength, setStrength] = useState('')
 
   const [edit, setEdit] = useState(true);
   const id = props.id.match.params.id;
@@ -97,7 +96,7 @@ export default function Character(props) {
         }
       );
     });
-  }, [setCharacter, setClassification]);
+  }, [setCharacter, setClassification, id]);
 
   // Fetch list of characters on load
   useEffect(() => {
@@ -133,7 +132,7 @@ export default function Character(props) {
 
   return (
     <div style={characterContainerStyle}>
-      <img className="splash blur" src="/images/city.jpg"></img>
+      <img alt="a city skyline at night" className="splash blur" src="/images/city.jpg"></img>
       <div className="flexBoxColumn flexGrow1 side-nav glass slideLeft">
         <div className="flexBoxColumn flexGrow1">
           <h1
@@ -147,25 +146,25 @@ export default function Character(props) {
             {character.name}
           </h1>
           <div className=" flexBoxColumn">
-            <div className={edit ? '' : 'flexBoxRow'}>
-            <button
-              style={buttonStyle}
-              className="flexGrow1 textGlow"
-              onClick={(e) => {
-                handleEditClick(e);
-              }}
-            >
-              {edit ? "Edit" : "Save"}
-            </button>
-            <button
-              style={buttonStyle}
-              className="flexGrow1 textGlow "
-              onClick={(e) => {
-                handleCancelClick(e);
-              }}
-            >
-              {edit ? false : "Cancel"}
-            </button>
+            <div className={edit ? '' : 'flexBoxColumn'}>
+              <button
+                style={buttonStyle}
+                className="flexGrow1 textGlow"
+                onClick={(e) => {
+                  handleEditClick(e);
+                }}
+              >
+                {edit ? "Edit" : "Save"}
+              </button>
+              <button
+                style={buttonStyle}
+                className="flexGrow1 textGlow "
+                onClick={(e) => {
+                  handleCancelClick(e);
+                }}
+              >
+                {edit ? false : "Cancel"}
+              </button>
             </div>
             <DeleteCharacter id={character.id}></DeleteCharacter>
           </div>

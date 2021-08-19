@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import Modal from "react-modal";
 import WeaponList from "../../WeaponComponents/WeaponList";
 
-
-
 export default function AddWeaponModal(props) {
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
@@ -44,16 +42,6 @@ export default function AddWeaponModal(props) {
     color: "#71f1e8",
     fontSize: "20px",
   };
-
-  const addButton = {
-    backgroundColor: "#71f1e8",
-    color: '#1d232b',
-    border: "none",
-    padding: "10px",
-    borderRadius: "40px",
-    paddingLeft: "20px",
-    paddingRight: "20px"
-  }
 
   const [weapon, setWeapon] = useState();
 

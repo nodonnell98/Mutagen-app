@@ -20,6 +20,8 @@ export default function Weapon(props) {
       case "Mythic":
         colour = "#fcc966";
         break;
+
+      default: colour = "#00ffff";
     }
     let color = {
       color: colour
@@ -45,6 +47,8 @@ export default function Weapon(props) {
       case "Long Range":
         src = "/images/weaponImg/sniper.png";
         break;
+
+      default:  src = "/images/weaponImg/knife.png";
     }
     return src;
   };
@@ -72,6 +76,7 @@ export default function Weapon(props) {
       <div className="containerDark flexGrow1" style={{paddingTop: '20px'}}>
       <img
         src={getWeaponType()}
+        alt="weapon art"
         style={{ maxWidth: '80%',
           maxHeight:'80%' }}
       />

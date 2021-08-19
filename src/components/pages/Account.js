@@ -1,9 +1,8 @@
 import React, { useEffect, useState, useCallback } from "react";
 import UserService from "../../services/user.service";
-import { Form, Button, Dropdown } from "react-bootstrap";
+import { Form, Button } from "react-bootstrap";
 
 export default function Account() {
-  const [user, setUser] = useState({ username: "Username", email: "u@u.com" });
   const [username, setUsername] = useState('a');
   const [email, setEmail] = useState('a');
   const [error, setError] = useState();
@@ -14,26 +13,27 @@ export default function Account() {
 
   const retrieveUser = useCallback(() => {
     UserService.get(userId).then((res) => {
-      setUser(res.data);
       setUsername(res.data.username);
       setEmail(res.data.email);
     });
-  }, [setUser]);
+  }, [setUsername, setEmail, userId]);
 
   useEffect(() => {
     retrieveUser();
   }, [retrieveUser]);
 
-  let params = {
-    user: {
-      username: username,
-      email: email,
-    },
-  };
+
 
   const onSubmit = useCallback(
     (e) => {
       e.preventDefault();
+
+      let params = {
+        user: {
+          username: username,
+          email: email,
+        },
+      };
 
       UserService.update(userId, params)
         .then((e) => {
@@ -41,9 +41,10 @@ export default function Account() {
         })
         .catch((e) => {
           setError(e.response.data.errors);
+          console.log(error)
         });
     },
-    [username, email, userId]
+    [username, email, userId, edit, error]
   );
 
   function validateForm() {
@@ -58,7 +59,7 @@ export default function Account() {
 
   return (
     <div style={{ marginTop: "15vh" }}>
-      <img className="splash blur" src="/images/character.jpg"></img>
+      <img alt="neon lights in underpass" className="splash blur" src="/images/character.jpg"></img>
       <div
         style={{ padding: "5em", width: '80vh', opacity: '1' }}
         className="container glass flexBoxColumn fadeIn"

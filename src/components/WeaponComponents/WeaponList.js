@@ -12,7 +12,7 @@ export default function WeaponList(props) {
   const [searchedWeapons, setSearchedWeapons] = useState([]);
 
   const retrieveWeapons = useCallback((character) => {
-    if (props.list == "character_weapons") {
+    if (props.list === "character_weapons") {
       WeaponService.index().then((response) => {
         let character_weapons = [];
 
@@ -21,11 +21,12 @@ export default function WeaponList(props) {
           let character_id_keys = Object.keys(weapon.character_ids);
           character_id_keys.map((id_key) => {
             // Loop through each id and check if the id matches the current character id, if it does push that weapon to the weapon array
-            if (weapon.character_ids[id_key] == character.id) {
+            if (weapon.character_ids[id_key] === character.id) {
               character_weapons.push(weapon);
-
             }
+            return null;
           });
+          return null;
         });
         //set searched weapons as the weapon array aka all the weapons that match the character id
          setWeapons(character_weapons);
@@ -34,9 +35,7 @@ export default function WeaponList(props) {
       WeaponService.index().then((response) => {
         setWeapons(response.data);
       });
-
-
-  }, [setWeapons]);
+  }, [setWeapons, props.list]);
 
   const setWeapon = (e) => {
     let weaponName = e.target.value;

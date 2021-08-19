@@ -56,8 +56,8 @@ export default function DeleteCharacter(props) {
       <Modal style={modalStyle} isOpen={modalIsOpen}>
         <h1 className="flexGrow1" style={{borderBottom: '1px solid #71f1e8', color: '#71f1e8', marginBottom: '1em', fontSize: '40px'}}>Are you sure you want to delete this character?</h1>
         <div className="flexBoxRow flexGrow1">
-        <button className="textGlow" style={{marginRight: '10%', flexGrow: '1', fontSize: '50px'}, buttonStyle} onClick={setModalIsOpenToFalse}>Cancel</button>
-        <span class="flexGrow1"></span>
+        <button className="textGlow" style={buttonStyle} onClick={setModalIsOpenToFalse}>Cancel</button>
+        <span className="flexGrow1"></span>
         <Confirmation
           style={{ flexGrow: '3'}}
           id={props.id}

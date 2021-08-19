@@ -5,36 +5,27 @@ import AuthenticationService from "../../services/authentication.service";
 export default function LoginLinks() {
   const [error, setError] = useState("");
 
-  const navLink = {
-    marginLeft: "1em",
-    marginRight: "1em",
-    borderBackground: "#71f1e8",
-  };
-
-  const links = {
-    flex: 3,
-  };
-
   function handleLogout() {
     AuthenticationService.logout()
       .then(() => {
         window.location.replace("/");
       })
       .catch((e) => {
-        // setError(e.response.data.errors);
+        setError(e.response.data.errors);
+        console.log(error)
       });
   }
 
-  if (AuthenticationService.loggedIn() == true) {
+  if (AuthenticationService.loggedIn() === true) {
     return (
       <div>
         {/* <a style={navLink} onClick={(e) => displayUser()}>Account</a> */}
-        <a
+        <button
           className="primary-button fill"
           onClick={(e) => handleLogout()}
         >
           Logout
-        </a>
+        </button>
       </div>
     );
   } else {
