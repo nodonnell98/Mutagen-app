@@ -55,7 +55,7 @@ export default function Header() {
         <div style={links} className="flexBoxRow flexGrow1">
           <Link style={navLink} className="flexGrow2 headerLink" to="/characters">My Characters</Link>
           <Link style={navLink} className="flexGrow1 headerLink"to="/weapons">Armoury</Link>
-          {AuthenticationService.loggedIn() ? <Link style={navLink} className="flexGrow2 headerLink"to="/account">Account</Link> : null}
+          <Link style={navLink} className="flexGrow2 headerLink"to="/account">Account</Link>
           <LoginLinks className="flexGrow1"/>
         </div>
       </nav>

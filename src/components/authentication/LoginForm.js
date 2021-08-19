@@ -27,9 +27,9 @@ export default function LoginForm() {
   }
 
   return (
-    <div>
-      <img alt="blue DNA strands" style={{width: '102%', marginTop: '0%', opacity: '0.2'}}src='./images/city.jpeg'></img>
-      <div className="container login glass">
+    <div class="flexBoxColumn" style={{width: '100vw', height: '70vh', justifyContent: 'center', alignItems: 'center'}}>
+      <img alt="blue DNA strands" className="splash blur" src='./images/city.jpeg'></img>
+      <div className="flexGrow1 container login glass" style={{maxHeight: '40vh', padding: '1em'}}>
         <Form onSubmit={handleSubmit}>
           <Form.Group size="lg" controlId="email">
             <Form.Label>Email</Form.Label>

@@ -43,9 +43,9 @@ export default function RegisterForm() {
   }
 
   return (
-    <div>
-      <img alt="blue DNA strand" style={{width: '102%', marginTop: '0%', opacity: '0.2', height: '100vh'}}src='./images/city.jpeg'></img>
-      <div className="container glass login">
+    <div style={{width: '100vw', height: '70vh', justifyContent: 'center', alignItems: 'center'}}>
+      <img alt="blue DNA strand" className="splash blur" src='./images/city.jpeg'></img>
+      <div className="container glass login" style={{maxHeight: '90vh', padding: '1em'}}>
         <Form onSubmit={onSubmit}>
           <Form.Group size="lg" controlId="username">
             <Form.Label>Username</Form.Label>

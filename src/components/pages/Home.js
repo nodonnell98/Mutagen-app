@@ -21,7 +21,7 @@ export default function Home() {
 
   return (
     <div className="flexBoxRow" style={homeContainerStyle}>
-      <img alt="a stone wall" className="splash" src="/images/splash.jpg"></img>
+      <img  className="splash" al="concrete wall" src="/images/splash.jpg"></img>
       <div className="flexBoxColumn flexGrow1" style={textStyle}>
         <TypedText></TypedText>
         <p style={{textShadow: '1px 2px 4px #000000'}}>Explore this site and discover a new way of playing</p>

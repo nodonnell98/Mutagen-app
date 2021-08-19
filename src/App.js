@@ -1,21 +1,25 @@
 import './App.css';
 import './stylesheets/weaponTable.css'
-import React, {Component} from 'react';
+import React, {Component, lazy, Suspense} from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
-import Weapons from './components/pages/Weapons';
-import Header from './components/layout/Header';
-import CreateWeapon from './components/WeaponComponents/CreateWeapon';
 import authenticationService from './services/authentication.service';
-import LoginForm from './components/authentication/LoginForm'
-import RegisterForm from './components/authentication/RegisterForm';
-import Characters from './components/pages/Characters';
-import Character from './components/pages/Character';
-import Home from './components/pages/Home.js';
-import Account from './components/pages/Account';
 
 class App extends Component {
   render() {
+    const Weapons = lazy(() => import('./components/pages/Weapons'));
+    const Header = lazy(() => import('./components/layout/Header'));
+    const CreateWeapon = lazy(() => import('./components/WeaponComponents/CreateWeapon'));
+    const LoginForm  = lazy(() => import('./components/authentication/LoginForm'));
+    const RegisterForm = lazy(() => import('./components/authentication/RegisterForm'));
+    const Characters = lazy(() => import('./components/pages/Characters'));
+    const Character = lazy(() => import('./components/pages/Character'));
+    const Home = lazy(() => import('./components/pages/Home.js'));
+    const Account = lazy(() => import('./components/pages/Account'));
+
+    const renderLoader = () => <p>Loading</p>;
+
     return (
+      <Suspense fallback={renderLoader()}>
       <Router>
         <div className="App">
           <Header/>
@@ -32,6 +36,7 @@ class App extends Component {
           </div>
         </div>
       </Router>
+      </Suspense>
     )
   }
 }
