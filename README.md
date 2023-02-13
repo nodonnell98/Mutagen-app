@@ -12,6 +12,8 @@ To build and run the application run the following two commands
 
 followed by
 
+```npm i```
+
 ``` docker-compose up```
 
 The port that the application can be accessed on is 'localhost:3001'
