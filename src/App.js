@@ -15,6 +15,7 @@ class App extends Component {
     const Character = lazy(() => import('./components/pages/Character'));
     const Home = lazy(() => import('./components/pages/Home.js'));
     const Account = lazy(() => import('./components/pages/Account'));
+    const Documentation = lazy(() => import('./components/pages/Documentation'));
 
     const renderLoader = () => <p>Loading</p>;
 
@@ -27,7 +28,7 @@ class App extends Component {
 
             <Route exact path="/"><Home /></Route>
             <Route exact path="/account" ><Account /></Route>
-            <Route exact path="/weapons">< Weapons /></Route>
+            <Route exact path="/documentation">< Documentation /></Route>
             <Route exact path="/weapons/add" ><CreateWeapon /></Route>
             <Route exact path="/login" ><LoginForm /></Route>
             <Route exact path="/register" ><RegisterForm /></Route>
